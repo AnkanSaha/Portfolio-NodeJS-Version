@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#callbtn{
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 7%;
+    cursor: pointer;
+  }
+  #navtag{
+    padding-left: 1%;
+    padding-right: 1%;
+    border: 2px dotted rgb(85, 146, 85);
+    border-radius: 10px 15px;
+  }
+  #navtag:hover{
+    background-color: rgb(6, 138, 6);
+    color: aliceblue;
+  }
+
+.downloadbtn{
+  cursor: pointer;
+}
+@media (max-width:400px) {
+    #callbtn{
+      position: fixed;
+      right: 8%;
+      bottom: 3%;
+      width: 15%;
+      cursor: pointer;
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+  #Hatag{
+    font-family: 'Bebas Neue', cursive;
+    color: blueviolet;
+    animation: Animate 4s 50ms infinite alternate-reverse;
+  }
+  
+  #HatagTwo{
+    font-family: 'Bebas Neue', cursive;
+    color: brown;
+    animation: Animate 4s 50ms infinite alternate-reverse;
+  }
+  #HatagThird{
+    font-family: 'Bebas Neue', cursive;
+    color: darkcyan;
+    animation: Animate 4s 50ms infinite alternate-reverse;
+  }
+  #HatagFourth{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(0, 21, 139);
+    animation: Animate 4s 50ms infinite alternate-reverse;
+  }
+
+  /* Animation Keyframes  */
+@keyframes Animate {
+  From{
+    font-size: small;
+    font-weight: lighter;
+  }
+  To{
+    font-size: x-large;
+    font-weight: bolder;
+  }
+}
+
+html:focus-within{
+  scroll-behavior: smooth;
+}

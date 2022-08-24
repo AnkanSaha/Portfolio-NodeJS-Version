@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#navtag{
+  padding-left: 1%;
+  padding-right: 1%;
+  border: 2px dotted rgb(85, 146, 85);
+  border-radius: 10px 15px;
+}
+#navtag:hover{
+  background-color: rgb(6, 138, 6);
+  color: aliceblue;
+}
+#pointers{
+  margin-left: 5%;
+  margin-top: 5vh;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+#Hatag{
+  font-family: 'Bebas Neue', cursive;
+  color: blueviolet;
+  animation: Animate 4s 50ms infinite alternate-reverse;
+}
+
+#HatagTwo{
+  font-family: 'Bebas Neue', cursive;
+  color: brown;
+  animation: Animate 4s 50ms infinite alternate-reverse;
+}
+#HatagThird{
+  font-family: 'Bebas Neue', cursive;
+  color: darkcyan;
+  animation: Animate 4s 50ms infinite alternate-reverse;
+}
+#HatagFourth{
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(0, 21, 139);
+  animation: Animate 4s 50ms infinite alternate-reverse;
+}
+#EducationPartners{
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(9, 148, 39);
+  animation: Animate 4s 50ms infinite alternate-reverse;
+}
+
+/* Footer  */
+.educationpartner{
+  width: 15%;
+  position: relative;
+  top: 2vh;
+  height: 5vh;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+.boardeducationpartner{
+  margin: 2%;
+  width: 5%;
+  animation: partneranimate 4s linear alternate-reverse;
+}
+#callbtn{
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  width: 7%;
+  cursor: pointer;
+}
+.slide{
+  height: 45vh;
+}
+
+
+/* Animation Keyframes  */
+@keyframes Animate {
+  From{
+    font-size: small;
+    font-weight: lighter;
+  }
+  To{
+    font-size: x-large;
+    font-weight: bolder;
+  }
+}
+@keyframes partneranimate {
+  From{
+    width: 0%;
+  }
+  To{
+    width: 100%;
+  }
+}
+
+/* Media Quires */
+@media (max-width:1023px) {
+  #education{
+    display: none;
+  }
+  .slide{
+    height: 20vh;
+  }
+}
+@media (max-width:991px) {
+  .buttonstyle{
+    margin-bottom: 4vh;
+  }
+}
+@media (max-width:400px) {
+  #callbtn{
+    position: fixed;
+    right: 8%;
+    bottom: 3%;
+    width: 15%;
+    cursor: pointer;
+  }
+}
+
+html:focus-within{
+  scroll-behavior: smooth;
+}

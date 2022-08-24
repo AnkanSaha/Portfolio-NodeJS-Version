@@ -1,0 +1,15 @@
+/* Maintanance Time Note  */
+#maintanancenote h1{
+    font-weight: bolder;
+    color: red;
+  }
+  #maintanancenote{
+    margin-top: 10vh;
+  }
+  #maintanancenote p{
+    font-style: italic;
+    color: blueviolet;
+  }
+  html:focus-within{
+    scroll-behavior: smooth;
+  }

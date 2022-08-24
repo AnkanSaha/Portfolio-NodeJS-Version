@@ -1,0 +1,43 @@
+#callbtn{
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 7%;
+    cursor: pointer;
+  }
+
+  @media (max-width:400px) {
+    #callbtn{
+      position: fixed;
+      right: 8%;
+      bottom: 3%;
+      width: 15%;
+      cursor: pointer;
+    }
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+}
+
+#navtag{
+    padding-left: 1%;
+    padding-right: 1%;
+    border: 2px dotted rgb(85, 146, 85);
+    border-radius: 10px 15px;
+  }
+  #navtag:hover{
+    background-color: rgb(6, 138, 6);
+    color: aliceblue;
+  }
+
+#finalpagebuy{
+  display: none;
+}
+#freeprojectsignincode{
+  display: none;
+}
+html:focus-within{
+  scroll-behavior: smooth;
+}
