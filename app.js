@@ -3,9 +3,10 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const port = 1234
+const port = 5678
 const DefPATH = `${__dirname}/static/html/` // Default Path
 const SaveData = require('./Other Services/saveData')
+const SaveToServer = require('./Server/SendToMongoDbatlas')
 
 app.listen(port, ()=>{console.log(`app listening at port No ${port}`)}); // listening port 
 app.use(bodyParser.urlencoded({extended:true})) //form data encoding
@@ -47,6 +48,7 @@ app.post('/contactus', (request, response)=>{
     var  Final = `Hello Sir, I am ${name}. i am facing some problem in your website. my query is ${massage}. please reply me on my email address. my email address is ${email}.`
     var FileName = `${request.body.name}(${email})`
     var SaveStatus = SaveData.SaveUserRequest(FileName, Final)
+    SaveToServer(name, email, massage,Final)
     if(SaveStatus =='success'){
         response.sendFile(`${DefPATH}buyaccesskey.html`)
     }
