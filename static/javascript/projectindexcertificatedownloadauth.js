@@ -6,8 +6,8 @@ document.getElementById('projectauthenticator1').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator1'
-    AuthSuccessPath = '/static/source/Covid Data.zip'
+    var HTMLId = 'projectauthenticator1'
+    var AuthSuccessPath = '/static/source/Covid Data.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -16,8 +16,8 @@ document.getElementById('projectauthenticator2').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator2'
-    AuthSuccessPath = '/static/source/NoteTaker.zip'
+    var HTMLId = 'projectauthenticator2'
+    var AuthSuccessPath = '/static/source/NoteTaker.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -26,8 +26,8 @@ document.getElementById('projectauthenticator3').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator3'
-    AuthSuccessPath = '/static/source/Financial Calculator.zip'
+    var HTMLId = 'projectauthenticator3'
+    var AuthSuccessPath = '/static/source/Financial Calculator.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -36,8 +36,8 @@ document.getElementById('projectauthenticator4').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator4'
-    AuthSuccessPath = '/static/source/IMEI Checker.zip'
+    var HTMLId = 'projectauthenticator4'
+    var AuthSuccessPath = '/static/source/IMEI Checker.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -46,18 +46,18 @@ document.getElementById('projectauthenticator5').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator5'
-    AuthSuccessPath = '/static/source/Lotterry Project.zip'
+    var HTMLId = 'projectauthenticator5'
+    var AuthSuccessPath = '/static/source/Lotterry Project.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
-// Primium porn site project in project file
+// Portfolio Website (NodeJS Version) project in project file
 document.getElementById('projectauthenticator6').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator6'
-    AuthSuccessPath = '/static/source/Primium Porn.zip"'
+    var HTMLId = 'projectauthenticator6'
+    var AuthSuccessPath = '/static/source/Primium Porn.zip"'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -66,8 +66,8 @@ document.getElementById('projectauthenticator7').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator7'
-    AuthSuccessPath = '/static/source/LoveCalculator.zip'
+    var HTMLId = 'projectauthenticator7'
+    var AuthSuccessPath = '/static/source/LoveCalculator.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -76,8 +76,8 @@ document.getElementById('projectauthenticator8').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator8'
-    AuthSuccessPath = '/static/source/IndianPincodeDetails.zip'
+    var HTMLId = 'projectauthenticator8'
+    var AuthSuccessPath = '/static/source/IndianPincodeDetails.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
@@ -86,8 +86,8 @@ document.getElementById('projectauthenticator9').addEventListener('click', ()=>{
     console.log('button clicked and authenticator activated');
     var tempkey = prompt("Enter Authenticator Code To Download");
     console.log(tempkey);
-    HTMLId = 'projectauthenticator9'
-    AuthSuccessPath = '/static/source/Rock Paper Sizer Game using JS.zipofficial.zip'
+    var HTMLId = 'projectauthenticator9'
+    var AuthSuccessPath = '/static/source/Rock Paper Sizer Game using JS.zipofficial.zip'
     authenticator(tempkey, authkeys, HTMLId, AuthSuccessPath)
 });
 
