@@ -1,14 +1,18 @@
 {
   "name": "ankansaha.in",
-  "version": "1.0.3",
+  "version": "2.3.5",
   "description": "The Official Application of Ankan Saha",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devstart": "nodemon app.js",
-    "deploy": "pm2 start app.js --name Portfolio",
+    "deploy": "pm2 start app.js",
     "pm2g": "npm install -g pm2",
-    "stop": "pm2 stop app.js --name Portfolio"
+    "stop": "pm2 stop app.js"
+  },
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/AnkanSaha/Portfolio-NodeJS-Version"
   },
   "keywords": [
     "Ankan",
