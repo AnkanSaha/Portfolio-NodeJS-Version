@@ -59,13 +59,6 @@
   width: 5%;
   animation: partneranimate 4s linear alternate-reverse;
 }
-#callbtn{
-  position: fixed;
-  right: 2%;
-  bottom: 2%;
-  width: 7%;
-  cursor: pointer;
-}
 .slide{
   height: 45vh;
 }

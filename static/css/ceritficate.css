@@ -2,13 +2,6 @@
     margin: 0;
     padding: 0;
 }
-#callbtn{
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-    width: 7%;
-    cursor: pointer;
-  }
   #navtag{
     padding-left: 1%;
     padding-right: 1%;
