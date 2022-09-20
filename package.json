@@ -8,8 +8,7 @@
     "devstart": "nodemon app.js",
     "deploy": "pm2 start app.js --name Portfolio",
     "pm2g": "npm install -g pm2",
-    "stop": "pm2 stop app.js --name Portfolio",
-    "start":"nodemon app.js"
+    "stop": "pm2 stop app.js --name Portfolio"
   },
   "repository": {
     "type": "git",
