@@ -7,7 +7,6 @@ document.getElementById('sendbtn').addEventListener('click', ()=>{
         email:email,
         message:message
     }
-    console.log(readytoSend);
     // Parameters for sending data
     let parameters={
         method:"POST",
@@ -23,9 +22,13 @@ document.getElementById('sendbtn').addEventListener('click', ()=>{
 
         fetch('/contactus', parameters).then(response=>{
             response.json().then(data=>{
-                console.log(data)
                 alert(data.status)
+                document.getElementById('name').value =''
+                document.getElementById('message').value =''
+                document.getElementById('email').value =''
             })
         })
     }
 })
+// Disable Right Click
+document.addEventListener('contextmenu', (event)=>{event.preventDefault();})

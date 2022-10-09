@@ -4,7 +4,11 @@ const bodyParser = require('body-parser');
 const port = 5678
 const DefPATH = `${__dirname}/static/` // Default Path
 const SaveData = require('./Other Services/saveData')
-const SaveToServer = require('./Server/SendToMongoDbatlas')
+const SaveToServer = require('./Server/SendToMongoDbatlas');
+const CORS = require('cors');
+// Cors Configuration
+ /* Cors Allowed Domains*/ let Domain = ['http://localhost:5678', 'https://theankan.live', 'http://127.0.0.1:5678'] 
+app.use(CORS(Domain))
 
 app.listen(port, ()=>{console.log(`app listening at port No ${port}`)}); // listening port 
 app.use(bodyParser.urlencoded({extended:true})) //form data encoding
