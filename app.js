@@ -7,7 +7,7 @@ const SaveData = require('./Other Services/saveData')
 const SaveToServer = require('./Server/SendToMongoDbatlas');
 const CORS = require('cors');
 // Cors Configuration
- /* Cors Allowed Domains*/ let Domain = ['http://localhost:5678', 'https://theankan.live', 'http://127.0.0.1:5678'] 
+ /* Cors Allowed Domains*/ let Domain = ['*'] 
 app.use(CORS(Domain))
 
 app.listen(port, ()=>{console.log(`app listening at port No ${port}`)}); // listening port 
