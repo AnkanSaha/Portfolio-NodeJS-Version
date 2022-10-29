@@ -1,4 +1,5 @@
 document.getElementById('sendbtn').addEventListener('click', ()=>{
+    document.getElementById('sendbtn').value ='Sending ....'
     let name = document.getElementById('name').value
     let email = document.getElementById('email').value
     let message = document.getElementById('message').value
@@ -19,14 +20,16 @@ document.getElementById('sendbtn').addEventListener('click', ()=>{
         alert('Please Fill all Fields correctly ..');
     }
     else{
-
-        fetch('/contactus', parameters).then(response=>{
-            response.json().then(data=>{
-                alert(data.status)
-                document.getElementById('name').value =''
-                document.getElementById('message').value =''
-                document.getElementById('email').value =''
-            })
+         fetch('/contactus', parameters).then(response=>{
+             response.json().then(data=>{
+                 alert(data.status)
+                 document.getElementById('sendbtn').value ='Send Securely'
+                 document.getElementById('name').value =''
+                 document.getElementById('message').value =''
+                 document.getElementById('email').value =''
+             })
+         }).catch((error)=>{
+             alert("Currently Server not acceping request, Try again later ...")
         })
     }
 })

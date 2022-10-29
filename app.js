@@ -15,4 +15,4 @@ app.listen(port, ()=>{console.log(`app listening at port No ${port}`)}); // list
 app.use(bodyParser.urlencoded({extended:true})) //form data encoding
 app.use(bodyParser.json()) //Json Data Encoding
 app.use(express.static('static')) // serving static files
-app.use(Routing)
+app.use(Routing.FastRouter)

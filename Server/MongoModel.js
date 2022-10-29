@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 var Request_Scema = {
-    name : String,
-    Email:String,
-    Message:String,
-    FinalMessage:String,
+    name : {type:String, required:true},
+    Email: {type:String, required:true},
+    Message:{type:String, required:true},
+    FinalMessage: {type:String, required:true},
     RequestDate:String
 }
 // Converting Object to sceema 
