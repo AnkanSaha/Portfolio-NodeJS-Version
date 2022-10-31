@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "start": "pm2 start app.js --name Portfolio --watch -i max",
+    "start": "pm2 start app.js --name Portfolio",
     "pm2g": "npm install -g pm2",
     "stop": "pm2 stop app.js --name Portfolio"
   },
