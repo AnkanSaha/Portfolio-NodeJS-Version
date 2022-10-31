@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon app.js",
-    "deploy": "pm2 start app.js --name Portfolio",
+    "dev": "nodemon app.js",
+    "start": "pm2 start app.js --name Portfolio --watch -i max",
     "pm2g": "npm install -g pm2",
     "stop": "pm2 stop app.js --name Portfolio"
   },
