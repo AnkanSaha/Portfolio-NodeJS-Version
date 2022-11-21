@@ -74,7 +74,7 @@ async function getmessage(){
     }
 }
 getmessage()
-// setInterval(getmessage, 1000);
+setInterval(getmessage, 1000);
 
 // read full message
 async function readfullmessage(id){
