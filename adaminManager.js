@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express.Router();
 const DefPATH = `${__dirname}/static/`; // Default Path
-const Auth_Code = ['Daluabari@7063355213']; // Admin Code
+const Auth_Code = ['Daluabari@7063355213','Ankan@157','Ankan@1567']; // Admin Code
 const mongoose = require("mongoose");
 const Request = require("./Server/MongoModel.js");
 const bodyParser = require("body-parser");
@@ -46,8 +46,10 @@ app.get('/admin', (request, response) => {
       Request.deleteOne({_id: request.body.Id}, (err, data) => {
         if(err) {
             response.status(200).json({status: 'failed'})
+            mongoose.connection.close()
         } else if(data) {
               response.status(200).json({status: 'success'})
+              mongoose.connection.close()
         }
       })
     })
