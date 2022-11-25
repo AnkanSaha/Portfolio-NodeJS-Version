@@ -20,7 +20,7 @@ function SaveToServer(Name, email, message, finalMessage, response) {
         FinalMessage: finalMessage,
         RequestDate: new Date(),
       };
-      var FinalData = new MongoModel(FinalScheema);
+      var FinalData = new MongoModel.Request(FinalScheema);
       FinalData.save()
         .then(() => {
           console.log("Data saved To Server Successfully");

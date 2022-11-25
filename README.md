@@ -23,7 +23,7 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 To deploy this project run
 
 ```bash
-  npm run deploy
+  npm run start
 ```
 
 
@@ -65,7 +65,7 @@ Javascript, HTML, CSS, Nodejs, MongoDB
 To run tests, run the following command
 
 ```bash
-  npm run devstart
+  npm run dev
 ```
 
 

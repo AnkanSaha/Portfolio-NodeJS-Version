@@ -32,7 +32,8 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.19",
     "path": "^0.12.7",
-    "pm2": "^5.2.0"
+    "pm2": "^5.2.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

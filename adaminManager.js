@@ -29,7 +29,7 @@ app.get('/admin', (request, response) => {
   app.get('/admin/message', (request, response) => {
     // variable for storing all messages
     mongoose.connect(DB_URL).then(()=>{
-      Request.find({}, (err, data) => {
+      Request.Request.find({}, (err, data) => {
         if(err) {
             response.status(200).json({status: 'failed'})
         } else if(data) {
@@ -59,7 +59,7 @@ app.get('/admin', (request, response) => {
   app.post('/admin/message/read', (request, response) => {
     var Id = request.body.Id;
     mongoose.connect(DB_URL).then(()=>{
-      Request.find({_id:Id}, (err, data) => {
+      Request.Request.find({_id:Id}, (err, data) => {
         if(err) {
             response.status(200).json({status: 'failed'})
         } else if(data) {
