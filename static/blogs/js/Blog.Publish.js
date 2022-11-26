@@ -21,6 +21,7 @@ let BlogName = document.getElementById('name').value
 let BlogCatagory = document.getElementById('catagory').value
 let PublishDate = document.getElementById('publishdate').value
 let Content = document.getElementById('message').value
+document.getElementById('postbutton').innerText = 'Posting...'
 // condition for validaton
     if(BlogName == '' || BlogCatagory =='' || PublishDate == '' || Content == ''){
         alert('Please Conplete all Fields 😃')
@@ -39,11 +40,28 @@ let Content = document.getElementById('message').value
             console.log(finalResponse)
             alert(finalResponse.status)
             if(finalResponse.status =='Your Blog Published Successfully'){
-                window.location.href = '/blogs'
+                window.location.href = '/blogs/publish'
+                document.getElementById('postbutton').innerText = 'Post This Blog'
+                BlogName = ''
+                BlogCatagory = ''
+                PublishDate = ''
+                Content = ''
+            }
+            else{
+                document.getElementById('postbutton').innerText = 'Post This Blog'
+                BlogName = ''
+                BlogCatagory = ''
+                PublishDate = ''
+                Content = ''
             }
         }
         catch{
             alert('Ubable To Post Blog Right Now 😢 Try again...')
+            document.getElementById('postbutton').innerText = 'Post This Blog'
+            BlogName = ''
+            BlogCatagory = ''
+            PublishDate = ''
+            Content = ''
         }
     }
 }
