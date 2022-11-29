@@ -62,3 +62,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   var loading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
   document.getElementById('massagetbody').innerHTML = loading;
 })
+
+// Gtag Configuration
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2RK9LW9MGR');
