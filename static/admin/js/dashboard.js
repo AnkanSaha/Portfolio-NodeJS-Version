@@ -103,7 +103,7 @@ function closeModal(){
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {
-    var loading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
+    var loading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img><img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
     document.getElementById('forloading').innerHTML = loading;
 });
 

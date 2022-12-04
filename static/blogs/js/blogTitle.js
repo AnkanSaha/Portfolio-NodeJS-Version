@@ -54,13 +54,58 @@ finaldata.data.forEach(selected=>{
 })
 document.getElementById('massagetbody').innerHTML = template
 }
-
 setInterval(getDetails, 3000)
 
 document.addEventListener('DOMContentLoaded', getDetails)
 document.addEventListener('DOMContentLoaded', ()=>{
-  var loading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
-  document.getElementById('massagetbody').innerHTML = loading;
+  var Deskloading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
+  var Mobloading = `
+  <div role="status" class="p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
+      <div class="flex justify-between items-center">
+          <div>
+              <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+      <div class="flex justify-between items-center pt-4">
+          <div>
+              <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+      <div class="flex justify-between items-center pt-4">
+          <div>
+              <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+      <div class="flex justify-between items-center pt-4">
+          <div>
+              <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+      <div class="flex justify-between items-center pt-4">
+          <div>
+              <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+      <span class="sr-only">Loading...</span>
+  </div>
+  `
+  var a = window.matchMedia("(max-width: 468px)")
+  if(a.matches==true){
+    document.getElementById('massagetbody').innerHTML = Mobloading
+  }
+  else if(a.matches==false){
+    document.getElementById('massagetbody').innerHTML = Deskloading
+  }
 })
 
 // Gtag Configuration
@@ -69,3 +114,31 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-2RK9LW9MGR');
+
+// dilar feature
+document.getElementById('dial').addEventListener('click', ()=>{
+  if(document.getElementById('dialer').classList.contains('hidden')){
+    document.getElementById('dialer').classList.replace('hidden', 'flex');
+}
+else if(document.getElementById('dialer').classList.contains('flex')){
+    document.getElementById('dialer').classList.replace('flex', 'hidden');
+}
+});
+// print button
+document.getElementById('printbtn').addEventListener('click', ()=>{
+  window.print();
+});
+document.getElementById('sharebtn').addEventListener('click', ()=>{
+  if(navigator.share){
+    navigator.share({
+      title: document.title,
+      text: document.title,
+      url: window.location.href
+    })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing', error));
+  }
+  else{
+    alert('Your browser does not support sharing');
+  }
+});
