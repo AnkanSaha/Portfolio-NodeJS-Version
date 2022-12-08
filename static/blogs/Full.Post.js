@@ -43,3 +43,22 @@ document.getElementById('dial').addEventListener('click', ()=>{
       alert('Your browser does not support sharing');
     }
   });
+
+
+// checking screen size
+setInterval(() => {
+  var sceenSize = window.matchMedia('(max-width: 768px)');
+  if(sceenSize.matches){
+    var devide = window.navigator.userAgent;
+    if(devide.includes('Android')){
+      document.getElementById('Version').innerText = 'You are viewing the Mobile version on Android';
+    }
+    else if(devide.includes('iPhone')){
+      document.getElementById('Version').innerText = 'You are viewing the Mobile version on iPhone';
+    }
+
+  }
+  else{
+    document.getElementById('Version').innerText = 'You are viewing the Desktop version';
+  }
+}, 10);

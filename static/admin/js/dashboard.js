@@ -155,6 +155,24 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
 });
 
+// add extra user to post
+document.getElementById('AddUser').addEventListener('click', ()=>{
+    let username = prompt('Enter username To add (without @) :');
+    if(username == null){
+        alert('Please enter username to add');
+    }
+    else if(username == ''){
+        alert('Please enter username to add');
+    }
+    else{
+        fetch('/admin/post/adduser',{method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({username:username})}).then(response=>{
+            response.json().then(data=>{
+                alert(data.status)
+            })
+        })
+    }
+})
+
 
 // Gtag Configuration
 window.dataLayer = window.dataLayer || [];
