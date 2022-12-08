@@ -25,6 +25,7 @@ document.getElementById('postbutton').innerText = 'Posting...'
 // condition for validaton
     if(BlogName == '' || BlogCatagory =='' || PublishDate == '' || Content == ''){
         alert('Please Conplete all Fields 😃')
+        document.getElementById('postbutton').innerText = 'Post This Blog'
     }
     else{
         var Sendingdata ={
@@ -40,7 +41,7 @@ document.getElementById('postbutton').innerText = 'Posting...'
             console.log(finalResponse)
             alert(finalResponse.status)
             if(finalResponse.status =='Your Blog Published Successfully'){
-                window.location.href = '/blogs/publish'
+                window.location.href = '/blogs'
                 document.getElementById('postbutton').innerText = 'Post This Blog'
                 BlogName = ''
                 BlogCatagory = ''
@@ -71,3 +72,5 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-2RK9LW9MGR');
+// disable right click in whole page
+document.addEventListener('contextmenu', (e)=>{e.preventDefault()})

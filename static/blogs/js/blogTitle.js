@@ -99,14 +99,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
       <span class="sr-only">Loading...</span>
   </div>
   `
-  var a = window.matchMedia("(max-width: 468px)")
-  if(a.matches==true){
+  var ScreenSize = window.matchMedia("(max-width: 468px)")
+  if(ScreenSize.matches==true){
     document.getElementById('massagetbody').innerHTML = Mobloading
   }
-  else if(a.matches==false){
+  else if(ScreenSize.matches==false){
     document.getElementById('massagetbody').innerHTML = Deskloading
   }
 })
+
+// disable right click in whole page
+document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
 
 // Gtag Configuration
 window.dataLayer = window.dataLayer || [];

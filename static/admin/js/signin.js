@@ -51,3 +51,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-2RK9LW9MGR');
+
+// disable right click in whole page
+document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
