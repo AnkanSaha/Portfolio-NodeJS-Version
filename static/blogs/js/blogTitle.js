@@ -120,12 +120,7 @@ gtag('config', 'G-2RK9LW9MGR');
 
 // dilar feature
 document.getElementById('dial').addEventListener('click', ()=>{
-  if(document.getElementById('dialer').classList.contains('hidden')){
-    document.getElementById('dialer').classList.replace('hidden', 'flex');
-}
-else if(document.getElementById('dialer').classList.contains('flex')){
-    document.getElementById('dialer').classList.replace('flex', 'hidden');
-}
+  document.getElementById('dialer').classList.toggle('hidden')
 });
 // print button
 document.getElementById('printbtn').addEventListener('click', ()=>{
@@ -145,3 +140,17 @@ document.getElementById('sharebtn').addEventListener('click', ()=>{
     alert('Your browser does not support sharing');
   }
 });
+
+// logo animaton
+let logo = document.getElementById('mainlogo');
+let dial = document.getElementById('dial');
+let maintitle = document.getElementById('maintitle');
+logo.classList.toggle('animate-spin');
+dial.classList.toggle('animate-spin');
+setInterval(() => {
+    logo.classList.toggle('animate-spin');
+    dial.classList.toggle('animate-spin');
+    dial.classList.toggle('animate-pulse');
+    dial.classList.toggle('bg-red-500');
+    maintitle.classList.toggle('animate-bounce');
+}, 2000);

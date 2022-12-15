@@ -6,6 +6,7 @@ const CORS = require("cors"); // CORS
 const Routing = require("./router"); // General Routing
 const AdminManager = require("./adaminManager.js"); // Admin Routing
 const BlogHandler = require("./blogHandler.js"); // Blog Routing
+
 // Cors Configuration
 /* Cors Allowed Domains*/ let Domain = [
   "http://localhost:5678",

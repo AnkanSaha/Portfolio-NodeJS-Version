@@ -4,13 +4,21 @@ const DefPATH = `${__dirname}/static/`; // Default Path
 const SaveData = require("./Other Services/saveData");
 const SaveToServer = require("./Server/SendToMongoDbatlas");
 
+// 404 Page error handler
+const blogHandler = require("./blogHandler");
+const AdminManager = require("./adaminManager");
+app.use(AdminManager);
+app.use(blogHandler);
+app.get('*', (request, response) => {
+  response.status(404).render('404', { title: '404 : Page Not Found', routes:'/', exit: 'Go To Home'});
+});
+
 // Endpoint
 app.get("/", (request, response) => {
   var UserIP = request.socket.remoteAddress;
   SaveData.SaveIPAddress(UserIP);
   response.sendFile(`${DefPATH}index.html`);
 });
-
 
 
 app.post("/contactus", (request, response) => {

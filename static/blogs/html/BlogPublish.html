@@ -8,7 +8,7 @@
     <!-- tailwind css link -->
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/tailwind.css" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="shortcut icon"
       href="/images/front-images/feature_pic.png"
@@ -24,12 +24,14 @@
           class="container flex flex-wrap items-center justify-between mx-auto"
         >
           <a href="/" class="flex items-center">
-            <img
+            <img 
+              id="mainlogo"
               src="../../images/front-images/feature_pic.png"
               class="h-6 mr-3 sm:h-10 rounded-full"
               alt="Main_Logo"
             />
             <span
+              id="maintitle"
               class="self-center text-xl font-semibold whitespace-nowrap dark:text-white animate-bounce"
               >Publish a blog daily</span
             >
@@ -103,8 +105,35 @@
                 <!-- submit button                -->
                 <button id="postbutton" type="button" class="text-white ml-[7rem] lg:ml-[33rem] mt-6 bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Post This Blog</button>
             </div>
+</div> 
     </main>
+    <footer>
+                   <!-- Auth Modal -->
+                   <div id="authmodal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full lg:ml-[16.5rem] mt-[10.5rem] lg:mt-[6rem] hidden">
+                    <div class="relative w-full max-w-2xl h-full md:h-auto">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700" style="border: 2px dotted red;">
+                            <!-- Modal header -->
+                            <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="MsgUsername">
+                                    Sign In to post a blog
+                                </h3>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 space-y-6">
+                                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" id="fullmassage">
+                                    <input id="Usercode" class="lg:ml-[12.5rem] text-center rounded-lg" type="text" placeholder="Enter Your Usercode To Login">
+                                </p>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                <button id="modalclose" data-modal-toggle="staticModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:ml-[18.25rem] ml-[6.25rem]">Login</button>
+                            </div>
+                    </div>
+                </div>
+    </footer>
 </body>
 <script src="../../blogs/js/Blog.Publish.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RK9LW9MGR"></script>
 </html>

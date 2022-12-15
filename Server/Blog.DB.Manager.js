@@ -80,7 +80,7 @@ async function getBlog(slug, response) {
         PublishDate: PublishDate,
       });
   } catch {
-    response.status(404).json({ status: "Internal Server Error" });
+    response.status(404).render("404", {title: "404 : Content Not Found", exit: "Go To Blogs", routes:'/blogs'})
   }
 }
 // exporting all methods

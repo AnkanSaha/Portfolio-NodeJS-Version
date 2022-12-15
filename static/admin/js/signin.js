@@ -54,3 +54,10 @@ gtag('config', 'G-2RK9LW9MGR');
 
 // disable right click in whole page
 document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
+
+// logo animaton
+let logo = document.getElementById('mainlogo');
+logo.classList.toggle('animate-spin');
+setInterval(() => {
+    logo.classList.toggle('animate-spin');
+}, 2000);

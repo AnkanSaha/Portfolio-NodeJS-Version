@@ -31,30 +31,27 @@ app.post("/ExtraUserVerify", (request, response) => {
   var Extra = request.body.Extra;
   var ResStatus = ExtraUser.includes(Extra);
   if (ResStatus == true) {
-    response.status(200).json({ status: "success", userCode: Extra});
-  }
-  else if (ResStatus == false) {
-    response.status(200).json({ status: "failed"});
+    response.status(200).json({ status: "success", userCode: Extra });
+  } else if (ResStatus == false) {
+    response.status(200).json({ status: "failed" });
   }
 });
 
-app.post('/admin/post/adduser', (request, response) => {
+app.post("/admin/post/adduser", (request, response) => {
   var usercodes = request.body.username;
   var res = ExtraUser.includes(usercodes);
-  if(res == true){
-    response.status(200).json({status:"User Already Exist"});
-  }
-  else if(res == false){
-    ExtraUser.push(usercodes)
-    var responses = ExtraUser.includes(usercodes)
-    if(responses == true){
-      response.status(200).json({status:"User Added"});
-    }
-    else if(responses == false){
-      response.status(200).json({status:"Not Added"})
+  if (res == true) {
+    response.status(200).json({ status: "User Already Exist" });
+  } else if (res == false) {
+    ExtraUser.push(usercodes);
+    var responses = ExtraUser.includes(usercodes);
+    if (responses == true) {
+      response.status(200).json({ status: "User Added" });
+    } else if (responses == false) {
+      response.status(200).json({ status: "Not Added" });
     }
   }
-})
+});
 
 // sending all messages
 app.get("/admin/message", (request, response) => {
@@ -74,7 +71,7 @@ app.get("/admin/message", (request, response) => {
 app.post("/admin/message/delete", (request, response) => {
   console.log(request.body.Id);
   mongoose.connect(DB_URL).then(() => {
-    Request.deleteOne({ _id: request.body.Id }, (err, data) => {
+    Request.Request.deleteOne({ _id: request.body.Id }, (err, data) => {
       if (err) {
         response.status(200).json({ status: "failed" });
         mongoose.connection.close();

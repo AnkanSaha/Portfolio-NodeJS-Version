@@ -18,12 +18,7 @@ gtag('config', 'G-2RK9LW9MGR');
 
 // dilar feature
 document.getElementById('dial').addEventListener('click', ()=>{
-    if(document.getElementById('dialer').classList.contains('hidden')){
-      document.getElementById('dialer').classList.replace('hidden', 'flex');
-  }
-  else if(document.getElementById('dialer').classList.contains('flex')){
-      document.getElementById('dialer').classList.replace('flex', 'hidden');
-  }
+  document.getElementById('dialer').classList.toggle('hidden')
   });
   // print button
   document.getElementById('printbtn').addEventListener('click', ()=>{
@@ -36,8 +31,14 @@ document.getElementById('dial').addEventListener('click', ()=>{
         text: document.title,
         url: window.location.href
       })
-      .then(() => console.log('Successful share'))
-      .catch((error) => console.log('Error sharing', error));
+      .then(() => {
+        console.log('Successful share')
+        alert('Shared Successfully');
+      })
+      .catch((error) => {
+        console.log('Error sharing', error)
+        alert('Unable to share this page right now');
+      });
     }
     else{
       alert('Your browser does not support sharing');
@@ -62,3 +63,16 @@ setInterval(() => {
     document.getElementById('Version').innerText = 'You are viewing the Desktop version';
   }
 }, 10);
+
+// logo animaton
+let logo = document.getElementById('mainlogo');
+let dial = document.getElementById('dial');
+let maintitle = document.getElementById('maintitle');
+dial.classList.toggle('animate-spin');
+logo.classList.toggle('animate-spin');
+setInterval(() => {
+  logo.classList.toggle('animate-spin');
+  dial.classList.toggle('animate-spin');
+  maintitle.classList.toggle('animate-bounce');
+
+}, 2000);

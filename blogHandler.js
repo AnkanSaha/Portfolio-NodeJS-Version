@@ -18,6 +18,7 @@ blogHandler.post('/blogs/publish/new', (req, res)=>{
     BlogManager.BlogSave(req.body.BlogName, req.body.BlogCatagory, req.body.PublishDate, req.body.Content, req.body.SlugLink, res)
 })
 
+
 // SEND ALL BLOG TITLES
 blogHandler.get('/blogs/gettitles', (req, res)=>{
     BlogManager.GetBlogs(res)

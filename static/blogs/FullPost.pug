@@ -12,8 +12,8 @@ header
   nav.p-3.border-gray-200.rounded.bg-cyan-100(class='dark:bg-gray-800 dark:border-gray-700')
     .container.flex.flex-wrap.items-center.justify-between.mx-auto
       a.flex.items-center(href='/')
-        img.h-6.mr-3.rounded-full(class='sm:h-10' src='../../images/front-images/feature_pic.png' alt='Main_Logo')
-        span.self-center.text-xl.font-semibold.whitespace-nowrap.animate-bounce(class='dark:text-white') Wellcome To Blogs
+        img#mainlogo.h-6.mr-3.rounded-full(class='sm:h-10' src='../../images/front-images/feature_pic.png' alt='Main_Logo')
+        span#maintitle.self-center.text-xl.font-semibold.whitespace-nowrap(class='dark:text-white') Wellcome To Blogs
       button#hamburger.inline-flex.items-center.p-2.ml-3.text-sm.text-gray-500.rounded-lg(class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' data-collapse-toggle='navbar-solid-bg' type='button' aria-controls='navbar-solid-bg' aria-expanded='false')
         span.sr-only Open main menu
         svg.w-6.h-6(aria-hidden='true' fill='currentColor' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
@@ -55,7 +55,7 @@ main
         #tooltip-copy.inline-block.absolute.invisible.z-10.py-2.px-3.w-auto.text-sm.font-medium.text-white.bg-gray-900.rounded-lg.shadow-sm.opacity-0.transition-opacity.duration-300.tooltip(role='tooltip' class='dark:bg-gray-700')
           | Copy
           .tooltip-arrow(data-popper-arrow='')
-      button#dial.flex.justify-center.items-center.w-14.h-14.text-white.bg-red-700.rounded-full.animate-spin(type='button' data-dial-toggle='speed-dial-menu-default' aria-controls='speed-dial-menu-default' aria-expanded='false' class='hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800')
+      button#dial.flex.justify-center.items-center.w-14.h-14.text-white.bg-red-700.rounded-full(type='button' data-dial-toggle='speed-dial-menu-default' aria-controls='speed-dial-menu-default' aria-expanded='false' class='hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800')
         svg.w-8.h-8.transition-transform(aria-hidden='true' class='group-hover:rotate-45' fill='none' stroke='currentColor' viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
           path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6v6m0 0v6m0-6h6m-6 0H6')
         span.sr-only Open actions menu

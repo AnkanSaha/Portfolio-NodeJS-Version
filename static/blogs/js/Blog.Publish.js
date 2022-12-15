@@ -1,28 +1,9 @@
 // login check
+let authmodal = document.getElementById('authmodal')
 var PostUser = localStorage.getItem('PostUser')
 if(PostUser == null){
-    let TempUser = prompt('In Order To Post any Blog in this website, You Need To Login First. Enter Your Username :');
-    if(TempUser == null){
-        alert('You Need To Login First To Post Any Blog')
-        window.location.href = '/blogs'
-    }
-    else if(TempUser == ''){
-        alert('You Need To Login First To Post Any Blog')
-        window.location.href = '/blogs'
-    }
-    else{
-        ExtraUserAuth(TempUser).then((data) => {
-            if(data == null){
-                alert('USer Not Found. Please Contact Admin in home page contact section to get your username')
-                localStorage.removeItem('PostUser')
-                window.location.href = '/blogs'
-            }
-            else{
-                console.log('User is Verified')
-                localStorage.setItem('PostUser', data)
-            }
-        })
-    }
+    document.getElementsByTagName('main')[0].classList.toggle('blur-lg')
+    authmodal.classList.toggle('hidden')
 }
 else{
     ExtraUserAuth(PostUser).then((data) => {
@@ -36,6 +17,20 @@ else{
         }
     })
 }
+
+// Extra User Auth
+document.getElementById('modalclose').addEventListener('click', async ()=>{
+    let usercode = document.getElementById('Usercode').value
+    let response = await ExtraUserAuth(usercode);
+    if(response == null){
+        alert('Invalid User Code')
+    }
+    else{
+        localStorage.setItem('PostUser', response)
+        authmodal.classList.toggle('hidden')
+        document.getElementsByTagName('main')[0].classList.toggle('blur-lg')
+    }
+})
 
 async function ExtraUserAuth(ExtraUserCode){
     var response = await fetch('/ExtraUserVerify',{
@@ -60,12 +55,7 @@ const targetEl = document.getElementById('navbar-solid-bg');
 const triggerEl = document.getElementById('hamburger');
 // set the trigger element that will be used to toggle the target element
 triggerEl.addEventListener('click', function() {
-    if(targetEl.classList.contains('hidden')) {
-        targetEl.classList.remove('hidden');
-    }
-    else{
-        targetEl.classList.add('hidden');
-    }
+        targetEl.classList.toggle('hidden');
 })
 
 let PostFailure = `<div class="w-full h-full">
@@ -151,3 +141,12 @@ gtag('js', new Date());
 gtag('config', 'G-2RK9LW9MGR');
 // disable right click in whole page
 // document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
+
+// logo animaton
+let logo = document.getElementById('mainlogo');
+let maintitle = document.getElementById('maintitle');
+logo.classList.toggle('animate-spin');
+setInterval(() => {
+    logo.classList.toggle('animate-spin');
+    maintitle.classList.toggle('animate-bounce');
+}, 2000);
