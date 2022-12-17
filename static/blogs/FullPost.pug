@@ -9,7 +9,7 @@ link(rel='stylesheet' href='../../css/base.css')
 link(rel='stylesheet' href='../../css/tailwind.css')
 link(rel='shortcut icon' href='/images/front-images/feature_pic.png' type='image/x-icon')
 header
-  nav.p-3.border-gray-200.rounded.bg-cyan-100(class='dark:bg-gray-800 dark:border-gray-700')
+  nav.p-3.border-gray-200.rounded.bg-cyan-100(class='dark:bg-gray-800 dark:border-gray-700 z-50 fixed top-0 w-full')
     .container.flex.flex-wrap.items-center.justify-between.mx-auto
       a.flex.items-center(href='/')
         img#mainlogo.h-6.mr-3.rounded-full(class='sm:h-10' src='../../images/front-images/feature_pic.png' alt='Main_Logo')
@@ -26,7 +26,7 @@ header
             a.block.py-2.pl-3.my-2.pr-4.text-white.bg-cyan-700.rounded(class='lg:my-0 md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent' href='/blogs/publish' aria-current='page') Publish your blog
           li
             a.block.py-2.pl-3.pr-4.text-gray-700.rounded(class='hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' href='/admin') Admin Panel
-main
+main(class='mt-[6rem]')
   // title
   p#Blogtitle.text-base.text-center.text-gray-900.mx-6(class='lg:text-4xl mt-[3rem] dark:text-white text-cyan-900') #{title}
   br

@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 // disable right click in whole page
-document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
+// document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
 
 // Gtag Configuration
 window.dataLayer = window.dataLayer || [];

@@ -195,8 +195,8 @@ document.addEventListener("contextmenu", (e) => {
 });
 
 // logo animaton
-let logo = document.getElementById('mainlogo');
-logo.classList.toggle('animate-spin');
+let logo = document.getElementById("mainlogo");
+logo.classList.toggle("animate-spin");
 setInterval(() => {
-    logo.classList.toggle('animate-spin');
+  logo.classList.toggle("animate-spin");
 }, 2000);

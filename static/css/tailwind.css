@@ -976,6 +976,10 @@ input[type="range"]::-ms-fill-lower {
   position: relative;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .right-6 {
   right: 1.5rem;
 }
@@ -990,10 +994,6 @@ input[type="range"]::-ms-fill-lower {
 
 .-left-full {
   left: -100%;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .right-0 {
@@ -1020,12 +1020,12 @@ input[type="range"]::-ms-fill-lower {
   bottom: 0.5rem;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
 .z-50 {
   z-index: 50;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .mx-auto {
@@ -1099,6 +1099,10 @@ input[type="range"]::-ms-fill-lower {
   margin-left: 0.75rem;
 }
 
+.mt-\[6rem\] {
+  margin-top: 6rem;
+}
+
 .mt-\[3rem\] {
   margin-top: 3rem;
 }
@@ -1119,6 +1123,10 @@ input[type="range"]::-ms-fill-lower {
   margin-top: 2rem;
 }
 
+.mt-\[4\.25rem\] {
+  margin-top: 4.25rem;
+}
+
 .mt-\[10\.5rem\] {
   margin-top: 10.5rem;
 }
@@ -1127,8 +1135,12 @@ input[type="range"]::-ms-fill-lower {
   margin-left: auto;
 }
 
-.mt-\[15rem\] {
-  margin-top: 15rem;
+.mt-\[10rem\] {
+  margin-top: 10rem;
+}
+
+.mt-\[7rem\] {
+  margin-top: 7rem;
 }
 
 .mb-2 {
@@ -1147,6 +1159,10 @@ input[type="range"]::-ms-fill-lower {
   margin-left: 8.25rem;
 }
 
+.mt-\[5rem\] {
+  margin-top: 5rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -1155,8 +1171,8 @@ input[type="range"]::-ms-fill-lower {
   margin-top: 1.5rem;
 }
 
-.ml-\[7rem\] {
-  margin-left: 7rem;
+.ml-\[5\.25rem\] {
+  margin-left: 5.25rem;
 }
 
 .mt-\[7\.5rem\] {
@@ -1243,12 +1259,12 @@ input[type="range"]::-ms-fill-lower {
   height: 0.5rem;
 }
 
-.w-6 {
-  width: 1.5rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-\[52px\] {
@@ -1764,6 +1780,11 @@ input[type="range"]::-ms-fill-lower {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -2242,6 +2263,10 @@ input[type="range"]::-ms-fill-lower {
 
   .lg\:mt-\[5\.5rem\] {
     margin-top: 5.5rem;
+  }
+
+  .lg\:mt-\[5\.25rem\] {
+    margin-top: 5.25rem;
   }
 
   .lg\:ml-\[16\.5rem\] {

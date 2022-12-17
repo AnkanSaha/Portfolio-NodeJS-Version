@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express.Router();
 const DefPATH = `${__dirname}/static/`; // Default Path
+const IPS = require('request-ip');
 const SaveData = require("./Other Services/saveData");
+
 const SaveToServer = require("./Server/SendToMongoDbatlas");
 
 // 404 Page error handler
@@ -15,7 +17,8 @@ app.get('*', (request, response) => {
 
 // Endpoint
 app.get("/", (request, response) => {
-  var UserIP = request.socket.remoteAddress;
+  var UserIP = IPS.getClientIp(request);
+  console.log(UserIP);
   SaveData.SaveIPAddress(UserIP);
   response.sendFile(`${DefPATH}index.html`);
 });
