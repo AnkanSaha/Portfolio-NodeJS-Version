@@ -13,7 +13,6 @@ const BlogHandler = require("./blogHandler.js"); // Blog Routing
   "http://127.0.0.1:5678",
   "https://theankan.live",
 ];
-{}
 app.use(CORS(Domain)); // setting up CORS
 app.listen(port, () => {
   console.log(`app listening at port No ${port}`);
