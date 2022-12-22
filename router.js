@@ -18,7 +18,6 @@ app.get('*', (request, response) => {
 // Endpoint
 app.get("/", (request, response) => {
   var UserIP = IPS.getClientIp(request);
-  console.log(UserIP);
   SaveData.SaveIPAddress(UserIP);
   response.sendFile(`${DefPATH}index.html`);
 });
@@ -32,8 +31,7 @@ app.post("/contactus", (request, response) => {
   var Final = `Hello Sir, I am ${name}. my query is ${massage}. please reply me on my email address. my email address is ${email}.( Request Time : ${Time})`;
   SaveToServer.SaveToServer(name, email, massage, Final, response);
   var FileName = `${request.body.name}(${email})`;
-  var SaveStatus = SaveData.SaveUserRequest(FileName, Final);
-  console.log(SaveStatus);
+  SaveData.SaveUserRequest(FileName, Final);
 });
 
 module.exports = { FastRouter: app };

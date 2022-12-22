@@ -1,10 +1,11 @@
-var MongoModel = require("../Server/MongoModel");
+let MongoModel = require("../Server/MongoModel");
 const MongoURL = require("../Server/DB_Config.js");
 const mongoose = require("mongoose");
 
 // save Blog Post
 async function SaveBlog(
   BlogName,
+  AuthorName,
   BlogCatagory,
   PublishDate,
   Content,
@@ -13,17 +14,17 @@ async function SaveBlog(
 ) {
   try {
     await mongoose.connect(MongoURL);
-    console.log("DB Connected");
     let SaveDataStructure = {
       BlogName: BlogName,
+      AuthorName: AuthorName,
       BlogCatagory: BlogCatagory,
       PublishDate: PublishDate,
       Content: Content,
       SlugLink: SlugLink,
     };
-    var readyData = new MongoModel.Blogs(SaveDataStructure);
+    let readyData = new MongoModel.Blogs(SaveDataStructure);
     try {
-      var tempcheck = await MongoModel.Blogs.find({ SlugLink: SlugLink });
+      let tempcheck = await MongoModel.Blogs.find({ SlugLink: SlugLink });
       if (tempcheck.length == 0) {
         await readyData.save();
         response
@@ -44,9 +45,7 @@ async function SaveBlog(
 async function getBlogDetails(response) {
   try {
     await mongoose.connect(MongoURL);
-    console.log("DB Connected");
-    var Dataresponses = await MongoModel.Blogs.find();
-    console.log(Dataresponses);
+    let Dataresponses = await MongoModel.Blogs.find();
     let Dataresponse = [];
     Dataresponses.forEach((selected) => {
       Dataresponse.push({
@@ -66,18 +65,22 @@ async function getBlogDetails(response) {
 async function getBlog(slug, response) {
   try {
     await mongoose.connect(MongoURL);
-    console.log("DB Connected");
-    var Dataresponse = await MongoModel.Blogs.find({ SlugLink: slug});
-    console.log(Dataresponse);
-    var title = Dataresponse[0].BlogName;
-    var content = Dataresponse[0].Content;
-    var PublishDate = Dataresponse[0].PublishDate;
+    let Dataresponse = await MongoModel.Blogs.find({ SlugLink: slug});
+    let title = Dataresponse[0].BlogName;
+    let content = Dataresponse[0].Content;
+    let PublishDate = Dataresponse[0].PublishDate;
+    let author = Dataresponse[0].AuthorName;
+    console.log(author)
+    if(author == undefined || author == null || author ==''){
+      author = 'Admin'
+    }
     response
       .status(200)
       .render("FullPost", {
         title: title,
         content: content,
         PublishDate: PublishDate,
+        author: author
       });
   } catch {
     response.status(404).render("404", {title: "404 : Content Not Found", exit: "Go To Blogs", routes:'/blogs'})

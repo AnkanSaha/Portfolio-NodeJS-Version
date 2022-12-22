@@ -1,25 +1,22 @@
-console.log('Hello World');
 // Hamburger Menu Control
-const targetEl = document.getElementById('navbar-solid-bg');
+const targetEl = document.getElementById("navbar-solid-bg");
 // set the target element that will be collapsed or expanded (eg. navbar menu)
-const triggerEl = document.getElementById('hamburger');
+const triggerEl = document.getElementById("hamburger");
 // set the trigger element that will be used to toggle the target element
-triggerEl.addEventListener('click', function() {
-    if(targetEl.classList.contains('hidden')) {
-        targetEl.classList.remove('hidden');
-    }
-    else{
-        targetEl.classList.add('hidden');
-    }
-})
+triggerEl.addEventListener("click", function () {
+  if (targetEl.classList.contains("hidden")) {
+    targetEl.classList.remove("hidden");
+  } else {
+    targetEl.classList.add("hidden");
+  }
+});
 
-async function getDetails(){
-    var data = await fetch('/blogs/gettitles')
-    var finaldata = await data.json()
-    console.log(finaldata)
-    let template = ''
-finaldata.data.forEach(selected=>{
-    template +=`<tr
+async function getDetails() {
+  let data = await fetch("/blogs/gettitles");
+  let finaldata = await data.json();
+  let template = "";
+  finaldata.data.forEach((selected) => {
+    template += `<tr
     class="bg-gray-300 border border-grey-500 md:border-none block md:table-row my-4"
   >
     <td
@@ -50,16 +47,16 @@ finaldata.data.forEach(selected=>{
       >
       <a href="${selected.SlugLink}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded readbtn my-2">Read Full</a>
     </td>
-  </tr>`
-})
-document.getElementById('massagetbody').innerHTML = template
+  </tr>`;
+  });
+  document.getElementById("massagetbody").innerHTML = template;
 }
-setInterval(getDetails, 3000)
+setInterval(getDetails, 60000);
 
-document.addEventListener('DOMContentLoaded', getDetails)
-document.addEventListener('DOMContentLoaded', ()=>{
-  var Deskloading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`
-  var Mobloading = `
+document.addEventListener("DOMContentLoaded", getDetails);
+document.addEventListener("DOMContentLoaded", () => {
+  let Deskloading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`;
+  let Mobloading = `
   <div role="status" class="p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
       <div class="flex justify-between items-center">
           <div>
@@ -98,59 +95,60 @@ document.addEventListener('DOMContentLoaded', ()=>{
       </div>
       <span class="sr-only">Loading...</span>
   </div>
-  `
-  var ScreenSize = window.matchMedia("(max-width: 468px)")
-  if(ScreenSize.matches==true){
-    document.getElementById('massagetbody').innerHTML = Mobloading
+  `;
+  let ScreenSize = window.matchMedia("(max-width: 468px)");
+  if (ScreenSize.matches == true) {
+    document.getElementById("massagetbody").innerHTML = Mobloading;
+  } else if (ScreenSize.matches == false) {
+    document.getElementById("massagetbody").innerHTML = Deskloading;
   }
-  else if(ScreenSize.matches==false){
-    document.getElementById('massagetbody').innerHTML = Deskloading
-  }
-})
+});
 
 // disable right click in whole page
 // document.addEventListener('contextmenu', (e)=>{e.preventDefault()})
 
 // Gtag Configuration
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
 
-gtag('config', 'G-2RK9LW9MGR');
+gtag("config", "G-2RK9LW9MGR");
 
 // dilar feature
-document.getElementById('dial').addEventListener('click', ()=>{
-  document.getElementById('dialer').classList.toggle('hidden')
+document.getElementById("dial").addEventListener("click", () => {
+  document.getElementById("dialer").classList.toggle("hidden");
 });
 // print button
-document.getElementById('printbtn').addEventListener('click', ()=>{
+document.getElementById("printbtn").addEventListener("click", () => {
   window.print();
 });
-document.getElementById('sharebtn').addEventListener('click', ()=>{
-  if(navigator.share){
-    navigator.share({
-      title: document.title,
-      text: document.title,
-      url: window.location.href
-    })
-    .then(() => console.log('Successful share'))
-    .catch((error) => console.log('Error sharing', error));
-  }
-  else{
-    alert('Your browser does not support sharing');
+document.getElementById("sharebtn").addEventListener("click", () => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: document.title,
+        text: document.title,
+        url: window.location.href,
+      })
+      .then(() => console.log("Successful share"))
+      .catch((error) => console.log("Error sharing", error));
+  } else {
+    alert("Your browser does not support sharing");
   }
 });
 
 // logo animaton
-let logo = document.getElementById('mainlogo');
-let dial = document.getElementById('dial');
-let maintitle = document.getElementById('maintitle');
-logo.classList.toggle('animate-spin');
-dial.classList.toggle('animate-spin');
+let logo = document.getElementById("mainlogo");
+let dial = document.getElementById("dial");
+let maintitle = document.getElementById("maintitle");
+logo.classList.toggle("animate-spin");
+dial.classList.toggle("animate-spin");
 setInterval(() => {
-    logo.classList.toggle('animate-spin');
-    dial.classList.toggle('animate-spin');
-    dial.classList.toggle('animate-pulse');
-    dial.classList.toggle('bg-red-500');
-    maintitle.classList.toggle('animate-bounce');
+  logo.classList.toggle("animate-spin");
+  dial.classList.toggle("animate-spin");
+  dial.classList.toggle("animate-pulse");
+  dial.classList.toggle("bg-red-500");
+  maintitle.classList.toggle("animate-bounce");
 }, 2000);

@@ -12,7 +12,7 @@ document.getElementById("logout").addEventListener("click", (e) => {
 });
 
 // check code
-var Code = localStorage.getItem("AdminCode");
+let Code = localStorage.getItem("AdminCode");
 if (Code == null) {
   window.location.href = "/admin";
 }
@@ -20,12 +20,11 @@ if (Code == null) {
 // loading all messages
 async function getmessage() {
   // get all messages
-  var response = await fetch("/admin/message");
-  var data = await response.json();
+  let response = await fetch("/admin/message");
+  let data = await response.json();
   if (data.status == "success") {
-    console.log(data.data);
     let html = "";
-    var MessageBody = document.getElementById("massagetbody");
+    let MessageBody = document.getElementById("massagetbody");
     data.data.forEach((item) => {
       html += `<tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row my-4">
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Name</span>${item.name}</td>
@@ -33,7 +32,7 @@ async function getmessage() {
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Short Message</span>${item.Message}</td>
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                 <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded readbtn my-2" name=${item._id}>Read Full</button>
+                <button class="bg-yellow-200 hover:bg-green-700 hover:text-white text-black font-bold py-1 px-2 border border-blue-500 rounded readbtn my-2" name=${item._id}>Read Full</button>
                 <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded deletebtn" name=${item._id}>Delete</button>
             </td>
         </tr>`;
@@ -46,14 +45,13 @@ async function getmessage() {
     // adding event listener to  all read message buttion
     document.querySelectorAll(".deletebtn").forEach((selectedbtn) => {
       selectedbtn.addEventListener("click", async () => {
-        var Message = selectedbtn.getAttribute("name");
-        console.log(Message);
-        var response = await fetch("/admin/message/delete", {
+        let Message = selectedbtn.getAttribute("name");
+        let response = await fetch("/admin/message/delete", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ Id: Message }),
         });
-        var data = await response.json();
+        let data = await response.json();
         if (data.status == "success") {
           getmessage();
         } else if (data.status == "failed") {
@@ -64,13 +62,11 @@ async function getmessage() {
     // read full message
     document.querySelectorAll(".readbtn").forEach((selectedbtn) => {
       selectedbtn.addEventListener("click", async () => {
-        var Message = selectedbtn.getAttribute("name");
-        console.log(Message);
+        let Message = selectedbtn.getAttribute("name");
         readfullmessage(Message);
       });
     });
   } else if (data.status == "failed") {
-    console.log("failed");
     alert("Failed to load messages");
   }
 }
@@ -79,15 +75,14 @@ setInterval(getmessage, 3000);
 
 // read full message
 async function readfullmessage(id) {
-  var response = await fetch("/admin/message/read", {
+  let response = await fetch("/admin/message/read", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ Id: id }),
   });
-  var data = await response.json();
+  let data = await response.json();
   if (data.status == "success") {
-    console.log(data.data);
-    document.getElementById("MsgUsername").innerText = data.data.name;
+    document.getElementById("MsgUsername").innerText = `Message from ${data.data.name}`;
     document.getElementById("fullmassage").innerText = data.data.FinalMessage;
     document.getElementById("staticModal").classList.remove("hidden");
     document.getElementById("staticModal").classList.add("block");
@@ -104,7 +99,7 @@ function closeModal() {
   document.getElementById("staticModal").classList.toggle("hidden");
 }
 
-// loading variables
+// loading letiables
 let Mobloading = `
   <div role="status" class="p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
       <div class="flex justify-between items-center">
@@ -147,8 +142,8 @@ let Mobloading = `
   `;
 let Deskloading = `<img src="../../images/loading.png" class="w-24 inline-block lg:ml-[35.25rem] mt-[12rem] animate-spin ml-[8.25rem]" alt="loading"></img>`;
 
-document.addEventListener("DOMContentLoaded", () => {
-  var ScreenSize = window.matchMedia("(max-width: 468px)");
+document.addEventListener("DOMContentLoaded", () => { 
+  let ScreenSize = window.matchMedia("(max-width: 468px)");
   if (ScreenSize.matches == true) {
     document.getElementById("forloading").innerHTML = Mobloading;
   } else if (ScreenSize.matches == false) {
@@ -158,22 +153,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // add extra user to post
 document.getElementById("AddUser").addEventListener("click", () => {
-  let username = prompt("Enter username To add (without @) :");
-  if (username == null) {
-    alert("Please enter username to add");
-  } else if (username == "") {
-    alert("Please enter username to add");
-  } else {
+  let username;
+  let Password;
+  let Email;
+do{
+   username= prompt("Enter username To add :");
+   Password= prompt("Enter Password To add :");
+   Email= prompt("Enter Email To add :");
+}while(username == null || username == "" || username.length <= 5 || Password == null || Password == "" || Password.length <= 5 || Email == null || Email == "" || Email.length <= 5)
     fetch("/admin/post/adduser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: username }),
+      body: JSON.stringify({ username: username, password: Password, email: Email }),
     }).then((response) => {
       response.json().then((data) => {
         alert(data.status);
       });
     });
-  }
 });
 
 // Gtag Configuration
@@ -186,13 +182,13 @@ gtag("js", new Date());
 gtag("config", "G-2RK9LW9MGR");
 
 // disable right click in modal
-document.getElementById("staticModal").addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+// document.getElementById("staticModal").addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });
 // disable right click in whole page
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });
 
 // logo animaton
 let logo = document.getElementById("mainlogo");

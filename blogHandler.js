@@ -14,8 +14,7 @@ blogHandler.get('/blogs/publish', (req, res)=>{
 
 // handle the blog posting request
 blogHandler.post('/blogs/publish/new', (req, res)=>{
-    console.log(req.body)
-    BlogManager.BlogSave(req.body.BlogName, req.body.BlogCatagory, req.body.PublishDate, req.body.Content, req.body.SlugLink, res)
+    BlogManager.BlogSave(req.body.BlogName, req.body.AuthorName ,req.body.BlogCatagory, req.body.PublishDate, req.body.Content, req.body.SlugLink, res)
 })
 
 
@@ -23,6 +22,7 @@ blogHandler.post('/blogs/publish/new', (req, res)=>{
 blogHandler.get('/blogs/gettitles', (req, res)=>{
     BlogManager.GetBlogs(res)
 })
+
 
 // send specific blog with pug
 blogHandler.get('/blogs/:slug', (req, res)=>{

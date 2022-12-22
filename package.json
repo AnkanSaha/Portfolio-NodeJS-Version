@@ -1,14 +1,14 @@
 {
-  "name": "ankansaha.in",
-  "version": "2.3.5",
+  "name": "theankan.live",
+  "version": "2.3.9",
   "description": "The Official Application of Ankan Saha",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
-    "start": "pm2 start app.js --name Portfolio",
+    "dev": "nodemon portfolio.js",
+    "start": "pm2 start portfolio.js --name Portfolio",
     "pm2g": "npm install -g pm2",
-    "stop": "pm2 stop app.js --name Portfolio",
+    "stop": "pm2 stop portfolio.js --name Portfolio",
     "build": "tailwindcss build -i ./static/css/base.css -o ./static/css/tailwind.css -c tailwind.config.js --minifiy"
   },
   "repository": {
@@ -22,25 +22,23 @@
   "author": "Ankan Saha",
   "license": "MIT License",
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "bootstrap": "^5.2.0",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "daisyui": "^2.45.0",
     "express": "^4.18.1",
-    "flowbite": "^1.5.4",
+    "express-ws": "^5.0.2",
     "ipware": "^2.0.0",
     "mongoose": "^6.6.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.19",
-    "path": "^0.12.7",
     "pm2": "^5.2.0",
     "pug": "^3.0.2",
-    "request-ip": "^3.3.0",
-    "tw-elements": "^1.0.0-alpha13"
+    "request-ip": "^3.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "bootstrap": "^5.2.3",
+    "flowbite": "^1.5.5",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "tw-elements": "^1.0.0-alpha13"
   }
 }

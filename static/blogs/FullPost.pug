@@ -13,7 +13,7 @@ header
     .container.flex.flex-wrap.items-center.justify-between.mx-auto
       a.flex.items-center(href='/')
         img#mainlogo.h-6.mr-3.rounded-full(class='sm:h-10' src='../../images/front-images/feature_pic.png' alt='Main_Logo')
-        span#maintitle.self-center.text-xl.font-semibold.whitespace-nowrap(class='dark:text-white') Wellcome To Blogs
+        span#maintitle.self-center.text-xl.font-semibold.whitespace-nowrap(class='dark:text-white text-sm lg:text-base') #{title}
       button#hamburger.inline-flex.items-center.p-2.ml-3.text-sm.text-gray-500.rounded-lg(class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' data-collapse-toggle='navbar-solid-bg' type='button' aria-controls='navbar-solid-bg' aria-expanded='false')
         span.sr-only Open main menu
         svg.w-6.h-6(aria-hidden='true' fill='currentColor' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
@@ -30,7 +30,8 @@ main(class='mt-[6rem]')
   // title
   p#Blogtitle.text-base.text-center.text-gray-900.mx-6(class='lg:text-4xl mt-[3rem] dark:text-white text-cyan-900') #{title}
   br
-  p.ml-6.text-gray-900(class='lg:text-xl dark:text-white hover:text-red-700 cursor-pointer animate-pulse') #{PublishDate}
+  p.ml-6.text-gray-900(class='lg:text-xl dark:text-white hover:text-red-700 cursor-pointer animate-pulse lg:mt-[3.75rem] mt-[1.25rem]') #{PublishDate}
+  p.ml-6.text-gray-900(class='lg:text-xl dark:text-white hover:text-red-700 cursor-pointer animate-pulse mt-[2.25rem] lg:mt-[3.25rem]')|By - #{author}
   .mx-6.mb-4(class='mt-[3.5rem] lg:mt-[5.5rem]')
     h2.bg-white.shadow-(class='first-letter:text-red-600 lg:first-letter:text-[2rem]') #{content}
     .fixed.right-6.bottom-6.group(data-dial-init='')
@@ -62,3 +63,5 @@ main(class='mt-[6rem]')
   h1#Version(class='text-center mt-[2rem] opacity-25')
     script(src='../blogs/Full.Post.js')
     script(src='https://www.googletagmanager.com/gtag/js?id=G-2RK9LW9MGR')
+    //- adsterra social bar ads (Saraswati157)
+    script(type='text/javascript', src='//pl18128901.highperformancecpmgate.com/de/6c/80/de6c805182a27f2d8a242feac6775f63.js')

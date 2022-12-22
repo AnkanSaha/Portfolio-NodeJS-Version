@@ -12,10 +12,12 @@
         <!-- main tailwind css file -->
         <link rel="stylesheet" href="../../css/tailwind.css">
     <title>Wellcome To Admin panel</title>
+        <!-- adsterra social bar ads (Saraswati157) -->
+        <script type='text/javascript' src='//pl18128901.highperformancecpmgate.com/de/6c/80/de6c805182a27f2d8a242feac6775f63.js'></script>
 </head>
 <body>
     
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-50 fixed top-0 w-full">
+<nav class="bg-green-200 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-50 fixed top-0 w-full">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
       <a href="/" class="flex items-center">
           <img id="mainlogo" src="../../images/front-images/feature_pic.png" class="rounded-full h-6 mr-3 sm:h-9" alt="main Logo" />
@@ -37,7 +39,10 @@
             <a href="/blogs/publish" class="block py-2 pl-3 pr-4 mt-4 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-700 md:p-0 dark:text-white" aria-current="page">Publish a new Blog</a>
           </li>
           <li>
-            <a id="AddUser" class="block py-2 pl-3 pr-4 mt-4 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-700 md:p-0 dark:text-white cursor-pointer" aria-current="page">Add Extra User</a>
+            <a class="block py-2 pl-3 pr-4 text-white mt-4 bg-red-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-white cursor-pointer" id="AddUser" aria-current="page">Add Extra User</a>
+          </li>
+          <li>
+            <a href="/admin/post/SeeExtraUser" class="block py-2 pl-3 pr-4 mt-4 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-700 md:p-0 dark:text-white cursor-pointer" aria-current="page">See Extra User List</a>
           </li>
           <li>
             <a class="block py-2 pl-3 pr-4 text-white mt-4 bg-red-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-white cursor-pointer" id="logout" aria-current="page">Logout</a>
@@ -64,7 +69,7 @@
 <!-- create a modal for read message -->
 
 <!-- Main modal -->
-<div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full lg:ml-[16.5rem] mt-[10.5rem] lg:mt-[6rem]">
+<div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full lg:ml-[16.5rem] mt-[6.5rem] lg:mt-[6rem]">
     <div class="relative w-full max-w-2xl h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">

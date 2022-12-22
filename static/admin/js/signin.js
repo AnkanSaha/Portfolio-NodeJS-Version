@@ -1,4 +1,3 @@
-console.log("Hello World");
 document.getElementById("hamburger").addEventListener("click", function () {
   document.getElementById("navbar-solid-bg").classList.toggle("hidden");
 });
@@ -7,7 +6,7 @@ document.getElementById("hamburger").addEventListener("click", function () {
 // Path: static/admin/js/signin.js
 document.getElementById("submitLogin").addEventListener("click", (e) => {
   e.preventDefault();
-  var AdminCode = document.getElementById("AdminCode").value;
+  let AdminCode = document.getElementById("AdminCode").value;
   if (AdminCode.length == 0) {
     alert("Please Enter Admin Code");
   } else {
@@ -16,7 +15,7 @@ document.getElementById("submitLogin").addEventListener("click", (e) => {
 });
 
 //auto login
-var Code = localStorage.getItem("AdminCode");
+let Code = localStorage.getItem("AdminCode");
 if (Code == null) {
   console.log("Admin Code is not set");
 } else if (Code != null) {
