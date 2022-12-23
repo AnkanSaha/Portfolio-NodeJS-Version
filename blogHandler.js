@@ -23,6 +23,11 @@ blogHandler.get('/blogs/gettitles', (req, res)=>{
     BlogManager.GetBlogs(res)
 })
 
+// send create a/c page
+blogHandler.get('/blogs/createaccount', (req, res)=>{
+    res.status(200).sendFile(`${DirName}/html/BlogscreateAccount.html`)
+})
+
 
 // send specific blog with pug
 blogHandler.get('/blogs/:slug', (req, res)=>{

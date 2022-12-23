@@ -70,7 +70,6 @@ async function getBlog(slug, response) {
     let content = Dataresponse[0].Content;
     let PublishDate = Dataresponse[0].PublishDate;
     let author = Dataresponse[0].AuthorName;
-    console.log(author)
     if(author == undefined || author == null || author ==''){
       author = 'Admin'
     }

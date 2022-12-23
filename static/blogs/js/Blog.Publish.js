@@ -7,7 +7,6 @@ if (PostUser == null) {
 } else {
   ExtraUserAuth(PostUser).then((data) => {
     if (data == null) {
-      alert("You Need To Login First To Post Any Blog");
       localStorage.removeItem("PostUser");
       window.location.href = "/blogs";
     } else {
@@ -39,6 +38,7 @@ async function ExtraUserAuth(ExtraUserCode, ExtraUserPass) {
     body: JSON.stringify({ Extra: ExtraUserCode, ExtraPass: ExtraUserPass }),
   });
   let data = await response.json();
+  console.log(data);
   if (data.status == "success") {
     return data.userCode;
   } else if (data.status == "failed") {
@@ -164,3 +164,15 @@ setInterval(() => {
   logo.classList.toggle("animate-spin");
   maintitle.classList.toggle("animate-bounce");
 }, 2000);
+
+function toggeler(){
+  let PostUser = localStorage.getItem("PostUser");
+  if(PostUser == null || PostUser == "" || PostUser == undefined){
+    document.getElementById("createaccount").classList.remove("hidden");
+  }
+  else{
+    document.getElementById("createaccount").classList.add("hidden");
+  }
+}
+toggeler()
+setInterval(toggeler, 1000);

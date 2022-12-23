@@ -51,7 +51,7 @@ async function getDetails() {
   });
   document.getElementById("massagetbody").innerHTML = template;
 }
-setInterval(getDetails, 60000);
+setInterval(getDetails, 30000);
 
 document.addEventListener("DOMContentLoaded", getDetails);
 document.addEventListener("DOMContentLoaded", () => {
@@ -152,3 +152,16 @@ setInterval(() => {
   dial.classList.toggle("bg-red-500");
   maintitle.classList.toggle("animate-bounce");
 }, 2000);
+
+
+function toggeler(){
+  let PostUser = localStorage.getItem("PostUser");
+  if(PostUser == null || PostUser == "" || PostUser == undefined){
+    document.getElementById("createaccount").classList.remove("hidden");
+  }
+  else{
+    document.getElementById("createaccount").classList.add("hidden");
+  }
+}
+toggeler()
+setInterval(toggeler, 1000);
