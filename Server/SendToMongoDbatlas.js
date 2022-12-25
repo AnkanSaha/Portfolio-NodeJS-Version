@@ -1,5 +1,5 @@
 function SaveToServer(Name, email, message, finalMessage, response) {
-  const MongoURL = require('../Server/DB_Config.js')
+  const MongoURL = require('./DB_Config.js')
   const SaveData = require("../Other Services/saveData");
   let status = {
     success: "Your Request Successfully Saved To Our Database",
@@ -7,7 +7,7 @@ function SaveToServer(Name, email, message, finalMessage, response) {
   };
   let mongoose = require("mongoose");
   let url = MongoURL;
-  let MongoModel = require("../Server/MongoModel");
+  let MongoModel = require("./MongoModel");
   mongoose
     .connect(url)
     .then(() => {

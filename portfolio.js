@@ -1,11 +1,25 @@
-const express = require("express"); // express
+const os = require('os');
+const cluster = require('cluster');
+let MaxWorkers = os.cpus().length;
+console.log(`We got ${MaxWorkers} CPUs for this machine to setup the cluster`);
+
+if(cluster.isMaster){
+    for(let Worker=0; Worker<MaxWorkers; Worker++){
+        cluster.fork();
+    }
+    cluster.on('exit', (worker) => {
+        console.log(`Worker ${worker.process.pid} died`);
+        cluster.fork();
+    });
+}
+else{
+  const express = require("express"); // express
 const app = express(); // initilize express
 const port = 5678; // Port
 const CORS = require("cors"); // CORS
 const {FastRouter} = require("./router"); // General Routing
 const AdminManager = require("./adaminManager.js"); // Admin Routing
 const BlogHandler = require("./blogHandler.js"); // Blog Routing
-
 // Cors Configuration
 /* Cors Allowed Domains*/ let Domain = [
   "http://localhost:5678",
@@ -26,3 +40,4 @@ app.use(BlogHandler); // Linking Blog Routing
 // pug engine configuration
 app.set("view engine", "pug");
 app.set("views", "./static/blogs");
+}

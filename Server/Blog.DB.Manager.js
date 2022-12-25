@@ -1,5 +1,5 @@
-let MongoModel = require("../Server/MongoModel");
-const MongoURL = require("../Server/DB_Config.js");
+let MongoModel = require("./MongoModel");
+const MongoURL = require("./DB_Config.js");
 const mongoose = require("mongoose");
 
 // save Blog Post
