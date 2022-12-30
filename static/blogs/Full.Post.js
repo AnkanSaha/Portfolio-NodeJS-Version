@@ -8,6 +8,7 @@ triggerEl.addEventListener("click", function () {
     targetEl.classList.add("hidden");
   }
 });
+
 // Gtag Configuration
 window.dataLayer = window.dataLayer || [];
 function gtag() {
