@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publish a New Blog - Ankan Saha</title>
+    <!-- tailwind css link -->
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/tailwind.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="shortcut icon"
+      href="/images/front-images/feature_pic.png"
+      type="image/x-icon"
+    />
+        <!-- adsterra social bar ads (Saraswati157) -->
+        <script type='text/javascript' src='//pl18128901.highperformancecpmgate.com/de/6c/80/de6c805182a27f2d8a242feac6775f63.js'></script>
+</head>
+<body>
+    <header>
+        <nav
+        class="p-3 border-gray-200 rounded bg-cyan-100 dark:bg-gray-800 dark:border-gray-700 z-50 fixed top-0 w-full"
+      >
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+          <a href="/" class="flex items-center">
+            <img 
+              id="mainlogo"
+              src="../../images/front-images/feature_pic.png"
+              class="h-6 mr-3 sm:h-10 rounded-full"
+              alt="Main_Logo"
+            />
+            <span
+              id="maintitle"
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white animate-bounce"
+              >Publish a blog daily</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-solid-bg"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-solid-bg"
+            aria-expanded="false"
+            id="hamburger"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+            <ul
+              class="flex flex-col mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="/"
+                  class="block py-2 pl-3 pr-4 my-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blogs/createaccount"
+                  class="block py-2 pl-3 pr-4 my-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                  aria-current="page" id="createaccount"
+                  >Create A/C</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/admin"
+                  class="block py-2 pl-3 pr-4 my-2 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Admin Panel</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-[5rem]">
+            <p class="text- text-center font-semibold my-5 text-xl lg:text-6xl text-gray-900 dark:text-white">Publish a Blog Post</p>
+            <div class="mx-6 my-2">
+                <div class="mb-6">
+                    <!-- blog name  -->
+                    <label for="default-input" class="block mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Blog Name in 30 charecters</label>
+                    <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Blog Name in 30 charecters">
+                    <!-- blog Author name  -->
+                    <label for="default-input" class="block mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Author Name</label>
+                    <input type="text" id="authorname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Author Name">
+                    <!-- blog catagory  -->
+                    <label for="default-input" class="block mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Blog Catagory</label>
+                    <input type="text" id="catagory" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Blog Catagory Name">
+                     <!-- blog pubslish date  -->
+                    <div class="relative mt-6">
+                    <label for="publishdate" class="block mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Blog Publish Date</label>
+                    <input id="publishdate" type="date" datepicker datepicker-autohide class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Publish date">
+                    </div>  
+                     <!-- blog main content  -->
+                    <label for="message" class="block mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Main Blog Content</label>
+                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your main content here..."></textarea>
+                </div> 
+                <!-- submit button                -->
+                <button id="postbutton" type="button" class="text-white ml-[5.25rem] lg:ml-[33rem] mt-6 bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Post This Blog</button>
+            </div>
+</div> 
+    </main>
+    <footer>
+                   <!-- Auth Modal -->
+                   <div id="authmodal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full lg:ml-[16.5rem] mt-[10.5rem] lg:mt-[6rem] hidden">
+                    <div class="relative w-full max-w-2xl h-full md:h-auto">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700" style="border: 2px dotted red;">
+                            <!-- Modal header -->
+                            <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="MsgUsername">
+                                    Sign In to post a blog
+                                </h3>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 space-y-6">
+                                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" id="fullmassage">
+                                    <input id="Usercode" class="lg:ml-[12.5rem] text-center rounded-lg my-1" type="text" placeholder="Enter Your Usercode">
+                                    <input id="UserPassword" class="lg:ml-[12.5rem] text-center rounded-lg my-1" type="text" placeholder="Enter Your Password">
+                                </p>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                <button id="modalclose" data-modal-toggle="staticModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:ml-[18.25rem] ml-[6.25rem]">Login</button>
+                            </div>
+                    </div>
+                </div>
+    </footer>
+</body>
+<script src="../../blogs/js/Blog.Publish.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2RK9LW9MGR"></script>
+</html>
