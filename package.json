@@ -40,17 +40,8 @@
   "engines": {
     "node": ">=14.17.0"
   },
-  "cpu": [
-    "x64",
-    "x86"
-  ],
   "maintainers": [
     "Ankan Saha"
   ],
-  "markdown": "github",
-  "os": [
-    "linux",
-    "osx",
-    "windows"
-  ]
+  "markdown": "github"
 }
