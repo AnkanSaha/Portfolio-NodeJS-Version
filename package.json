@@ -23,7 +23,7 @@
   "license": "MIT License",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "express": "^3.18.4",
     "mongoose": "^6.8.3",
     "pm2": "^5.2.2",
     "pug": "^3.0.2"
