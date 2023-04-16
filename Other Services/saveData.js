@@ -46,7 +46,7 @@ function ReadExtraUserJSONWhileAddUser(UserName, pass, email, res) {
   });
 }
 
-// Checking if the user is already in the list or not
+// Login Extra use
 function ExtraUserVerify(UserName, Password, res) {
   let fs = require("fs");
   // Reading JSON data
@@ -56,7 +56,7 @@ function ExtraUserVerify(UserName, Password, res) {
 
     // Checking if the user is already in the list
     let UserVarified = ParsedData.filter((user) => {
-      return user.ExtraUser == UserName && user.ExtraUSerPass == Password;
+      return user.ExtraUser == UserName && user.ExtraUserPass == Password;
     });
 
     // If the user is not in the list, then add the user

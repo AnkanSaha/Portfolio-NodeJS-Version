@@ -2,7 +2,7 @@
   "name": "theankan.live",
   "version": "2.3.9",
   "description": "The Official Application of Ankan Saha",
-  "main": "app.js",
+  "main": "portfolio.js",
   "scripts": {
     "updatepack": "npm i express@latest mongoose@latest pug@latest cors@latest pm2@latest nodemon@latest tailwindcss@latest autoprefixer@latest postcss@latest tw-elements@latest bootstrap@latest",
     "dev": "nodemon portfolio.js",
