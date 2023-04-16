@@ -4,7 +4,7 @@
   "description": "The Official Application of Ankan Saha",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "updatepack": "npm i express@latest mongoose@latest pug@latest cors@latest pm2@latest nodemon@latest tailwindcss@latest autoprefixer@latest postcss@latest tw-elements@latest bootstrap@latest",
     "dev": "nodemon portfolio.js",
     "start": "pm2 start portfolio.js --name Portfolio",
     "pm2g": "npm install -g pm2",
@@ -23,19 +23,19 @@
   "license": "MIT License",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^3.18.4",
-    "mongoose": "^6.8.3",
-    "pm2": "^5.2.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "pm2": "^5.3.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "bootstrap": "^5.2.3",
     "flowbite": "^1.5.5",
-    "nodemon": "^2.0.20",
-    "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4",
-    "tw-elements": "^1.0.0-alpha13"
+    "nodemon": "^2.0.22",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "tw-elements": "^1.0.0-beta2"
   },
   "engines": {
     "node": ">=14.17.0"
