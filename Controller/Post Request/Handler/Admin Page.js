@@ -1,9 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const Auth_Code = ["Daluabari@7063355213", "Ankan@157", "Ankan@1567"]; // Admin Code
-let ExtraUser = [];
-let ExtraUSerPass = [];
-let ExtraUserEmail = [];
+const { Auth_Code } = require("../../../Other Services/saveData");
 const mongoose = require("mongoose");
 const Request = require("../../../Server/MongoModel.js");
 const credential = require("../../../Secret/credential.js");
@@ -12,124 +9,77 @@ const credential = require("../../../Secret/credential.js");
 
 // Admin Login verification
 app.post("/CodeVerify", (request, response) => {
-    var UserAdminCode = request.body.AdminCode;
-    var ResStatus = Auth_Code.includes(UserAdminCode);
-    if (ResStatus == true) {
-      response.status(200).json({ status: "success" });
-    } else if (ResStatus == false) {
-      response.status(200).json({ status: "failed" });
-    }
-  });
+  var UserAdminCode = request.body.AdminCode;
+  console.log(UserAdminCode);
+  var ResStatus = Auth_Code.includes(UserAdminCode);
+  if (ResStatus == true) {
+    response.status(200).json({ status: "success" });
+  } else if (ResStatus == false) {
+    response.status(200).json({ status: "failed" });
+  }
+});
 
-  // Extra User Login verification
+// Extra User Login verification
+const { ExtraUserVerify } = require("../../../Other Services/saveData.js");
 app.post("/admin/post/ExtraUserVerify", (request, response) => {
-    var Extra = request.body.Extra;
-    var ResStatus = ExtraUser.includes(Extra);
-    var ExtraPass = request.body.ExtraPass;
-    var ResPass = ExtraUSerPass.includes(ExtraPass);;
-    if (ResStatus == true && ResPass == true) {
-      response.status(200).json({ status: "success", userCode: Extra });
-    } else if (ResStatus == false && ResPass == false) {
-      response.status(200).json({ status: "failed" });
-    }
-  });
+  var Extra = request.body.Extra;
+  var ExtraPass = request.body.ExtraPass;
+  ExtraUserVerify(Extra, ExtraPass, response); // Calling the function from Other Services/saveData.js
+});
 
-  app.post("/admin/post/adduser", (request, response) => {
-    var usercodes = request.body.username;
-    var pass = request.body.password;
-    var email = request.body.email;
-    var userres = ExtraUser.includes(usercodes);
-    if (userres == true) {
-      response.status(200).json({ status: "User Already Exist" });
-    } else if (userres == false) {
-      ExtraUser.push(usercodes);
-      ExtraUSerPass.push(pass);
-      ExtraUserEmail.push(email);
-      var resuser = ExtraUser.includes(usercodes);
-      var respass = ExtraUSerPass.includes(pass);
-      var resemail = ExtraUserEmail.includes(email);
-      if (resuser == true && respass == true && resemail == true) {
-        response.status(200).json({ status: "User Added" });
-      } else if (resuser == false && respass == false && resemail == false) {
-        response.status(200).json({ status: "Not Added" });
-      }
-    }
-  });
+// Add Extra User
+const {
+  ReadExtraUserJSONWhileAddUser,
+} = require("../../../Other Services/saveData.js");
+app.post("/admin/post/adduser", (request, response) => {
+  var usercodes = request.body.username;
+  var pass = request.body.password;
+  var email = request.body.email;
+  ReadExtraUserJSONWhileAddUser(usercodes, pass, email, response); // Calling the function from
+});
 
-  // sending all extra user
+// sending all extra user
+const { SendAllUserData } = require("../../../Other Services/saveData");
 app.post("/admin/post/getusers", (request, response) => {
-    var user = ExtraUser;
-    var pass = ExtraUSerPass;
-    var email = ExtraUserEmail;
-    var final = [];
-    user.forEach((element1, index) => {
-      var element2 = pass[index];
-      var element3 = email[index];
-          final.push(
-            {
-              username: element1,
-              password: element2,
-              email: element3,
-            }
-          );
-        });
-    var reqTocken = request.body.token;
-    var resTocken = Auth_Code.includes(reqTocken);
-    if (resTocken == true) {
-      response.status(200).json({ status: "success", data: final });
-    }
-    else if(resTocken == false){
-      response.status(200).json({ status: "failed" });
-    }
+  SendAllUserData(request, response); // Calling the function from Other Services/saveData.js
 });
 
 // delete user
+const { DeleteExtraUser } = require("../../../Other Services/saveData.js");
 app.post("/admin/post/deleteuser", (request, response) => {
-    var user = request.body.username;
-    var pass = request.body.password;
-    var email = request.body.email;
-    var userres = ExtraUser.includes(user);
-    var passres = ExtraUSerPass.includes(pass);
-    var emailres = ExtraUserEmail.includes(email);
-    if (userres == true && passres == true && emailres == true) {
-      var index = ExtraUser.indexOf(user);
-      ExtraUser.splice(index, 1);
-      ExtraUSerPass.splice(index, 1);
-      ExtraUserEmail.splice(index, 1);
-      response.status(200).json({ status: "success" });
-    } else if (userres == false && passres == false && emailres == false) {
-      response.status(200).json({ status: "failed" });
-    }
-  });
+  var user = request.body.username;
+  var pass = request.body.password;
+  var email = request.body.email;
+  DeleteExtraUser(user, pass, email, response); // Calling the function from Other Services/saveData.js
+});
 
-
-  // delete message
+// delete message
 app.post("/admin/message/delete", (request, response) => {
-    mongoose.connect(credential.MOngoDB_URI).then(() => {
-      Request.Request.deleteOne({ _id: request.body.Id }, (err, data) => {
-        if (err) {
-          response.status(200).json({ status: "failed" });
-          mongoose.connection.close();
-        } else if (data) {
-          response.status(200).json({ status: "success" });
-          mongoose.connection.close();
-        }
-      });
+  mongoose.connect(credential.MOngoDB_URI).then(() => {
+    Request.Request.deleteOne({ _id: request.body.Id }, (err, data) => {
+      if (err) {
+        response.status(200).json({ status: "failed" });
+        mongoose.connection.close();
+      } else if (data) {
+        response.status(200).json({ status: "success" });
+        mongoose.connection.close();
+      }
     });
   });
-  
-  // read message
-  app.post("/admin/message/read", (request, response) => {
-    var Id = request.body.Id;
-    mongoose.connect(credential.MOngoDB_URI).then(() => {
-      Request.Request.find({ _id: Id }, (err, data) => {
-        if (err) {
-          response.status(200).json({ status: "failed" });
-        } else if (data) {
-          response.status(200).json({ status: "success", data: data[0] });
-        }
-      });
-    });
-  });
+});
 
-  module.exports = app;
+// read message
+app.post("/admin/message/read", (request, response) => {
+  var Id = request.body.Id;
+  mongoose.connect(credential.MOngoDB_URI).then(() => {
+    Request.Request.find({ _id: Id }, (err, data) => {
+      if (err) {
+        response.status(200).json({ status: "failed" });
+      } else if (data) {
+        response.status(200).json({ status: "success", data: data[0] });
+      }
+    });
+  });
+});
+
+module.exports = { app, Auth_Code };
