@@ -12,8 +12,7 @@ const port = credential.PORT || 5678 // Port
 // Cors Configuration
 /* Cors Allowed Domains*/ let Domain = [
   "theankan.live",
-  "www.theankan.live",
-  "localhost:5678",
+  "www.theankan.live"
 ];
 
 // Cluster Configuration
