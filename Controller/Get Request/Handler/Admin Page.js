@@ -8,14 +8,13 @@ const credential = require("../../../Secret/credential.js");
 // sending all messages
 app.get("/admin/message", (request, response) => {
     // variable for storing all messages
-    mongoose.connect(credential.MOngoDB_URI).then(() => {
-      Request.Request.find({}, (err, data) => {
-        if (err) {
+    mongoose.connect(credential.MOngoDB_URI).then(async () => {
+      let data = await Request.Request.find(); // getting all messages
+        if (data.length === 0) {
           response.status(200).json({ status: "failed" });
-        } else if (data) {
+        } else if (data.length > 0) {
           response.status(200).json({ status: "success", data: data });
         }
-      });
     });
   });
 
