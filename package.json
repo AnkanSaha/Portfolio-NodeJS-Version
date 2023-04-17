@@ -6,7 +6,7 @@
   "scripts": {
     "updatepack": "npm i express@latest mongoose@latest pug@latest cors@latest pm2@latest nodemon@latest tailwindcss@latest autoprefixer@latest postcss@latest tw-elements@latest bootstrap@latest",
     "dev": "nodemon portfolio.js",
-    "start": "pm2 start portfolio.js --name Portfolio",
+    "start": "pm2 start portfolio.js --name Portfolio --watch",
     "pm2g": "npm install -g pm2",
     "stop": "pm2 stop portfolio.js --name Portfolio",
     "build": "tailwindcss build -i ./static/css/base.css -o ./static/css/tailwind.css -c tailwind.config.js --minifiy"
