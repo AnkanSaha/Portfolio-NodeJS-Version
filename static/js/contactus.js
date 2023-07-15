@@ -8,6 +8,7 @@ document.getElementById("sendbtn").addEventListener("click", () => {
     email: email,
     message: message,
   };
+  console.log(readytoSend);
   // Parameters for sending data
   let parameters = {
     method: "POST",
