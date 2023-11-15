@@ -10,10 +10,7 @@ const credential = require("./Secret/credential.js"); // credential
 const port = credential.PORT || 5678 // Port
 
 // Cors Configuration
-/* Cors Allowed Domains*/ let Domain = [
-  "theankan.live",
-  "www.theankan.live"
-];
+/* Cors Allowed Domains*/  let Domain = '*'; // All Domains
 
 // Cluster Configuration
 let cpuCount = os.cpus().length;
