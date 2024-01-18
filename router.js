@@ -1,10 +1,28 @@
-const express = require("express");
+const express = require("express"); // express
+const rateLimit = require("express-rate-limit"); // Rate Limit
 const app = express.Router();
 const DefPATH = `${__dirname}/static/`; // Default Path
 const DirName = `${__dirname}/static/blogs`; // Blog Path
 
-// Endpoint
+// Apply Rate Limit
+app.use(
+  rateLimit({
+    windowMs: 60 * 1000, // 1 minute
+    statusCode: 429,
+    max: 15, // 15 requests
+    message: {
+        status: false,
+        statusCode: 429,
+        Title: "Too many requests",
+        message: "Too many requests, please try again later",
+        response: undefined,
+    },
+    standardHeaders: true, // Include standard headers for request limit
+    legacyHeaders: false, // Include legacy headers for request limit
+})
+);
 
+// Endpoint
 // Sending Home Page Files
 app.get("/", (request, response) => {
   response.sendFile(`${DefPATH}index.html`);
