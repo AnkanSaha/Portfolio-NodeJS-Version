@@ -41,7 +41,7 @@ button {
 .scroll-top {
   width: 45px;
   height: 45px;
-  background: #2F80ED;
+  background: #2f80ed;
   display: none;
   justify-content: center;
   align-items: center;
@@ -137,7 +137,7 @@ button {
   height: 100%;
   border-style: solid;
   /* Spinner Color */
-  border-color: #2F80ED #2F80ED #E9E9E9;
+  border-color: #2f80ed #2f80ed #e9e9e9;
   border-radius: 50%;
   border-width: 6px;
 }
@@ -145,14 +145,14 @@ button {
 .preloader .loader .spinner-left .spinner-circle {
   left: 0;
   right: -100%;
-  border-right-color: #E9E9E9;
+  border-right-color: #e9e9e9;
   animation: spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
 .preloader .loader .spinner-right .spinner-circle {
   left: -100%;
   right: 0;
-  border-left-color: #E9E9E9;
+  border-left-color: #e9e9e9;
   animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
@@ -218,39 +218,55 @@ button {
 /* ============================= 
     TYPOGRAPHY CSS
 ================================ */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-weight: 700;
   color: #323450;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 80px;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 60px;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 40px;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 30px;
-  letter-spacing: .35px;
+  letter-spacing: 0.35px;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 24px;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 20px;
 }
 
@@ -308,7 +324,7 @@ p {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #2F80ED;
+  background: #2f80ed;
   color: #ffffff;
   border: 1px solid transparent;
   position: relative;
@@ -322,7 +338,7 @@ p {
 }
 
 .button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -333,7 +349,7 @@ p {
   margin: auto;
   background: rgba(0, 0, 0, 0.1);
   z-index: -1;
-  transition: all .4s linear;
+  transition: all 0.4s linear;
   transform: translate3d(-50%, -50%, 0) scale(0);
 }
 
@@ -347,8 +363,8 @@ p {
 
 .button.border-button {
   background: transparent;
-  color: #2F80ED;
-  border-color: #2F80ED;
+  color: #2f80ed;
+  border-color: #2f80ed;
 }
 
 .button.border-button::before {
@@ -512,9 +528,10 @@ p {
   }
 }
 
-.header.header-6 .navbar-nav .nav-item a:hover, .header.header-6 .navbar-nav .nav-item a.active {
-  color: #2F80ED;
-  border-color: #2F80ED;
+.header.header-6 .navbar-nav .nav-item a:hover,
+.header.header-6 .navbar-nav .nav-item a.active {
+  color: #2f80ed;
+  border-color: #2f80ed;
 }
 
 .header.header-6 .navbar-nav .nav-item:hover .sub-menu {
@@ -579,9 +596,10 @@ p {
   color: #000000;
 }
 
-.header.header-6 .navbar-nav .nav-item .sub-menu li a.active, .header.header-6 .navbar-nav .nav-item .sub-menu li a:hover {
+.header.header-6 .navbar-nav .nav-item .sub-menu li a.active,
+.header.header-6 .navbar-nav .nav-item .sub-menu li a:hover {
   padding-left: 25px;
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 .header.header-6 .navbar-nav .sub-nav-toggler {
@@ -805,12 +823,12 @@ p {
 }
 
 .feature-style-5 .single-feature:hover {
-  border-color: #2F80ED;
+  border-color: #2f80ed;
   box-shadow: 0px 8px 25px rgba(47, 128, 237, 0.35);
 }
 
 .feature-style-5 .single-feature .icon {
-  color: #2F80ED;
+  color: #2f80ed;
   font-size: 45px;
   display: flex;
   justify-content: center;
@@ -840,7 +858,7 @@ p {
 ================================ */
 .pricing-style-4 {
   padding: 100px 0;
-  background: #F3F3F3;
+  background: #f3f3f3;
 }
 
 .pricing-style-4 .pricing-active-wrapper {
@@ -860,7 +878,8 @@ p {
   outline: none;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  (max-width: 767px) {
   .pricing-style-4 .pricing-active-wrapper .tns-controls {
     left: 0;
     width: 100%;
@@ -883,14 +902,14 @@ p {
 }
 
 .pricing-style-4 .pricing-active-wrapper .tns-controls button:hover {
-  background: #2F80ED;
+  background: #2f80ed;
   color: #ffffff;
 }
 
 .pricing-style-4 .pricing-active .single-pricing {
   background: #ffffff;
   border-radius: 5px;
-  margin: 30px  15px;
+  margin: 30px 15px;
   padding: 45px 40px;
   border: 1px solid transparent;
   transition: all 0.3s ease-out 0s;
@@ -904,7 +923,8 @@ p {
   z-index: 9;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  (max-width: 767px) {
   .pricing-style-4 .pricing-active .single-pricing {
     padding: 40px 25px;
     margin-bottom: 100px;
@@ -947,7 +967,7 @@ p {
 
 .pricing-style-4 .pricing-active .single-pricing h3 {
   margin-bottom: 18px;
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 .pricing-style-4 .pricing-active .single-pricing ul {
@@ -964,7 +984,7 @@ p {
     ABOUT-4 CSS
 ================================ */
 .about-style-4 {
-  background: #F3F3F3;
+  background: #f3f3f3;
   padding: 100px 0 50px;
   position: relative;
   z-index: 1;
@@ -992,18 +1012,18 @@ p {
   margin-top: 30px;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px), (max-width: 767px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+  (max-width: 767px) {
   .about-style-4 .about-image img {
     width: 100%;
   }
 }
 
-
 /* ============================= 
     CONTACT-3 CSS
 ================================ */
 .contact-style-3 {
-  background: #F3F3F3;
+  background: #f3f3f3;
   padding: 100px 0 70px;
   position: relative;
   z-index: 1;
@@ -1043,7 +1063,7 @@ p {
 
 .contact-style-3 .contact-form-wrapper form .single-input textarea:focus,
 .contact-style-3 .contact-form-wrapper form .single-input input:focus {
-  border-color: #2F80ED;
+  border-color: #2f80ed;
 }
 
 .contact-style-3 .contact-form-wrapper form .single-input input {
@@ -1088,7 +1108,8 @@ p {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  (max-width: 767px) {
   .contact-style-3 .left-wrapper {
     margin-top: 50px;
   }
@@ -1114,7 +1135,7 @@ p {
   width: 100%;
   height: 54px;
   border-radius: 50%;
-  background: #2F80ED;
+  background: #2f80ed;
   color: #ffffff;
   margin-right: 20px;
   display: flex;
@@ -1127,7 +1148,7 @@ p {
     FOOTER-4 CSS
 ================================ */
 .footer-style-4 {
-  background: #F3F3F3;
+  background: #f3f3f3;
   padding-top: 80px;
 }
 
@@ -1157,7 +1178,7 @@ p {
 }
 
 .footer-style-4 .widget-wrapper .footer-widget .socials li a:hover {
-  background: #2F80ED;
+  background: #2f80ed;
 }
 
 .footer-style-4 .widget-wrapper .footer-widget h6 {
@@ -1174,7 +1195,7 @@ p {
 }
 
 .footer-style-4 .widget-wrapper .footer-widget .links li a:hover {
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 .footer-style-4 .widget-wrapper .footer-widget .download-app li a {
@@ -1225,7 +1246,7 @@ p {
 }
 
 .footer-style-4 .copyright-wrapper p a:hover {
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 .footer-style-4.footer-dark {
@@ -1245,7 +1266,7 @@ p {
 }
 
 .footer-style-4.footer-dark .widget-wrapper .footer-widget .socials li a:hover {
-  background: #2F80ED;
+  background: #2f80ed;
 }
 
 .footer-style-4.footer-dark .widget-wrapper .footer-widget .links li a {
@@ -1253,7 +1274,7 @@ p {
 }
 
 .footer-style-4.footer-dark .widget-wrapper .footer-widget .links li a:hover {
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 .footer-style-4.footer-dark .copyright-wrapper p {
@@ -1279,7 +1300,7 @@ p {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #2F80ED;
+  background: #2f80ed;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -1287,11 +1308,15 @@ p {
   margin: 3px 8px;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   transition: all 0.3s ease-out 0s;
 }
 
-input:focus, textarea:focus, button:focus {
+input:focus,
+textarea:focus,
+button:focus {
   outline: none;
   box-shadow: none;
 }

@@ -1,7 +1,8 @@
 @font-face {
   font-family: "unicons";
   src: url("../font/unicons.eot?42479262");
-  src: url("../font/unicons.eot?42479262#iefix") format("embedded-opentype"),
+  src:
+    url("../font/unicons.eot?42479262#iefix") format("embedded-opentype"),
     url("../font/unicons.woff2?42479262") format("woff2"),
     url("../font/unicons.woff?42479262") format("woff"),
     url("../font/unicons.ttf?42479262") format("truetype"),

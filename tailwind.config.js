@@ -2,7 +2,7 @@
 module.exports = {
   content: ['./static/**/*.html', './static/**/*.{js,jsx,ts,tsx,vue,pug}'],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin')]
 }
