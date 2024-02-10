@@ -2,6 +2,12 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	"name": "Node.js & TypeScript",
+	"hostRequirements": {
+		"cpus": 2, // 2 CPUs are required for the universal image
+		"gpu": true, // GPU is required for the universal image
+		"storage": "20gb", // 20gb is the minimum requirement for the universal image
+		"memory": "4gb" // 4gb is the minimum requirement for the universal image
+	},
 	// // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
 	
