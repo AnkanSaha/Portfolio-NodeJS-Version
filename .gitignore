@@ -1,2 +1,3 @@
 # node_modules added to .gitignore
-node_modules
+Client/node_modules
+Client/build
