@@ -47,7 +47,8 @@
 				"ms-vscode.remote-explorer",
 				"ms-vscode.remote-repositories",
 				"bradlc.vscode-tailwindcss",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"jock.svg"
 			],
 			"settings" :{
 				"editor.formatOnSave": true,
