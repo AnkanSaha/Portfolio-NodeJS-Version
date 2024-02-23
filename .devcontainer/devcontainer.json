@@ -35,7 +35,6 @@
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
 				"GitHub.remotehub",
-				"GitHub.github-vscode-theme",
 				"eamodio.gitlens",
 				"PKief.material-icon-theme",
 				"mongodb.mongodb-vscode",
@@ -47,7 +46,11 @@
 				"ms-vscode.remote-explorer",
 				"ms-vscode.remote-repositories",
 				"bradlc.vscode-tailwindcss",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"formulahendry.code-runner",
+				"TabNine.tabnine-vscode",
+				"pnp.polacode",
+				"Anan.jetbrains-darcula-theme"
 			],
 			"settings" :{
 				"editor.formatOnSave": true,
