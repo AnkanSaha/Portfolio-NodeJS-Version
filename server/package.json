@@ -1,15 +1,32 @@
 {
   "name": "Portfolio",
   "version": "1.0.2",
+  "scripts": {
+    "test": "eslint ./src/**/*.{js,ts} --fix",
+    "build": "yarn test && tsc && cp package.json ./Build/ && cp yarn.lock ./Build/ && cd ./Build && yarn install",
+    "dev": "ts-node src/Portfolio.ts --watch",
+    "start": "pm2 start ./PaisaPay.js --name PaisaPay --max-memory-restart 200M -f",
+    "stop": "pm2 stop PaisaPay"
+  },
   "description": "This is the Portfolio Website for Ankan Saha",
   "main": "server.js",
   "repository": "https://github.com/AnkanSaha/Portfolio.git",
   "author": "Ankan Saha",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "Portfolio",
+    "backend",
+    "payment",
+    "gateway",
+    "api",
+    "node"
+  ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
