@@ -2,3 +2,9 @@
 
 # Client Side
 client/node_modules
+client/Portfolio
+client/.vite
+
+# Server Side
+server/node_modules
+server/.env
