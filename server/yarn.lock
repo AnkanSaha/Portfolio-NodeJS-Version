@@ -626,6 +626,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dotenv@^16.4.5:
+  version "16.4.5"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.5.tgz#cdd3b3b604cb327e286b4762e13502f717cb099f"
+  integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
+
 ecdsa-sig-formatter@1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz#ae0f0fa2d85045ef14a817daa3ce9acd0489e5bf"
@@ -1445,10 +1450,10 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
 
-outers@^6.5.5:
-  version "6.5.5"
-  resolved "https://registry.yarnpkg.com/outers/-/outers-6.5.5.tgz#a9e6945a4c269f2066aba9603e075a0d20eaa575"
-  integrity sha512-BnTwxP5wp1GKOMfverVVj9mcaBrheEQduDWNx4L0X3LtwW1Zf6jsYscpTHPTu2jXg1J0dR6pY+SsUMk8Bcs97Q==
+outers@^6.5.7:
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/outers/-/outers-6.5.7.tgz#e549afe7f01f7126784a05146da40d3483fbfcd6"
+  integrity sha512-ptnkrcTnyVEj4pWBfog3Efi+3zlZSa2skpE2REQHVvbHHXT6gwVqjbMjJsa4ubSdIdRQScz+WwqkQrYV/acR4A==
   dependencies:
     crypto-js "^4.2.0"
     express "^4.18.2"
