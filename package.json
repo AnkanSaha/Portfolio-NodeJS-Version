@@ -1,0 +1,10 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.2",
+  "description": "This is the Portfolio Website for Ankan Saha",
+  "main": "server.js",
+  "repository": "https://github.com/AnkanSaha/Portfolio.git",
+  "author": "Ankan Saha",
+  "license": "MIT",
+  "private": false
+}
