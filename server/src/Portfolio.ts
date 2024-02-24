@@ -10,6 +10,4 @@ Server.set('trust proxy', () => true); // Enable trust proxy
 // Before Lessening Functions
 const Consoler = () => console.log('Vag Bakchod, Abhi Start ngi hui'); // Console Log
 const Complete = () => console.log('Chal Bakchod, Abhi Complete ho gayi'); // Console Log
-methods.ClusterCreator(Server, 3000, 1, [Consoler], [Complete]).then((data)=>{
-    console.log(data);
-}); // Create cluster with Outers Package
+methods.ClusterCreator(Server, 3000, 1, [Consoler], [Complete]); // Create cluster with Outers Package

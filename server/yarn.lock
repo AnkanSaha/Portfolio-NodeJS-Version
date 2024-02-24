@@ -1445,10 +1445,10 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
 
-outers@^6.5.3:
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/outers/-/outers-6.5.3.tgz#d59e993a76db0a486bc341ca8ea9e1541b7a4426"
-  integrity sha512-eHfJ/nRoi8/TV0eu+X4bGY3Uoq9j6VBka5lvTTRFSJel8vUrsgjH6vPKwt/l7oqF0sSOSmdN7KL3g8Y6FFQ09w==
+outers@^6.5.5:
+  version "6.5.5"
+  resolved "https://registry.yarnpkg.com/outers/-/outers-6.5.5.tgz#a9e6945a4c269f2066aba9603e075a0d20eaa575"
+  integrity sha512-BnTwxP5wp1GKOMfverVVj9mcaBrheEQduDWNx4L0X3LtwW1Zf6jsYscpTHPTu2jXg1J0dR6pY+SsUMk8Bcs97Q==
   dependencies:
     crypto-js "^4.2.0"
     express "^4.18.2"
