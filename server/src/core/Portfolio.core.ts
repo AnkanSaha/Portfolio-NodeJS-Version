@@ -1,6 +1,6 @@
-import express, {Express} from 'express'; // Import express
+import express, { Express } from 'express'; // Import express
 import { methods } from 'outers'; // Import outers
-import {NumberKeys} from './variables.core'; // Import Environment Variables
+import { NumberKeys } from './variables.core'; // Import Environment Variables
 
 // Import Middlewares
 import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
@@ -13,8 +13,6 @@ Server.set('trust proxy', () => true); // Enable trust proxy
 
 // Add Rate Limiter
 Server.use(RateLimiterMiddleware); // Add rate limiter middleware
-
-
 
 // Start Server with Cluster Config
 methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package

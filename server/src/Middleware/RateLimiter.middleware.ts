@@ -1,5 +1,5 @@
-import rateLimit from "express-rate-limit"; // Import rate limit for limiting request
-import { StatusCodes } from "outers"; // Import Status Codes
+import rateLimit from 'express-rate-limit'; // Import rate limit for limiting request
+import { StatusCodes } from 'outers'; // Import Status Codes
 
 export default rateLimit({
 	windowMs: 60 * 1000, // 1 minute
@@ -8,8 +8,8 @@ export default rateLimit({
 	message: {
 		status: false,
 		statusCode: StatusCodes.TOO_MANY_REQUESTS,
-		Title: "Too many requests",
-		message: "Too many requests, please try again later",
+		Title: 'Too many requests',
+		message: 'Too many requests, please try again later',
 		response: undefined,
 	},
 	standardHeaders: true, // Include standard headers for request limit
