@@ -1,12 +1,19 @@
-import express from 'express'; // Import express
+import express, {Express} from 'express'; // Import express
 import { methods } from 'outers'; // Import outers
 import {NumberKeys} from './variables.core'; // Import Environment Variables
 
+// Import Middlewares
+import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
+
 // create Express Instance
-const Server = express(); // Initialize express
+const Server: Express = express(); // Initialize express
 
 // Set Trust Proxy
 Server.set('trust proxy', () => true); // Enable trust proxy
+
+// Add Rate Limiter
+Server.use(RateLimiterMiddleware); // Add rate limiter middleware
+
 
 
 // Start Server with Cluster Config
