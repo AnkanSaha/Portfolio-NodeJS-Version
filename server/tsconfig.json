@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+      /* Visit https://aka.ms/tsconfig to read more about this file */
+      /* Language and Environment */
+      "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+      "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
+  
+      /* Modules */
+      "module": "NodeNext",                                /* Specify what module code is generated. */
+      "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+      "moduleResolution": "NodeNext",                     /* Specify how TypeScript looks up a file from a given module specifier. */
+      /* JavaScript Support */
+      "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+      // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+      /* Emit */
+      "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+      "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+      // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
+      "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */                                 /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
+      "outDir": "./Build",                                   /* Specify an output folder for all emitted files. */
+      "removeComments": true,                           /* Disable emitting comments. */
+      "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+      "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+  
+      /* Type Checking */
+      "strict": true,                                      /* Enable all strict type-checking options. */
+      "noImplicitAny": false,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+      "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
+      "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+      "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
+      "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
+      "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+      "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
+      "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    },
+    "include": [
+      "src/**/*"
+    ]
+  }

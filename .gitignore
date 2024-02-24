@@ -8,3 +8,4 @@ client/.vite
 # Server Side
 server/node_modules
 server/.env
+server/Build
