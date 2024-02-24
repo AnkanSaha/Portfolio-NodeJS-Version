@@ -4,7 +4,7 @@
   "scripts": {
     "test": "eslint ./src/**/*.{js,ts} --fix",
     "build": "yarn test && tsc && cp package.json ./Build/ && cp yarn.lock ./Build/ && cd ./Build && yarn install",
-    "dev": "ts-node src/Portfolio.ts --watch",
+    "dev": "nodemon src/Portfolio.ts",
     "start": "pm2 start ./PaisaPay.js --name PaisaPay --max-memory-restart 200M -f",
     "stop": "pm2 stop PaisaPay"
   },
@@ -23,10 +23,15 @@
     "node"
   ],
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "eslint": "^8.57.0",
+    "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
