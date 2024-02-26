@@ -27,7 +27,7 @@ Server.use(
 	Middleware.MethodsController(),
 	Middleware.AccessController([hostname]),
 	Middleware.JWTValidator('sessionID', StringKeys.JWT_SECRET),
-  Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])
+	Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])
 ); // Enable API Main Entry Route with Some Middlewares
 
 // Start Server with Cluster Config
