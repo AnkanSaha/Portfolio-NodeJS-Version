@@ -1,6 +1,6 @@
 import express, { Express } from 'express'; // Import express
-import { methods } from 'outers'; // Import outers
-import { NumberKeys } from './variables.core'; // Import Environment Variables
+import { methods, Middleware } from 'outers'; // Import outers
+import { NumberKeys, StringKeys } from './variables.core'; // Import Environment Variables
 
 // Import Middlewares
 import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
@@ -18,8 +18,17 @@ Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 
 // Set Rate Limiter Middleware
 Server.use(RateLimiterMiddleware); // Enable Rate Limiter Middleware
 
+// Create URL Hostname
+const { hostname } = new URL(StringKeys.CORS_URL); // Create URL Hostname
+
 // Set API Main Entry Route
-// Server.use('/api');
+Server.use(
+	'/api',
+	Middleware.MethodsController(),
+	Middleware.AccessController([hostname]),
+	Middleware.JWTValidator('sessionID', StringKeys.JWT_SECRET),
+	Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])
+); // Enable API Main Entry Route with Some Middlewares
 
 // Start Server with Cluster Config
 methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package
