@@ -11,8 +11,15 @@ const Server: Express = express(); // Initialize express
 // Set Trust Proxy
 Server.set('trust proxy', () => true); // Enable trust proxy
 
-// Add Rate Limiter
-Server.use(RateLimiterMiddleware); // Add rate limiter middleware
+// Set APi Content Type and JSON Parsing
+Server.use(express.json({ limit: '999mb' })); // Enable JSON Parsing
+Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 2000 })); // Enable URL Encoded Parsing and Limit of 5GB
+
+// Set Rate Limiter Middleware
+Server.use(RateLimiterMiddleware); // Enable Rate Limiter Middleware
+
+// Set API Main Entry Route
+// Server.use('/api');
 
 // Start Server with Cluster Config
 methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package
