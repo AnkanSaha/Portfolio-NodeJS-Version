@@ -50,7 +50,8 @@
 				"formulahendry.code-runner",
 				"TabNine.tabnine-vscode",
 				"pnp.polacode",
-				"Anan.jetbrains-darcula-theme"
+				"Anan.jetbrains-darcula-theme",
+				"foxundermoon.shell-format"
 			],
 			"settings" :{
 				"editor.formatOnSave": true,

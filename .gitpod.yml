@@ -23,6 +23,7 @@ vscode:
     - formulahendry.code-runner
     - MoBalic.jetbrains-dark-theme
     - adpyke.codesnap
+    - foxundermoon.shell-format
 
 # Run Some Commands
 tasks:
