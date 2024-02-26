@@ -1,5 +1,5 @@
 import express, { Express } from 'express'; // Import express
-import { methods } from 'outers'; // Import outers
+import { methods, Middleware } from 'outers'; // Import outers
 import { NumberKeys } from './variables.core'; // Import Environment Variables
 
 // Import Middlewares
@@ -19,7 +19,7 @@ Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 
 Server.use(RateLimiterMiddleware); // Enable Rate Limiter Middleware
 
 // Set API Main Entry Route
-// Server.use('/api');
+Server.use('/api', Middleware.MethodsController()); // Enable API Main Entry Route with Some Middlewares
 
 // Start Server with Cluster Config
 methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package
