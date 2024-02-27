@@ -29,7 +29,8 @@
     "eslint": "^8.57.0",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "yarn": "^1.22.21"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
