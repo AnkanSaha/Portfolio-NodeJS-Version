@@ -11,10 +11,6 @@ const Routing = Router(); // This is the main router
 Routing.use(RateLimiterMiddleware); // Attach Rate Limiter Middleware
 
 // All Routes
-Routing.post('/', (Request: Request, Response: Response) => {
-	console.log(Request.hostname);
-	Response.json(Request.body);
-});
 
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {

@@ -15,6 +15,7 @@ export const StringKeys = Object.freeze({
 	FreeRam: Number((freemem() / 1024 / 1024 / 1024).toFixed(2)),
 	Model: String(cpus()[0].model),
 	IP_INFO_API_KEY: String(process.env.IP_INFO_API_KEY),
+	Allowed_Methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 });
 
 // All Number Keys
