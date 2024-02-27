@@ -18,14 +18,15 @@ Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 
 // Create URL Hostname
 const { hostname } = new URL(StringKeys.CORS_URL); // Create URL Hostname
 
+// Setup Security Middlewares to protect from attacks
+Server.use(Middleware.MethodsController(StringKeys.Allowed_Methods)); // Only Allow Specific Methods
+
+Server.use(Middleware.AccessController([hostname])); // Only Allow Specific Hostname to Access API
+
+Server.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
+
 // Set API Main Entry Route
-Server.use(
-	'/api',
-	Middleware.MethodsController(['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD']),
-	Middleware.AccessController([hostname]),
-	Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE']),
-	MainRouter // Main Router Entry Point
-); // Enable API Main Entry Route with Some Middlewares
+Server.use('/api', MainRouter); // Enable API Main Entry Route with Some Middlewares
 
 // Start Server with Cluster Config
 methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package
