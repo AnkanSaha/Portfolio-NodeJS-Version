@@ -51,7 +51,8 @@
 				"TabNine.tabnine-vscode",
 				"pnp.polacode",
 				"Anan.jetbrains-darcula-theme",
-				"foxundermoon.shell-format"
+				"foxundermoon.shell-format",
+				"rangav.vscode-thunder-client"
 			],
 			"settings" :{
 				"editor.formatOnSave": true,

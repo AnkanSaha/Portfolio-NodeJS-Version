@@ -19,11 +19,11 @@ vscode:
     - christian-kohler.npm-intellisense
     - esbenp.prettier-vscode
     - bradlc.vscode-tailwindcss
-    - dracula-theme.theme-dracula
     - formulahendry.code-runner
     - MoBalic.jetbrains-dark-theme
     - adpyke.codesnap
     - foxundermoon.shell-format
+    - rangav.vscode-thunder-client
 
 # Run Some Commands
 tasks:
