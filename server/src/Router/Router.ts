@@ -24,7 +24,6 @@ Routing.use(Middleware.AccessController([hostname])); // Only Allow Specific Hos
 
 Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
 
-
 // All Routes
 
 // If All Routes not found

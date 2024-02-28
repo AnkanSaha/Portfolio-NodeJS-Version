@@ -38,14 +38,14 @@ export const AllowedHeadersInCORS: string[] = [
 	'Access-Control-Allow-Credentials',
 ]; // All Allowed Headers in CORS headers
 
-export const AllExposedHeadersInCORS : string[] = [
-	"Content-Type",
-	"Authorization",
-	"X-Requested-With",
-	"Accept",
-	"Origin",
-	"Access-Control-Allow-Headers",
-	"Access-Control-Allow-Origin",
-	"Access-Control-Allow-Methods",
-	"Access-Control-Allow-Credentials",
+export const AllExposedHeadersInCORS: string[] = [
+	'Content-Type',
+	'Authorization',
+	'X-Requested-With',
+	'Accept',
+	'Origin',
+	'Access-Control-Allow-Headers',
+	'Access-Control-Allow-Origin',
+	'Access-Control-Allow-Methods',
+	'Access-Control-Allow-Credentials',
 ]; // All Exposed Headers in CORS headers to be accessible by the client
