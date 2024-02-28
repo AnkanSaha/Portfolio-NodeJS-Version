@@ -24,3 +24,28 @@ export enum NumberKeys {
 	// CPU Count
 	CPUCount = cpus().length * Number(process.env.CPU_COUNT_MULTIPLIERENV) || 2,
 }
+
+// Variables from CORS
+export const AllowedHeadersInCORS: string[] = [
+	'Content-Type',
+	'Authorization',
+	'X-Requested-With',
+	'Accept',
+	'Origin',
+	'Access-Control-Allow-Headers',
+	'Access-Control-Allow-Origin',
+	'Access-Control-Allow-Methods',
+	'Access-Control-Allow-Credentials',
+]; // All Allowed Headers in CORS headers
+
+export const AllExposedHeadersInCORS : string[] = [
+	"Content-Type",
+	"Authorization",
+	"X-Requested-With",
+	"Accept",
+	"Origin",
+	"Access-Control-Allow-Headers",
+	"Access-Control-Allow-Origin",
+	"Access-Control-Allow-Methods",
+	"Access-Control-Allow-Credentials",
+]; // All Exposed Headers in CORS headers to be accessible by the client
