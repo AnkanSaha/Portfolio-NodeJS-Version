@@ -1,14 +1,28 @@
 import { Router, Request, Response } from 'express'; // Import the Router class from express
-import { Serve, StatusCodes } from 'outers'; // Import the methods from outers
+import { Serve, StatusCodes, Middleware } from 'outers'; // Import the methods from outers
+import { StringKeys } from '../core/variables.core'; // Import the variables
 
 // Import Middlewares
 import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
+import CORSMiddleware from '../Middleware/CORS.middleware'; // Import CORS Middleware
 
 // Create a new Router instance
 const Routing = Router(); // This is the main router
 
 // Attach Middlewares
 Routing.use(RateLimiterMiddleware); // Attach Rate Limiter Middleware
+Routing.use(CORSMiddleware); // Attach CORS Middleware and CORS Options
+
+// Attach Security middlewares to protect API endpoints
+// Create URL Hostname
+const { hostname } = new URL(StringKeys.CORS_URL); // Create URL Hostname
+
+// Setup Security Middlewares to protect from attacks
+Routing.use(Middleware.MethodsController(StringKeys.Allowed_Methods)); // Only Allow Specific Methods
+
+Routing.use(Middleware.AccessController([hostname])); // Only Allow Specific Hostname to Access API
+
+Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
 
 // All Routes
 
