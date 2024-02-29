@@ -22,7 +22,7 @@ export const StringKeys = Object.freeze({
 export enum NumberKeys {
 	PORT = Number(process.env.PORT) ?? 4821,
 	// CPU Count
-	CPUCount = cpus().length * Number(process.env.CPU_COUNT_MULTIPLIERENV) ?? 2,
+	CPUCount = Number(process.env.CPU_COUNT_MULTIPLIERENV) ?? cpus().length,
 }
 
 // Variables from CORS
