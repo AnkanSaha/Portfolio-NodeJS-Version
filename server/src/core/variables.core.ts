@@ -51,10 +51,9 @@ export const AllExposedHeadersInCORS: string[] = [
 	'Access-Control-Allow-Credentials',
 ]; // All Exposed Headers in CORS headers to be accessible by the client
 
-
 // Variables for IP Details Utility
 
 // Register APiCall Instance
 export const IP_API = new methods.APiCall.ClassBased(`https://ipinfo.io`, {
-	"Content-Type": "application/json"
+	'Content-Type': 'application/json',
 }); // Create New APiCall Instance

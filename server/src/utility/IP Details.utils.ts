@@ -22,18 +22,17 @@ export default async function getIPDetails(ClientIP: string): Promise<IGetIPDeta
 			return {
 				status: 200,
 				message: 'Success',
-				details: IPDetails.Data[0].Data
+				details: IPDetails.Data[0].Data,
 			};
 		}
-        const ClientIPData = await IP_API.Get(`/${ClientIP}/json?token=${StringKeys.IP_INFO_API_KEY}`, true)
-        const IPType = IPChecker(ClientIP); // Check if IP is IPv4 or IPv6
+		const ClientIPData = await IP_API.Get(`/${ClientIP}/json?token=${StringKeys.IP_INFO_API_KEY}`, true);
+		const IPType = IPChecker(ClientIP); // Check if IP is IPv4 or IPv6
 
 		// Save to Short Storage
 		await IPDetailsShortStorage.Save(ClientIP, {
 			...ClientIPData,
 			Type: IPType,
 			origin: `${StringKeys.AppName}'s Cache Server`,
-		
 		}); // Save IP Details to Short Storage
 
 		// Send Return data
@@ -42,8 +41,8 @@ export default async function getIPDetails(ClientIP: string): Promise<IGetIPDeta
 			message: 'Success',
 			details: {
 				...ClientIPData,
-                Type: IPType,
-				origin: "IP Address Lookup API Server"
+				Type: IPType,
+				origin: 'IP Address Lookup API Server',
 			},
 		};
 	} catch (error) {
@@ -56,7 +55,6 @@ export default async function getIPDetails(ClientIP: string): Promise<IGetIPDeta
 	}
 }
 
-
 // IP Type checker
 
 // Check if IP is IPv4 or IPv6 address
@@ -68,11 +66,11 @@ export function IPChecker(CurrentIP: string): string | unknown {
 
 		// Check if the IP address matches IPv4 or IPv6 regex
 		if (ipv4Regex.test(CurrentIP)) {
-			return "IPv4";
+			return 'IPv4';
 		} else if (ipv6Regex.test(CurrentIP)) {
-			return "IPv6";
+			return 'IPv6';
 		} else {
-			return new Error("Invalid IP address");
+			return new Error('Invalid IP address');
 		}
 	} catch (error) {
 		// If any error occurs, reject the Promise with the error

@@ -1,4 +1,4 @@
-import { Router} from 'express'; // Import the Router class from express
+import { Router } from 'express'; // Import the Router class from express
 
 // Initialize the Router
 const Authenticate = Router(); // Create a new Router
