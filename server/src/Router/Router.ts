@@ -26,6 +26,7 @@ Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP
 
 // All Routes
 
+
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {
 	Serve.JSON({

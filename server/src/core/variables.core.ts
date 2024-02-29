@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 config(); // load.env file into process.env
 import { cpus, platform, freemem, arch } from 'node:os'; // Import OS
+import { methods } from 'outers'; // Import Methods from outer
 
 // All String Keys
 export const StringKeys = Object.freeze({
@@ -49,3 +50,11 @@ export const AllExposedHeadersInCORS: string[] = [
 	'Access-Control-Allow-Methods',
 	'Access-Control-Allow-Credentials',
 ]; // All Exposed Headers in CORS headers to be accessible by the client
+
+
+// Variables for IP Details Utility
+
+// Register APiCall Instance
+export const IP_API = new methods.APiCall.ClassBased(`https://ipinfo.io`, {
+	"Content-Type": "application/json"
+}); // Create New APiCall Instance
