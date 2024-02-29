@@ -54,6 +54,6 @@ export const AllExposedHeadersInCORS: string[] = [
 // Variables for IP Details Utility
 
 // Register APiCall Instance
-export const IP_API = new methods.APiCall.ClassBased(`https://ipinfo.io`, {
+export const IP_API = new methods.APiCall.ClassBased('https://ipinfo.io', {
 	'Content-Type': 'application/json',
 }); // Create New APiCall Instance
