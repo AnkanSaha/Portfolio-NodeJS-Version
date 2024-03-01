@@ -17,6 +17,7 @@ export const StringKeys = Object.freeze({
 	Model: String(cpus()[0].model),
 	IP_INFO_API_KEY: String(process.env.IP_INFO_API_KEY),
 	Allowed_Methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+	MongoDB_URL : `${process.env.MONGODB_URL}${process.env.DB_NAME}`
 });
 
 // All Number Keys

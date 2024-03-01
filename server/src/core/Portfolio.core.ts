@@ -2,6 +2,9 @@ import express, { Express } from 'express'; // Import express
 import { methods } from 'outers'; // Import outers
 import { NumberKeys } from './variables.core'; // Import Environment Variables
 
+// import DB Connection Functions
+import { connectDB } from '../Database/MongoDB'; // Import DB Connection Functions
+
 // Import Main Router
 import MainRouter from '../Router/Router'; // Import Methods Router
 
@@ -18,5 +21,14 @@ Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 
 // Set API Main Entry Route
 Server.use('/api', MainRouter); // Enable API Main Entry Route with Some Middlewares
 
-// Start Server with Cluster Config
-methods.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Create cluster with Outers Package
+// Initialize Server with Cluster Config
+const Cluster = new methods.ClusterCreator.ClassBased(Server, NumberKeys.PORT); // Initialize Cluster Creator
+
+// Add Number of Workers to Cluster
+Cluster.SetNumberOfWorkers(NumberKeys.CPUCount); // Set Number of Workers to Cluster
+
+// Add After Listen function
+Cluster.AddAfterListenFunction(connectDB); // Add After Listen Function to Cluster
+
+// Listen Server
+Cluster.StartServer(); // Start Server
