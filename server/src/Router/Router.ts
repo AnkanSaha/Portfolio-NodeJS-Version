@@ -6,6 +6,9 @@ import { StringKeys } from '../core/variables.core'; // Import the variables
 import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
 import CORSMiddleware from '../Middleware/CORS.middleware'; // Import CORS Middleware
 
+// Import Sub Routes
+import Authenticate from './GET/Auth.routes'; // Import the Auth Routes
+
 // Create a new Router instance
 const Routing = Router(); // This is the main router
 
@@ -15,16 +18,16 @@ Routing.use(CORSMiddleware); // Attach CORS Middleware and CORS Options
 
 // Attach Security middlewares to protect API endpoints
 // Create URL Hostname
-const { hostname } = new URL(StringKeys.CORS_URL); // Create URL Hostname
 
 // Setup Security Middlewares to protect from attacks
 Routing.use(Middleware.MethodsController(StringKeys.Allowed_Methods)); // Only Allow Specific Methods
 
-Routing.use(Middleware.AccessController([hostname])); // Only Allow Specific Hostname to Access API
+// Routing.use(Middleware.AccessController([new URL(StringKeys.CORS_URL).hostname])); // Only Allow Specific Hostname to Access API
 
 Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
 
 // All Routes
+Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
 
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {
