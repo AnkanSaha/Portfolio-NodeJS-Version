@@ -21,7 +21,7 @@ export const StringKeys = Object.freeze({
 
 // All Number Keys
 export enum NumberKeys {
-	PORT = Number(process.env.PORT) ?? 4821,
+	PORT = Number(process.env.PORT) ?? 5678,
 	// CPU Count
 	CPUCount = Number(process.env.CPU_COUNT_MULTIPLIERENV) ?? cpus().length,
 }
@@ -54,6 +54,4 @@ export const AllExposedHeadersInCORS: string[] = [
 // Variables for IP Details Utility
 
 // Register APiCall Instance
-export const IP_API = new methods.APiCall.ClassBased('https://ipinfo.io', {
-	'Content-Type': 'application/json',
-}); // Create New APiCall Instance
+export const IP_API = new methods.APiCall.ClassBased('https://ipinfo.io'); // Create New APiCall Instance
