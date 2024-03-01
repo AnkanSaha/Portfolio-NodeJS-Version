@@ -13,12 +13,12 @@ export default async function GenerateJWT(Request: Request, Response: Response) 
 	try {
 		// Get User IP Address
 		const RequesterIPaddress =
-          Request.headers["x-forwarded-for"] ??
-          Request.connection.remoteAddress ??
-          Request.socket.remoteAddress ??
-          Request.socket.remoteAddress ??
-          Request.headers["x-real-ip"] ??
-          Request.ip; // Get Requester IP Address
+			Request.headers['x-forwarded-for'] ??
+			Request.connection.remoteAddress ??
+			Request.socket.remoteAddress ??
+			Request.socket.remoteAddress ??
+			Request.headers['x-real-ip'] ??
+			Request.ip; // Get Requester IP Address
 
 		// Get Ip Address Details
 		const IP_Address_Details = await IP_Details(String(RequesterIPaddress)); // Get IP Details
@@ -28,10 +28,9 @@ export default async function GenerateJWT(Request: Request, Response: Response) 
 
 		// Assign JWT Token to Response Headers
 		Response.setHeader('Authorization', JWT_Token); // Assign JWT Token to Response Headers
-		
-		//Send Response to Client
-		OK.Send(JWT_Token, "You can use this token for further requests"); // Send OK Response to Client
 
+		//Send Response to Client
+		OK.Send(JWT_Token, 'You can use this token for further requests'); // Send OK Response to Client
 	} catch (error) {
 		Console.red(error); // Log Error
 		return InternalServerError.Send(undefined, 'Could not generate JWT Token. Please try again later.'); // Send Internal Server Error
