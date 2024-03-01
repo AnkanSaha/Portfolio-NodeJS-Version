@@ -17,7 +17,6 @@ Routing.use(RateLimiterMiddleware); // Attach Rate Limiter Middleware
 Routing.use(CORSMiddleware); // Attach CORS Middleware and CORS Options
 
 // Attach Security middlewares to protect API endpoints
-// Create URL Hostname
 
 // Setup Security Middlewares to protect from attacks
 Routing.use(Middleware.MethodsController(StringKeys.Allowed_Methods)); // Only Allow Specific Methods
