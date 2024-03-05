@@ -1,5 +1,5 @@
 import express, { Express } from 'express'; // Import express
-import { methods } from 'outers'; // Import outers
+import { ClassBased } from 'outers'; // Import outers
 import { NumberKeys } from './variables.core'; // Import Environment Variables
 
 // import DB Connection Functions
@@ -22,13 +22,10 @@ Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 
 Server.use('/api', MainRouter); // Enable API Main Entry Route with Some Middlewares
 
 // Initialize Server with Cluster Config
-const Cluster = new methods.ClusterCreator.ClassBased(Server, NumberKeys.PORT); // Initialize Cluster Creator
-
-// Add Number of Workers to Cluster
-Cluster.SetNumberOfWorkers(NumberKeys.CPUCount); // Set Number of Workers to Cluster
+const Cluster = new ClassBased.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Initialize Cluster Creator
 
 // Add After Listen function
-Cluster.AddAfterListenFunction(connectDB); // Add After Listen Function to Cluster
+Cluster.AddBeforeListenFunction(connectDB); // Add After Listen Function to Cluster
 
 // Listen Server
 Cluster.StartServer(); // Start Server

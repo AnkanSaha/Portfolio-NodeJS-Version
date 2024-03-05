@@ -8,6 +8,7 @@ import CORSMiddleware from '../Middleware/CORS.middleware'; // Import CORS Middl
 
 // Import Sub Routes
 import Authenticate from './GET/Auth.routes'; // Import the Auth Routes
+import General from './GET/General.routes'; // Import the General Routes
 
 // Create a new Router instance
 const Routing = Router(); // This is the main router
@@ -27,6 +28,7 @@ Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP
 
 // All Routes
 Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
+Routing.use('/get/general', General); // Attach the General Routes
 
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {

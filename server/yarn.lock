@@ -1512,16 +1512,15 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
 
-outers@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/outers/-/outers-8.0.0.tgz#a6104eea422bee9aca74d5a998f17efbc6e45be0"
-  integrity sha512-Hu6rNMK6kyrz01fSEqaxwt82gy1eALDtwTJVyJz2xJaaslgHbWnaFvgdzBYo8pTqBoQinuORnhKZK4i8f1HnpQ==
+outers@^8.2.13:
+  version "8.2.13"
+  resolved "https://registry.yarnpkg.com/outers/-/outers-8.2.13.tgz#e98dadbc15f89e207fdcf9de341ef5dd2582abe1"
+  integrity sha512-afAXS3r4qsUCjTZaMVHkGo6sMYukRuHSWSKtHwTWbtVxEYXgQS0+2hXa7ObvB71JVCoFjBKA/y8JPy7HE4vcbg==
   dependencies:
     crypto-js "^4.2.0"
     express "^4.18.2"
     jsonwebtoken "^9.0.2"
     mongosuper "^4.4.3"
-    uniquegen "^8.5.0"
 
 p-limit@^3.0.2:
   version "3.1.0"
@@ -1914,11 +1913,6 @@ undici-types@~5.26.4:
   version "5.26.5"
   resolved "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz"
   integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
-
-uniquegen@^8.5.0:
-  version "8.5.0"
-  resolved "https://registry.npmjs.org/uniquegen/-/uniquegen-8.5.0.tgz"
-  integrity sha512-m9pxE/M7VHxDVhxNgJRGCagjDvVw0qD19iYIUoxybrN0/MfG30grpICu+ZxHEPe1rQjoUwVLR4XJ4YihQvIqAA==
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
