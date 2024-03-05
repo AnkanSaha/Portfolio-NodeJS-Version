@@ -4,7 +4,7 @@ import { Router } from 'express'; // Import the Router class from express
 const Authenticate = Router(); // Create a new Router
 
 // Import Services
-import GenerateJWT from '../../Services/Auth/JWT Generator.service'; // Import the getIPDetails Service
+import GenerateJWT from '../../Services/Auth/JWT Generator.service'; // Import the GenerateJWT Service
 
 // Handle the GET Requests
 Authenticate.get('/generate-JWT-Token', GenerateJWT); // Handle the GET Request

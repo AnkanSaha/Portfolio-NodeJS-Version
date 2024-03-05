@@ -1,11 +1,11 @@
-import { methods, Console, StatusCodes } from 'outers'; // Import Methods from outers
+import { ClassBased, Console, StatusCodes } from 'outers'; // Import Methods from outers
 import { StringKeys, IP_API } from '../core/variables.core'; // Import AppName from variables.core
 
 // Import Interfaces
 import { IGetIPDetails } from '../core/Interfaces/IP Details.utils.interface'; // Import IGetIPDetails from IP Details.utils.interface
 
 // Register IP Details Short Storage for IP Details Cache
-export const IPDetailsShortStorage = new methods.Storage.CreateNewShortStorage(
+export const IPDetailsShortStorage = new ClassBased.Storage.CreateNewShortStorage(
 	StringKeys.AppName,
 	999,
 	`${StringKeys.AppName}${StringKeys.JWT_SECRET}${StringKeys.IP_INFO_API_KEY}`

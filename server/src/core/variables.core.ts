@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config(); // load.env file into process.env
 import { cpus, platform, freemem, arch } from 'node:os'; // Import OS
-import { methods } from 'outers'; // Import Methods from outer
+import { ClassBased } from 'outers'; // Import Methods from outer
 
 // All String Keys
 export const StringKeys = Object.freeze({
@@ -55,4 +55,4 @@ export const AllExposedHeadersInCORS: string[] = [
 // Variables for IP Details Utility
 
 // Register APiCall Instance
-export const IP_API = new methods.APiCall.ClassBased('https://ipinfo.io'); // Create New APiCall Instance
+export const IP_API = new ClassBased.API('https://ipinfo.io'); // Create New APiCall Instance
