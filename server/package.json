@@ -1,6 +1,6 @@
 {
   "name": "Portfolio",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "scripts": {
     "test": "eslint ./src/**/*.{js,ts} --fix",
     "build": "yarn test && tsc && cp package.json ./Build/ && cp yarn.lock ./Build/ && cd ./Build && yarn install",
