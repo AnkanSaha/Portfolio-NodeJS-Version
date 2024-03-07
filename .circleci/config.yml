@@ -10,6 +10,16 @@ jobs:
           name: Build Client Project
           command: | 
             cd client/ && yarn install --force && yarn run build
+  
+  Test_Client:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Test Client Project
+          command: |
+            cd client/ && yarn install --force && yarn run test
 
   Build_Server:
     docker:
@@ -19,7 +29,17 @@ jobs:
       - run:
           name: Build Server Project
           command: |
-           cd server/ && npm install --force && npm run build
+           cd server/ && yarn install --force && yarn run build
+  
+  Test_Server:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Test Server Project
+          command: |
+            cd server/ && yarn install --force && yarn run test
 
 
   Push_To_Gitlab:
@@ -47,21 +67,35 @@ workflows:
   Build_Publish:
     jobs:
       - Build_Client:
-          name: Build Client
+          name: Build Client Side
+          filters:
+           branches:
+             only: main
+      - Test_Client:
+          name: Test Client Side
+          requires:
+            - Build Client Side
           filters:
            branches:
              only: main
       - Build_Server:
-          name: Build Server
+          name: Build Server Side
           requires:
-            - Build Client
+            - Test Client Side
+          filters:
+           branches:
+             only: main
+      - Test_Server:
+          name: Test Server Side
+          requires:
+            - Build Server Side
           filters:
            branches:
              only: main
       - Push_To_Gitlab:
           name: Publish to Gitlab
           requires:
-            - Build Server
+            - Test Server Side
           filters:
             branches:
               only: main
