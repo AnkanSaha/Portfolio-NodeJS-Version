@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run:
           name: Switch To Client Directory
-          command: cd client/
+          command: |
+            cd client/
       - run:
           name: Install Dependencies
           command: npm install --force
