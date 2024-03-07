@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  Push_To_Gitlab:
+    docker:
+        - image: node:latest
+    steps:
+        - checkout
+        - run:
+            name: Add Gitlab Remote URL
+            command: git remote add gitlab ${GITLAB_REPO_URL}
+        - run:
+            name: Push to Gitlab
+            command: git push --mirror gitlab
+
+
+workflows:
+  version: 2
+  Publisher:
+    jobs:
+      - Push_To_Gitlab:
+          name: Publish to Gitlab
+          filters:
+            branches:
+              only: main
