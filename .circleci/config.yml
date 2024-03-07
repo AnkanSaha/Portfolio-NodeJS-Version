@@ -95,7 +95,7 @@ workflows:
       - Push_To_Gitlab:
           name: Publish to Gitlab
           requires:
-            - Build Server
+            - Test Server Side
           filters:
             branches:
               only: main
