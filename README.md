@@ -1,5 +1,6 @@
 
 # Portfolio in Nodejs
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/AnkanSaha/Portfolio/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/AnkanSaha/Portfolio/tree/main)
 
 I created My Portfolio Website with NodeJS and ExpressJS & for getting problem query, i used Mongoose with mongoDB as a Database.
 
