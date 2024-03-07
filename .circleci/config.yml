@@ -1,6 +1,36 @@
 version: 2.1
 
 jobs:
+  Build_Client:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Switch To Client Directory
+          command: cd Portfolio/client/
+      - run:
+          name: Install Dependencies
+          command: npm install --force
+      - run: 
+          name: Build Client
+          command: npm run build
+
+  Build_Server:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Switch To Server Directory
+          command: cd Portfolio/server/
+      - run:
+          name: Install Dependencies
+          command: npm install --force
+      - run: 
+          name: Build Server
+          command: npm run build
+
   Push_To_Gitlab:
     docker:
       - image: node:latest
@@ -23,10 +53,24 @@ jobs:
 
 workflows:
   version: 2
-  Publisher:
+  Build_Publish:
     jobs:
+      - Build_Client:
+          name: Build Client
+          filters:
+           branches:
+             only: main
+      - Build_Server:
+          name: Build Server
+          requires:
+            - Build Client
+          filters:
+           branches:
+             only: main
       - Push_To_Gitlab:
           name: Publish to Gitlab
+          requires:
+            - Build Server
           filters:
             branches:
               only: main
