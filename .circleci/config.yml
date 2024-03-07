@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Push to Gitlab
           command: |
-            git push gitlab HEAD:main
+            git push gitlab
 
 workflows:
   version: 2
