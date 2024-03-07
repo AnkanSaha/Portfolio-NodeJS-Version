@@ -8,7 +8,9 @@ jobs:
         - checkout
         - run:
             name: Add Gitlab Remote URL
-            command: git remote add gitlab ${GITLAB_REPO_URL}
+            command: |
+              git remote add gitlab ${GITLAB_REPO_URL}
+              echo ${GITLAB_REPO_URL}
         - run:
             name: Push to Gitlab
             command: git push --mirror main:main
