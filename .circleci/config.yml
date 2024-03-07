@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Switch To Client Directory
-          command: cd Portfolio/client/
-      - run:
           name: Install Dependencies
           command: npm install --force
       - run: 
@@ -21,9 +18,6 @@ jobs:
       - image: node:latest
     steps:
       - checkout
-      - run:
-          name: Switch To Server Directory
-          command: cd Portfolio/server/
       - run:
           name: Install Dependencies
           command: npm install --force
