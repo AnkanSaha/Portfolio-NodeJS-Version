@@ -13,7 +13,7 @@ jobs:
               echo ${GITLAB_REPO_URL}
         - run:
             name: Push to Gitlab
-            command: git push --mirror main:main
+            command: git push --mirror gitlab
 
 
 workflows:
