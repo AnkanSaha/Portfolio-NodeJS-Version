@@ -7,12 +7,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Fetch from Origin and Prune
+          command: git fetch -p origin
+      - run:
           name: Add Gitlab Remote URL
           command: git remote add gitlab ${GITLAB_REPO_URL}
       - run:
           name: Push to Gitlab
           command: |
-            git fetch gitlab main:main || true
             git push gitlab HEAD:main
 
 workflows:
