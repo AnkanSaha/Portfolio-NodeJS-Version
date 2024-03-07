@@ -12,8 +12,6 @@ jobs:
       - run:
           name: Configure GitLab Credentials
           command: |
-            git config --global credential.helper store
-            echo "https://oauth2:${GITLAB_PERSONAL_ACCESS_TOKEN}@gitlab.com" > ~/.git-credentials
             git config --global user.email "${OWNER_EMAIL}"
             git config --global user.name "${OWNER_NAME}"
       - run:
