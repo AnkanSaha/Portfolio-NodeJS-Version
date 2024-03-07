@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Build Server Project
           command: |
-           cd server/ && npm install --force && npm run build
+           cd server/ && yarn install --force && yarn run build
 
 
   Push_To_Gitlab:
