@@ -3,18 +3,17 @@ version: 2.1
 jobs:
   Push_To_Gitlab:
     docker:
-        - image: node:latest
+      - image: node:latest
     steps:
-        - checkout
-        - run:
-            name: Add Gitlab Remote URL
-            command: |
-              git remote add gitlab ${GITLAB_REPO_URL}
-              echo ${GITLAB_REPO_URL}
-        - run:
-            name: Push to Gitlab
-            command: git push gitlab main:main
-
+      - checkout
+      - run:
+          name: Add Gitlab Remote URL
+          command: git remote add gitlab ${GITLAB_REPO_URL}
+      - run:
+          name: Push to Gitlab
+          command: |
+            git fetch gitlab main:main || true
+            git push gitlab HEAD:main
 
 workflows:
   version: 2
