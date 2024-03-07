@@ -7,17 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Switch To Client Directory
-          command: |
-            ls -a
-            cd client/
-            ls -a
-      - run:
-          name: Install Dependencies
-          command: npm install --force
-      - run: 
-          name: Build Client
-          command: npm run build
+          name: Build Client Project
+          command: | 
+            cd client/ && yarn install --force && yarn run build
 
   Build_Server:
     docker:
@@ -25,14 +17,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Switch To Server Directory
-          command: cd server/
-      - run:
-          name: Install Dependencies
-          command: npm install --force
-      - run: 
-          name: Build Server
-          command: npm run build
+          name: Build Server Project
+          command: |
+           cd server/ && npm install --force && npm run build
+
 
   Push_To_Gitlab:
     docker:
