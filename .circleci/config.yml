@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Switch To Client Directory
           command: |
+            ls -a
             cd client/
       - run:
           name: Install Dependencies
