@@ -11,7 +11,7 @@ jobs:
             command: git remote add gitlab ${GITLAB_REPO_URL}
         - run:
             name: Push to Gitlab
-            command: git push gitlab main:dev
+            command: git push --mirror gitlab
 
 
 workflows:
