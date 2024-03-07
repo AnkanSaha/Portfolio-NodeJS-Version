@@ -10,6 +10,13 @@ jobs:
           name: Add Gitlab Remote URL
           command: git remote add gitlab ${GITLAB_REPO_URL}
       - run:
+          name: Configure GitLab Credentials
+          command: |
+            git config --global credential.helper store
+            echo "https://oauth2:${GITLAB_PERSONAL_ACCESS_TOKEN}@gitlab.com" > ~/.git-credentials
+            git config --global user.email "${OWNER_EMAIL}"
+            git config --global user.name "${OWNER_NAME}"
+      - run:
           name: Push to Gitlab
           command: |
             git push gitlab
