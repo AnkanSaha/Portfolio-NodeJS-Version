@@ -26,8 +26,6 @@ Routing.use(Middleware.URL_Controller([new URL(StringKeys.CORS_URL).hostname]));
 
 Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
 
-Routing.use(Middleware.RequestCounter()); // Count the number of requests come today
-
 // All Routes
 Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
 Routing.use('/get/general', General); // Attach the General Routes
