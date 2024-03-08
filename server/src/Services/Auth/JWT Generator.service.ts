@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'; // Importing express types
-import { ClassBased, Console, StatusCodes } from 'outers'; // Import Methods from outers
+import { ClassBased, Console, StatusCodes, FunctionBased } from 'outers'; // Import Methods from outers
 import { StringKeys } from '../../core/variables.core'; // Import the variables
 
 // Import Utility Functions
