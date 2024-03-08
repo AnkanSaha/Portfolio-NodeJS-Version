@@ -22,9 +22,11 @@ Routing.use(CORSMiddleware); // Attach CORS Middleware and CORS Options
 // Setup Security Middlewares to protect from attacks
 Routing.use(Middleware.MethodsController(StringKeys.Allowed_Methods)); // Only Allow Specific Methods
 
-Routing.use(Middleware.AccessController([new URL(StringKeys.CORS_URL).hostname])); // Only Allow Specific Hostname to Access API
+Routing.use(Middleware.URL_Controller([new URL(StringKeys.CORS_URL).hostname])); // Only Allow Specific Hostname to Access API
 
 Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP Address to Request Body
+
+Routing.use(Middleware.RequestCounter()) // Count the number of requests come today
 
 // All Routes
 Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
