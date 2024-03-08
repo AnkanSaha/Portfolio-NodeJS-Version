@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Test Client Project
           command: |
-            cd client/ && yarn install --force && yarn run test
+            cd client/ && yarn install --force && && yarn run build && yarn add pm2 && yarn run test
 
   Build_Server:
     docker:

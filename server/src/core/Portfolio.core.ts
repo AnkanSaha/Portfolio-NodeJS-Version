@@ -11,9 +11,6 @@ import MainRouter from '../Router/Router'; // Import Methods Router
 // create Express Instance
 const Server: Express = express(); // Initialize express
 
-// Set Trust Proxy
-Server.set('trust proxy', () => true); // Enable trust proxy
-
 // Set APi Content Type and JSON Parsing
 Server.use(express.json({ limit: '999mb' })); // Enable JSON Parsing
 Server.use(express.urlencoded({ extended: true, limit: '999mb', parameterLimit: 2000 })); // Enable URL Encoded Parsing and Limit of 5GB
@@ -23,6 +20,9 @@ Server.use('/api', MainRouter); // Enable API Main Entry Route with Some Middlew
 
 // Initialize Server with Cluster Config
 const Cluster = new ClassBased.ClusterCreator(Server, NumberKeys.PORT, NumberKeys.CPUCount); // Initialize Cluster Creator
+
+// Set Trust Proxy to True
+Cluster.ControlTrustProxy(true); // Enable Trust Proxy
 
 // Add After Listen function
 Cluster.AddBeforeListenFunction(connectDB); // Add After Listen Function to Cluster
