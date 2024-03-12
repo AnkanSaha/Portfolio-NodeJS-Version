@@ -12,7 +12,7 @@ export const IPDetailsShortStorage = new ClassBased.Storage.CreateNewShortStorag
 ); // Create New Short Storage for IP Details
 
 // Main Function
-export default async function getIPDetails(ClientIP: string): Promise<IGetIPDetails> {
+export default async function (ClientIP: string): Promise<IGetIPDetails> {
 	try {
 		// Search IP Details in Short Storage
 		const IPDetails = await IPDetailsShortStorage.Get(ClientIP); // Get IP Details from Short Storage
