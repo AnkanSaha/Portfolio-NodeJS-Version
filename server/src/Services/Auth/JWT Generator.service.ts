@@ -9,7 +9,6 @@ import IP_Details from '../../utility/IP Details.utils'; // Import IP_Details ut
 export default async function GenerateJWT(Request: Request, Response: Response) {
 	// Response Instances
 	const InternalServerError = new ClassBased.Response.JSON(Response, StatusCodes.INTERNAL_SERVER_ERROR, 'json', 'Internal Server Error', false); // Internal Server Error Response
-	const OK = new ClassBased.Response.JSON(Response, StatusCodes.OK, 'json', 'Token JWT Generated', true); // OK Response
 	try {
 		// Get User IP Address
 		const RequesterIPaddress =
@@ -33,6 +32,18 @@ export default async function GenerateJWT(Request: Request, Response: Response) 
 		Response.setHeader('Authorization', JWT_Token); // Assign JWT Token to Response Headers
 
 		//Send Response to Client
+		const OK = new ClassBased.Response.JSON(Response, StatusCodes.OK, 'json', 'Token JWT Generated', true, '', [
+			{
+				name: 'sessionid',
+				value: JWT_Token,
+				options: {
+					httpOnly: true,
+					secure: true,
+					maxAge: 3600, // 1 hour expiration
+				},
+			},
+		]); // OK Response
+
 		OK.Send(JWT_Token, 'You can use this token for further requests'); // Send OK Response to Client
 	} catch (error) {
 		Console.red(error); // Log Error
