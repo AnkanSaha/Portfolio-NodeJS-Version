@@ -25,7 +25,7 @@ const Cluster = new ClassBased.ClusterCreator(Server, NumberKeys.PORT, NumberKey
 Cluster.ControlTrustProxy(true); // Enable Trust Proxy
 
 // Add After Listen function
-Cluster.AddBeforeListenFunction(connectDB); // Add After Listen Function to Cluster
+Cluster.AddAfterListenFunction(connectDB); // Add After Listen Function to Cluster
 
 // Listen Server
 Cluster.StartServer(); // Start Server
