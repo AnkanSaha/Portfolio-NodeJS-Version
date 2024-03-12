@@ -19,7 +19,7 @@ export const StringKeys = Object.freeze({
 	Allowed_Methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	MongoDB_URL: String(process.env.MONGODB_URL),
 	DB_NAME: String(process.env.DB_NAME),
-	CollectionName: "HelpCenter"
+	CollectionName: 'Request Center',
 });
 
 // All Number Keys

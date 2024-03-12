@@ -9,11 +9,6 @@ export const Collection = Database.collection(StringKeys.CollectionName); // Con
 export async function connectDB() {
 	try {
 		await Client.connect(); // Connect to MongoDB
-		Collection.insertOne({
-			name: 'Ankan',
-		}).then(res => {
-			console.log(res);
-		});
 		console.log('MongoDB Connected with Server');
 	} catch (error) {
 		console.log(error); // Error
