@@ -6,15 +6,15 @@ import { createSlice } from '@reduxjs/toolkit'
 const UserInfo = createSlice({
   name: 'UserInfo',
   initialState: {
-    JWT: null,
+    JWT: null
   },
   reducers: {
     ModifyJWT: (state, action) => {
-        state.JWT = action.payload.JWT
+      state.JWT = action.payload.JWT
     }
   }
 })
 
 // Export the reducer and actions from the AccountInfo slice
 export const { ModifyJWT } = UserInfo.actions // Export the action
-export default UserInfo.reducer; // Export the reducer from the UserInfo slice
+export default UserInfo.reducer // Export the reducer from the UserInfo slice

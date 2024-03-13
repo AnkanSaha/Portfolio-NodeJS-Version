@@ -4,7 +4,7 @@ import MainRouter from './Router/Router'
 
 // import Redux Provider
 import { Provider } from 'react-redux' // Import React Redux Provider
-import ReduxStore from './Redux/Store'; // Import Redux Store
+import ReduxStore from './Redux/Store' // Import Redux Store
 
 // import CSS Frameworks
 import '../css/tailwind.css' // Import Tailwind CSS
@@ -21,6 +21,6 @@ Root.render(
       <ChakraProvider>
         <MainRouter />
       </ChakraProvider>
-      </Provider>
+    </Provider>
   </React.StrictMode>
 ) // Render App Component with React Strict Mode

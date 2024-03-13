@@ -3,7 +3,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit' // Import the
 import { isDevelopmentMode } from '../Keys/variables.keys' // Import the development mode checker
 
 // Import the reducers
-import GuestUsersReducers from './Slices/Guest Users'; // Import the Guest Users Reducer
+import GuestUsersReducers from './Slices/Guest Users' // Import the Guest Users Reducer
 
 // Combine all the reducers into one
 export const CombinedReducers = combineReducers({
