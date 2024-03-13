@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Router from "../App.jsx";
+import MainRouter from "./Router/Router";
 
 // import Redux Provider
 import { Provider } from "react-redux"; // Import React Redux Provider
 
 // import CSS Frameworks
-import "@src/css/tailwind.css"; // Import Tailwind CSS
+import "../css/tailwind.css"; // Import Tailwind CSS
 import "daisyui"; // Import Daisy UI
 import { ChakraProvider } from "@chakra-ui/react"; // Import Chakra Provider
 
@@ -18,7 +18,7 @@ Root.render(
   <React.StrictMode>
     <Provider>
       <ChakraProvider>
-        <Router />
+        <MainRouter />
       </ChakraProvider>
     </Provider>
   </React.StrictMode>
