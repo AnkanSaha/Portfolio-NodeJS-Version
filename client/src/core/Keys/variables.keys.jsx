@@ -19,6 +19,7 @@ export const OwnerEmail = 'ankansahaofficial@gmail.com' // Global App Owner Emai
 export const OwnerLinkedIn = 'theankansaha' // Global App Owner LinkedIn
 export const OwnerYoutube = 'UC6vLzWN-UCHe28ZMyHkNJf91MKLt-8Eg' // Global App Owner Youtube
 export const OwnerTwitter = 'theankansaha' // Global App Owner Twitter
+export const OwnerGithub = "AnkanSaha"; // Global App Owner Github
 
 // Global API Call to Server Instance
 export const API_Call = new Service.ClassBasedFunctions.API({
