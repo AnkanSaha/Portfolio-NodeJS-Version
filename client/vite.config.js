@@ -25,9 +25,9 @@ export default defineConfig({
   publicDir: 'public',
   preview: {
     cors: true,
-    port: 3000,
+    port: 5173,
     strictPort: true,
-    open: true,
+    open: false,
     hmr: true,
     https: false,
     host: 'localhost',
@@ -55,7 +55,7 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: true,
-    open: true,
+    open: false,
     cors: true,
     hmr: true,
     https: false,
