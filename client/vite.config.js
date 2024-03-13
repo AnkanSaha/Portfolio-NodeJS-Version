@@ -70,9 +70,9 @@ export default defineConfig({
       '@component': '/src/Components',
       '@page': '/src/Pages',
       '@helper': '/src/Helper',
-      '@setting': '/src/Settings',
+      '@core': '/src/core',
       '@validator': '/src/Validator',
-      '@router': '/src/Settings/Router',
+      '@router': '/src/core/Router',
       '@redux': '/src/App/Redux'
     },
     dedupe: ['react', 'react-dom', 'react-router-dom'],
