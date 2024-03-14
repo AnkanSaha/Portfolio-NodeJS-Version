@@ -19,7 +19,7 @@ export default function Education() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {education.Date}
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="lg:text-lg font-semibold text-gray-900 dark:text-black">
                 {education.SchoolName}
               </h3>
               <h2>{education.Degree}</h2>
