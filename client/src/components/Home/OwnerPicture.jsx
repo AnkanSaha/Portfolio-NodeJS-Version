@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import React
-import { OwnerPicture, OwnerName } from '../../core/Keys/variables.keys' // Import the variables from the variables.keys file
+import { OwnerPicture, OwnerName } from '../../core/Keys/OwnerDetails.keys' // Import the variables from the variables.keys file
 
 // Main Component
 export default function OwnerPictureShower () {

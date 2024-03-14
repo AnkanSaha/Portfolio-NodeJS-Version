@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { OwnerName, OwnerSkills } from '../../core/Keys/variables.keys' // Import the OwnerName variable
+import { OwnerName, OwnerSkills } from '../../core/Keys/OwnerDetails.keys' // Import the OwnerName variable
 
 export default function MainText () {
   return (

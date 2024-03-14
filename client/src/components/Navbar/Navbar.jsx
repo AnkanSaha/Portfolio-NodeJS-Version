@@ -3,7 +3,7 @@ import React from 'react' // Import React
 import { Link } from 'react-router-dom' // Import the react-router-dom
 
 // Import Information
-import { OwnerName, OwnerGithub } from '../../core/Keys/variables.keys' // Import the variables from the variables.keys file
+import { OwnerName, OwnerGithub } from '../../core/Keys/OwnerDetails.keys' // Import the variables from the variables.keys file
 
 // Main Component
 export default function Navbar () {
