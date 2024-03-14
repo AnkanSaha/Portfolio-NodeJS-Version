@@ -18,7 +18,8 @@ export default function MainText () {
           <br />
           {OwnerSkills.map((Skill, index) =>
             index == 0 ? ` ${Skill}` : `, ${Skill}`
-          )} <br />
+          )}{' '}
+          <br />
           . Whether you're looking to streamline processes, enhance performance,
           or build from the ground up, I'm your go-to developer. <br /> Let's
           collaborate on creating scalable, efficient, and reliable systems that
