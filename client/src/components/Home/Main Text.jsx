@@ -4,8 +4,8 @@ import { OwnerName, OwnerSkills } from '../../core/Keys/OwnerDetails.keys' // Im
 export default function MainText () {
   return (
     <>
-      <div className='main-text ml-[10rem] mt-[6.25rem]'>
-        <h1 className='mb-4 lg:ml-[11.25rem] ml-[0.75rem] text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-7xl dark:text-black'>
+      <div className='main-text ml-[9rem] mt-[6.25rem] lg:mt-[5.25rem]'>
+        <h1 className='mb-4 lg:ml-[11.25rem] ml-[0.75rem] text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black'>
           Hello everyone, I'm{' '}
           <span className='text-indigo-600'>{OwnerName.split(' ')[0]}</span>
         </h1>
@@ -18,7 +18,7 @@ export default function MainText () {
           <br />
           {OwnerSkills.map((Skill, index) =>
             index == 0 ? ` ${Skill}` : `, ${Skill}`
-          )}
+          )} <br />
           . Whether you're looking to streamline processes, enhance performance,
           or build from the ground up, I'm your go-to developer. <br /> Let's
           collaborate on creating scalable, efficient, and reliable systems that

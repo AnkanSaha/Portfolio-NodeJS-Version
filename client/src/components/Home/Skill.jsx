@@ -13,7 +13,7 @@ export default function MiddleText() {
       </h1>
 
       <div className="flex lg:flex-row flex-col flex-wrap">
-        {OwnerSkillsIcons.map((SkillDetails) => {
+        {OwnerSkillsIcons.map((SkillDetails, index) => {
           return (
             <div
               key={SkillDetails.name}
@@ -36,7 +36,7 @@ export default function MiddleText() {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </>
