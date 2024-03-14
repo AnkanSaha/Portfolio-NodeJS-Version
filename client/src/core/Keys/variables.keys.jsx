@@ -22,6 +22,8 @@ export const OwnerYoutube = 'UC6vLzWN-UCHe28ZMyHkNJf91MKLt-8Eg' // Global App Ow
 export const OwnerTwitter = 'theankansaha' // Global App Owner Twitter
 export const OwnerGithub = 'AnkanSaha' // Global App Owner Github
 export const OwnerPicture = OwnerImage // Global App Owner Picture
+// Global Owner Skills
+export const OwnerSkills = ['React (Basic)', 'Javascript', 'NodeJS', 'ExpressJS', 'MongoDB', 'Nginx', 'Linux Shell Scripting', 'Docker', 'Typescript', 'Git & Github']; // Global Owner Skills
 
 // Global API Call to Server Instance
 export const API_Call = new Service.ClassBasedFunctions.API({
