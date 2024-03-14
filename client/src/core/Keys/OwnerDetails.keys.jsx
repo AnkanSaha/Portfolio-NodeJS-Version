@@ -22,7 +22,8 @@ import ServerlessImage from "@assets/Icons/Skill_Logo/serverless.png"; // Server
 export const OwnerName = "Ankan Saha"; // Global App Owner Name
 export const OwnerEmail = "ankansahaofficial@gmail.com"; // Global App Owner Email
 export const OwnerLinkedIn = "theankansaha"; // Global App Owner LinkedIn
-export const OwnerYoutube = "UC6vLzWN-UCHe28ZMyHkNJf91MKLt-8Eg"; // Global App Owner Youtube
+export const OwnerFacebook = "theankansaha"; // Global App Owner Facebook
+export const OwnerYoutube = "@javascriptalks"; // Global App Owner Youtube
 export const OwnerTwitter = "theankansaha"; // Global App Owner Twitter
 export const OwnerGithub = "AnkanSaha"; // Global App Owner Github
 export const OwnerPicture = OwnerImage; // Import Typescript Icon
