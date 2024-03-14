@@ -8,7 +8,7 @@ export default function OwnerPictureShower () {
     <>
       <img
         src={OwnerPicture}
-        className='ml-[4rem] mt-10 lg:w-[40%] w-[60%]'
+        className='ml-[4rem] mt-10 lg:w-[50%] w-[60%]'
         alt={`${OwnerName}'s Image`}
       />
     </>
