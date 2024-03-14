@@ -1,9 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React from "react"; // Import React
+import { Button } from "@chakra-ui/react"; // Import Chakra UI Button
 import { OwnerSkillsIcons } from "../../core/Keys/OwnerDetails.keys"; // Import Owner Skills Icons
 
 // main component
 export default function MiddleText() {
+  // State for the component
+  const [MoreSkillShow, setMoreSkillShow] = React.useState(false); // State for More Skill Show
+  const [CountSkill, setCountSkill] = React.useState(2); // State for Count of Skill
+  
+  // Function for More Skill Show
+  const ShowMoreSkill = (event) => {
+    event.preventDefault(); // Prevent Default Event
+    setMoreSkillShow(true); // Set More Skill Show to True
+    setCountSkill(OwnerSkillsIcons.length); // Set Count of Skill to Length of OwnerSkillsIcons
+  }
   return (
     <>
       <h1 className="mb-4 my-[3.25rem] lg:my-[6.25rem] text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -14,7 +25,7 @@ export default function MiddleText() {
 
       <div className="flex lg:flex-row flex-col flex-wrap">
         {OwnerSkillsIcons.map((SkillDetails, index) => {
-          return (
+          return index <= CountSkill ? (
             <div
               key={SkillDetails.name}
               className="card w-auto lg:w-1/4 lg:h-1/4 bg-base-100 shadow-xl lg:mx-12 my-5"
@@ -36,8 +47,18 @@ export default function MiddleText() {
                 </div>
               </div>
             </div>
-          )
+          ) : null;
         })}
+        {MoreSkillShow === false ? (
+          <Button
+            onClick={ShowMoreSkill}
+            className="text-center my-5 mx-5 lg:ml-[41.25rem]"
+            colorScheme="teal"
+            size="lg"
+          >
+            View More
+          </Button>
+        ) : null}
       </div>
     </>
   );
