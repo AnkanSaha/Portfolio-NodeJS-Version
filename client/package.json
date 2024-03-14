@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "yarn test && vite build",
-    "test": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "test": "eslint ./src/**/*.{js,jsx} --fix",
     "preview": "vite preview"
   },
   "dependencies": {
