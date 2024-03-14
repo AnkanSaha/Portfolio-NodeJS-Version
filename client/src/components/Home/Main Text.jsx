@@ -9,12 +9,19 @@ export default function MainText() {
           Hello everyone, I'm{" "}
           <span className="text-indigo-600">{OwnerName.split(" ")[0]}</span>
         </h1>
-        <p className="mb-6 text-lg px-5 lg:px-5 font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          Empowering businesses with robust backend solutions! I'm a skilled
-          Node JS Developer, specializing in backend development. Proficient in
-          {OwnerSkills.map((Skill, index) => index == 0 ? ` ${Skill}`: `, ${Skill}`)}. Let's build
-          scalable, efficient systems together. Reach out for your next
-          project!
+        <p className="mb-6 text-lg px-5 lg:px-5 font-normal text-gray-500 lg:text-base sm:px-16 xl:px-48 dark:text-gray-400">
+          I'm here to supercharge your business with top-notch <br />
+          backend solutions. As a dedicated Node JS Developer, I specialize in <br />
+          crafting powerful backend systems that drive your applications <br />
+          forward. My expertise spans a wide array of technologies including{" "} <br />
+          {OwnerSkills.map((Skill, index) =>
+            index == 0 ? ` ${Skill}` : `, ${Skill}`
+          )}
+          . Whether you're looking to streamline processes, enhance performance,
+          or build from the ground up, I'm your go-to developer. <br /> Let's
+          collaborate on creating scalable, efficient, and reliable systems that
+          propel your ideas to success. Get in touch, and let's bring your
+          vision to life!
         </p>
       </div>
     </>

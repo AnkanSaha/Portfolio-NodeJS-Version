@@ -73,7 +73,8 @@ export default defineConfig({
       '@core': '/src/core',
       '@validator': '/src/Validator',
       '@router': '/src/core/Router',
-      '@redux': '/src/App/Redux'
+      '@redux': '/src/App/Redux',
+      '@assets': '/src/Assets',
     },
     dedupe: ['react', 'react-dom', 'react-router-dom'],
     extensions: [
