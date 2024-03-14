@@ -152,5 +152,30 @@ export const OwnerSkillsIcons = [
     description:
       "Serverless computing is a cloud-computing execution model in which the cloud provider runs the server, and dynamically manages the allocation of machine resources. Pricing is based on the actual amount of resources consumed by an application, rather than on pre-purchased units of capacity.",
     Specialty: ["Cloud Computing", "DevOps"],
-  }
+  },
+];
+
+// Owner Education Details
+export const OwnerEducation = [
+  {
+    Date: "JANUARY 2013 - JUL 2019",
+    SchoolName: "Daluabari Kalipur Anchalik Shiksha Pratishtan",
+    Degree: "Secondary",
+    Description:
+      "I have completed my secondary education from Daluabari Kalipur Anchalik Shiksha Pratishtan, a school in my hometown. I have been a good student in my school. I Scored 282 out of 700 in my secondary examination. that is 40.28%. i know it is not a good score just because of my wrong decision i got this score. but i have learned from my mistake and i will not repeat it again.",
+  },
+  {
+    Date: "JULY 2019 - JUN 2021",
+    SchoolName: "Daluabari Kalipur Anchalik Shiksha Pratishtan (H.S)",
+    Degree: "Higher Secondary",
+    Description:
+      "I have completed my higher secondary education from Daluabari Kalipur Anchalik Shiksha Pratishtan, a school in my hometown. I Scored 263 out of 500 in my higher secondary examination. that is 52.6%. i know it is not a good score just because of i passed my higher secondary during the covid-19 pandamic and my 12th exam was cancelled and i got this score based on my 10th exam.",
+  },
+  {
+    Date: "JULY 2021 - PRESENT",
+    SchoolName: "University of Kalyani",
+    Degree: "Bachelor of Arts (B.A)",
+    Description:
+      "I am currently pursuing my Bachelor of Arts (B.A) from University of Kalyani, a university in West Bengal, India. I was Studying Bengali, Political Science & History. It was my 6th & last semester, throughout my college is deferent than any other college student. i was studying in B.A but i have high interest in computer science and i have learned many things from the internet and i have started my career as a web developer.",
+  },
 ];
