@@ -10,7 +10,7 @@ export default function HomePage () {
   return (
     <>
       <Navbar />
-      <div className='justify-between flex'>
+      <div className='justify-between space-x-0 lg:flex'>
         <OwnerPictureShower />
         <MainText />
       </div>

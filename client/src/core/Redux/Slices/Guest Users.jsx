@@ -1,5 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable no-unused-vars */
 import { createSlice } from '@reduxjs/toolkit'
 
 // This slice is used to store the account information

@@ -190,7 +190,7 @@ export default defineConfig({
     fullySpecified: false
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'react-caches'],
     sourcemap: true
   }
 })
