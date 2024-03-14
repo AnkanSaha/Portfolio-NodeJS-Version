@@ -2,6 +2,7 @@
 import React from "react"; // Import React
 import { Button } from "@chakra-ui/react"; // Import Chakra UI Button
 import { OwnerSkillsIcons } from "../../core/Keys/OwnerDetails.keys"; // Import Owner Skills Icons
+import { MdExpandMore, MdExpandLess } from "react-icons/md"; // More Icon
 
 // main component
 export default function MiddleText() {
@@ -14,6 +15,12 @@ export default function MiddleText() {
     event.preventDefault(); // Prevent Default Event
     setMoreSkillShow(true); // Set More Skill Show to True
     setCountSkill(OwnerSkillsIcons.length); // Set Count of Skill to Length of OwnerSkillsIcons
+  }
+
+  const ShowLessSkill = (event) => {
+    event.preventDefault(); // Prevent Default Event
+    setMoreSkillShow(false); // Set More Skill Show to False
+    setCountSkill(2); // Set Count of Skill to 2
   }
   return (
     <>
@@ -51,6 +58,7 @@ export default function MiddleText() {
         })}
         {MoreSkillShow === false ? (
           <Button
+            rightIcon={<MdExpandMore />}
             onClick={ShowMoreSkill}
             className="text-center my-5 mx-5 lg:ml-[41.25rem]"
             colorScheme="teal"
@@ -58,7 +66,15 @@ export default function MiddleText() {
           >
             View More
           </Button>
-        ) : null}
+        ) : <Button
+        rightIcon={<MdExpandLess />}
+        onClick={ShowLessSkill}
+        className="text-center my-5 mx-5 lg:ml-[41.25rem]"
+        colorScheme="teal"
+        size="lg"
+      >
+        View Less
+      </Button>}
       </div>
     </>
   );
