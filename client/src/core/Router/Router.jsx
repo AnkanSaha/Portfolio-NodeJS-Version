@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom' // import the React router DOM module
 
 // Import Pages
-import HomePage from '../../Pages/Home'; // Import the Home page
-import ProjectsPage from '../../Pages/Projects'; // Import the Projects page
+import HomePage from '../../Pages/Home' // Import the Home page
+import ProjectsPage from '../../Pages/Projects' // Import the Projects page
 
 // Main Router
 const MainRouter = () => {
@@ -10,7 +10,7 @@ const MainRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/projects' element={<ProjectsPage />}/>
+        <Route path='/projects' element={<ProjectsPage />} />
       </Routes>
     </BrowserRouter>
   )
