@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import the React library
+import { React as Service } from 'react-caches' // Import React Caches
+import { OwnerName } from '../core/Keys/OwnerDetails.keys' // Import the Owner Name
 
 // import Components
 import Navbar from '../components/Navbar/Navbar' // Import the Navbar component
@@ -11,6 +13,8 @@ import Education from '../components/Home/Education' // Import the Education com
 import Certification from '../components/Home/Certification' // Import the Certification component
 
 export default function HomePage () {
+  // Change the title of the page
+  Service.UpdateDocumentTitle(`Home - ${OwnerName}`) // Change the title of the page to "Home"
   return (
     <>
       <Navbar />

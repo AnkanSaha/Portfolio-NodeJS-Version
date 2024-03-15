@@ -8,9 +8,10 @@ import Navbar from '../components/Navbar/Navbar' // Import the Navbar component
 import Footer from '../components/Footer/Footer' // Import the Footer component
 
 // Main Component
-export default function ProjectsPage () {
+export default function IPdetailsPage () {
   // Change the title of the page
-  Service.UpdateDocumentTitle(`Projects - ${OwnerName}`) // Change the title of the page to "Projects"
+  Service.UpdateDocumentTitle(`Get Your IP Address - ${OwnerName}`) // Change the title of the page to "Contact"
+
   return (
     <>
       <Navbar />
