@@ -18,9 +18,27 @@ import {
   OwnerName,
   OwnerCertification,
 } from "../../core/Keys/OwnerDetails.keys"; // Import OwnerDetails
+import { MdExpandMore, MdExpandLess } from 'react-icons/md' // More Icon
+
 
 // Certification component
 export default function Certification() {
+    // State for the component
+    const [MoreCertificateShow, setMoreCertificateShow] = React.useState(false) // State for More Skill Show
+    const [CountCertificate, setCountCountCertificate] = React.useState(2) // State for Count of Skill
+  
+      // Function for More Skill Show
+  const ShowMoreCertificate = (event) => {
+    event.preventDefault() // Prevent Default Event
+    setMoreCertificateShow(true) // Set More Skill Show to True
+    setCountCountCertificate(OwnerCertification.length) // Set Count of Skill to Length of OwnerSkillsIcons
+  }
+
+  const ShowLessCertificate = (event) => {
+    event.preventDefault() // Prevent Default Event
+    setMoreCertificateShow(false) // Set More Skill Show to False
+    setCountCountCertificate(2) // Set Count of Skill to 2
+  }
   return (
     <>
       <h1 className="my-[3.25rem] lg:my-[4.25rem] text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -30,8 +48,8 @@ export default function Certification() {
       </h1>
 
       <div className='flex lg:flex-row flex-col flex-wrap'>
-        {OwnerCertification.map((Certification) => {
-          return (
+        {OwnerCertification.map((Certification, index) => {
+          return index <= CountCertificate ? (
             <Card
               key={Certification.CourseName}
               maxW="md"
@@ -84,9 +102,32 @@ export default function Certification() {
                 }}
               ></CardFooter>
             </Card>
-          );
+          ) : null;
         })}
       </div>
+      {MoreCertificateShow === false
+          ? (
+            <Button
+              rightIcon={<MdExpandMore />}
+              onClick={ShowMoreCertificate}
+              className='text-center my-5 mx-5 lg:ml-[41.25rem]'
+              colorScheme='teal'
+              size='lg'
+            >
+              View More
+            </Button>
+            )
+          : (
+            <Button
+              rightIcon={<MdExpandLess />}
+              onClick={ShowLessCertificate}
+              className='text-center my-5 mx-5 lg:ml-[41.25rem]'
+              colorScheme='teal'
+              size='lg'
+            >
+              View Less
+            </Button>
+            )}
     </>
   );
 }
