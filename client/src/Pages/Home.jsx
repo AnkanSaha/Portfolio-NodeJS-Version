@@ -2,12 +2,13 @@
 import React from 'react' // Import the React library
 
 // import Components
-import Navbar from '../components/Navbar/Navbar' // Import the Navbar component
-import Footer from '../components/Footer/Footer' // Import the Footer component
-import OwnerPictureShower from '../components/Home/OwnerPicture' // Import the OwnerPictureShower component
-import MainText from '../components/Home/Main Text' // Import the MainText component
-import Skill from '../components/Home/Skill' // Import the MainText component
-import Education from '../components/Home/Education' // Import the Education component
+import Navbar from '../components/Navbar/Navbar'; // Import the Navbar component
+import Footer from '../components/Footer/Footer'; // Import the Footer component
+import OwnerPictureShower from '../components/Home/OwnerPicture'; // Import the OwnerPictureShower component
+import MainText from '../components/Home/Main Text'; // Import the MainText component
+import Skill from '../components/Home/Skill'; // Import the MainText component
+import Education from '../components/Home/Education'; // Import the Education component
+import Certification from '../components/Home/Certification'; // Import the Certification component
 
 export default function HomePage () {
   return (
@@ -19,6 +20,7 @@ export default function HomePage () {
       </div>
       <Skill />
       <Education />
+      <Certification />
       <Footer />
     </>
   )

@@ -56,6 +56,20 @@ export const OwnerSkillsIcons = [
     Specialty: ['Backend', 'Frontend']
   },
   {
+    name: 'NodeJS',
+    Icons: NodeJSImage,
+    description:
+    'Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.',
+    Specialty: ['Backend', 'API']
+  },
+  {
+    name: 'MongoDB',
+    Icons: MongoDBImage,
+    description:
+      'MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.',
+    Specialty: ['Database', 'NoSQL']
+  },
+  {
     name: 'Typescript',
     Icons: TypescriptImage,
     description:
@@ -98,25 +112,11 @@ export const OwnerSkillsIcons = [
     Specialty: ['Version Control', 'Collaboration']
   },
   {
-    name: 'MongoDB',
-    Icons: MongoDBImage,
-    description:
-      'MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.',
-    Specialty: ['Database', 'NoSQL']
-  },
-  {
     name: 'Nginx',
     Icons: NginxImage,
     description:
       'Nginx is a web server that can also be used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.',
     Specialty: ['Web Server', 'Reverse Proxy']
-  },
-  {
-    name: 'NodeJS',
-    Icons: NodeJSImage,
-    description:
-      'Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.',
-    Specialty: ['Backend', 'API']
   },
   {
     name: 'React',
