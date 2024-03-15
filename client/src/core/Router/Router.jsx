@@ -1,9 +1,9 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom' // import the React router DOM module
 
 // Import Pages
-import HomePage from '../../Pages/Home'; // Import the Home page
-import ProjectsPage from '../../Pages/Projects'; // Import the Projects page
-import ContactPage from '../../Pages/Contact'; // Import the Contact page
+import HomePage from '../../Pages/Home' // Import the Home page
+import ProjectsPage from '../../Pages/Projects' // Import the Projects page
+import ContactPage from '../../Pages/Contact' // Import the Contact page
 
 // Main Router
 const MainRouter = () => {
