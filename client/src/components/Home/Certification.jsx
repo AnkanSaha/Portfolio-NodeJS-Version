@@ -110,7 +110,7 @@ export default function Certification() {
             <Button
               rightIcon={<MdExpandMore />}
               onClick={ShowMoreCertificate}
-              className='text-center my-5 mx-5 lg:ml-[41.25rem]'
+              className='text-center my-5 ml-[25%] lg:ml-[41.25rem]'
               colorScheme='teal'
               size='lg'
             >
@@ -121,7 +121,7 @@ export default function Certification() {
             <Button
               rightIcon={<MdExpandLess />}
               onClick={ShowLessCertificate}
-              className='text-center my-5 mx-5 lg:ml-[41.25rem]'
+              className='text-center my-5 ml-[25%] lg:ml-[41.25rem]'
               colorScheme='teal'
               size='lg'
             >
