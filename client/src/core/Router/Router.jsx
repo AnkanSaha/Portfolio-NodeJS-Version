@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom' // import the Re
 import HomePage from '../../Pages/Home' // Import the Home page
 import ProjectsPage from '../../Pages/Projects' // Import the Projects page
 import ContactPage from '../../Pages/Contact' // Import the Contact page
+import GetIPDetailsPage from '../../Pages/Get IP Details' // Import the Get IP Details page
 
 // Main Router
 const MainRouter = () => {
@@ -13,6 +14,7 @@ const MainRouter = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/contact' element={<ContactPage />} />
+        <Route path='/current-ip' element={<GetIPDetailsPage />} />
       </Routes>
     </BrowserRouter>
   )
