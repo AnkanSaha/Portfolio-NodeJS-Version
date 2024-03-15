@@ -185,6 +185,7 @@ export const OwnerEducation = [
 import GoogleLogo from '@assets/Icons/Certification_logo/google.png' // Google Logo
 import IndiaLogo from '@assets/Icons/Certification_logo/india.png' // India Logo
 import CourseraLogo from '@assets/Icons/Certification_logo/coursera.png' // Coursera Logo
+import LinuxLogo from '@assets/Icons/Certification_logo/linux.png' // Linux Logo
 
 // owner Certification Details
 export const OwnerCertification = [
@@ -211,5 +212,21 @@ export const OwnerCertification = [
     description: `This course will give you an overview of client-side web frameworks, in particular Bootstrap. You will learn about grids and responsive design, Bootstrap CSS and JavaScript components. You will learn about CSS preprocessors, Less and Sass. You will also learn the basics of Node.js and NPM and task runners like Grunt and Gulp.`,
     Icons: CourseraLogo,
     Details_URL: "https://www.coursera.org/account/accomplishments/records/6XRTEFZMY9M8"
+  },
+  {
+    CourseName: "Linux for Developers",
+    Issuer: "The Linux Foundation",
+    IssueDate: "26 JUL 2023",
+    description: "This course will help you understand how to use Linux for software development. You will understand how to use the command line, manage files, directories, and permissions. You will also learn how to use the Linux operating system to develop software.",
+    Details_URL: "https://www.coursera.org/account/accomplishments/verify/S5KA949UUMAJ",
+    Icons: LinuxLogo
+  },
+  {
+    CourseName: "The Complete Web Developer Course 2.0",
+    Issuer: "Infosys",
+    IssueDate: "27 OCT 2022",
+    description: "This course will help you to understand fundamental of web development. You will learn about HTML, CSS, Javascript, NodeJS, ExpressJS, MongoDB, and many more.",
+    Icons: IndiaLogo,
+    Details_URL: "https://drive.google.com/file/d/1y0SasMOfcybBFAx9YvnRkMHOHuuMNW0b/view?usp=sharing"
   }
 ]
