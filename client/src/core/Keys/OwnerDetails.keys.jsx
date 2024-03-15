@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import OwnerImage from '@assets/Images/Ankan Saha.png' // Global App Owner Picture
+import OwnerImage from '@assets/Images/Ankan Saha.png' // Global Owner Skills
 
 // Import Skill Icons
 import JavascriptImage from '@assets/Icons/Skill_Logo/javascript.png' // Javascript Logo
@@ -16,7 +16,13 @@ import ReactImage from '@assets/Icons/Skill_Logo/react.png' // React Logo
 import ShellImage from '@assets/Icons/Skill_Logo/shell.png' // Shell Logo
 import TailwindImage from '@assets/Icons/Skill_Logo/tailwind.png' // TailwindCSS Logo
 import DenoImage from '@assets/Icons/Skill_Logo/deno.png' // Deno Logo
-import ServerlessImage from '@assets/Icons/Skill_Logo/serverless.png' // Serverless Logo
+import ServerlessImage from '@assets/Icons/Skill_Logo/serverless.png'
+
+// Import Certificate Issuer Logo
+import GoogleLogo from '@assets/Icons/Certification_logo/google.png' // Google Logo
+import IndiaLogo from '@assets/Icons/Certification_logo/india.png' // India Logo
+import CourseraLogo from '@assets/Icons/Certification_logo/coursera.png' // Coursera Logo
+import LinuxLogo from '@assets/Icons/Certification_logo/linux.png' // Global App Owner Picture
 
 // Global App Owner Details
 export const OwnerName = 'Ankan Saha' // Global App Owner Name
@@ -44,7 +50,7 @@ export const OwnerSkills = [
   'Tailwind CSS',
   'Deno (Basic)',
   'Serverless (Basic)'
-] // Global Owner Skills
+] // Serverless Logo
 
 // Global Owner Skills Icons with details
 export const OwnerSkillsIcons = [
@@ -54,6 +60,20 @@ export const OwnerSkillsIcons = [
     description:
       'JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.',
     Specialty: ['Backend', 'Frontend']
+  },
+  {
+    name: 'NodeJS',
+    Icons: NodeJSImage,
+    description:
+      'Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.',
+    Specialty: ['Backend', 'API']
+  },
+  {
+    name: 'MongoDB',
+    Icons: MongoDBImage,
+    description:
+      'MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.',
+    Specialty: ['Database', 'NoSQL']
   },
   {
     name: 'Typescript',
@@ -98,25 +118,11 @@ export const OwnerSkillsIcons = [
     Specialty: ['Version Control', 'Collaboration']
   },
   {
-    name: 'MongoDB',
-    Icons: MongoDBImage,
-    description:
-      'MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.',
-    Specialty: ['Database', 'NoSQL']
-  },
-  {
     name: 'Nginx',
     Icons: NginxImage,
     description:
       'Nginx is a web server that can also be used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.',
     Specialty: ['Web Server', 'Reverse Proxy']
-  },
-  {
-    name: 'NodeJS',
-    Icons: NodeJSImage,
-    description:
-      'Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.',
-    Specialty: ['Backend', 'API']
   },
   {
     name: 'React',
@@ -177,5 +183,59 @@ export const OwnerEducation = [
     Degree: 'Bachelor of Arts (B.A)',
     Description:
       'I am currently pursuing my Bachelor of Arts (B.A) from University of Kalyani, a university in West Bengal, India. I was Studying Bengali, Political Science & History. It was my 6th & last semester, throughout my college is deferent than any other college student. i was studying in B.A but i have high interest in computer science and i have learned many things from the internet and i have started my career as a web developer.'
+  }
+] // Linux Logo
+
+// owner Certification Details
+export const OwnerCertification = [
+  {
+    CourseName: 'Google IT Support Professional Certificate',
+    Issuer: 'Google LLC',
+    IssueDate: '23 JUN 2022',
+    description:
+      'The Google IT Support Professional Certificate is a beginner level certificate that is designed to help you get started in IT and develop the skills you need to succeed in the field. The program is part of Grow with Google, a Google initiative to help create economic opportunities for all Americans. The program is designed to be completed in 6 months, but is flexible enough to be completed at your own pace. The certificate is designed to prepare you for an entry-level role in IT support. It covers a wide range of topics, including troubleshooting, customer service, networking, operating systems, system administration, automation, and security. The program is designed to be completed in 6 months, but is flexible enough to be completed at your own pace.',
+    Icons: GoogleLogo,
+    Details_URL:
+      'https://www.coursera.org/account/accomplishments/professional-cert/JYZ797CJLX7L'
+  },
+  {
+    CourseName: 'Diploma in Information Technology (DIT)',
+    Issuer: 'National Yuva Computer Saksharata Mission',
+    IssueDate: 'DEC 2021',
+    description:
+      'The Diploma in Information Technology (DIT) is a beginner level diploma that is designed to help you get started in IT and develop the skills you need to succeed in the field. The program is part of National Yuva Computer Saksharata Mission, a initiative to help create economic opportunities for all Indians. The program is designed to be completed in 6 months, but is flexible enough to be completed at your own pace. The diploma is designed to prepare you for an entry-level role in IT support. It covers a wide range of topics, including troubleshooting, customer service, networking, operating systems, system administration, automation, and security. The program is designed to be completed in 6 months, but is flexible enough to be completed at your own pace.',
+    Icons: IndiaLogo,
+    Details_URL:
+      'https://drive.google.com/file/d/1TqLFPS7sc23UYj747rFj-gN7_MBS11vZ/view?usp=sharing'
+  },
+  {
+    CourseName: 'HTML, CSS, and Javascript for Web Developers',
+    Issuer: 'Coursera',
+    IssueDate: '9 APR 2022',
+    description:
+      'This course will give you an overview of client-side web frameworks, in particular Bootstrap. You will learn about grids and responsive design, Bootstrap CSS and JavaScript components. You will learn about CSS preprocessors, Less and Sass. You will also learn the basics of Node.js and NPM and task runners like Grunt and Gulp.',
+    Icons: CourseraLogo,
+    Details_URL:
+      'https://www.coursera.org/account/accomplishments/records/6XRTEFZMY9M8'
+  },
+  {
+    CourseName: 'Linux for Developers',
+    Issuer: 'The Linux Foundation',
+    IssueDate: '26 JUL 2023',
+    description:
+      'This course will help you understand how to use Linux for software development. You will understand how to use the command line, manage files, directories, and permissions. You will also learn how to use the Linux operating system to develop software.',
+    Details_URL:
+      'https://www.coursera.org/account/accomplishments/verify/S5KA949UUMAJ',
+    Icons: LinuxLogo
+  },
+  {
+    CourseName: 'The Complete Web Developer Course 2.0',
+    Issuer: 'Infosys',
+    IssueDate: '27 OCT 2022',
+    description:
+      'This course will help you to understand fundamental of web development. You will learn about HTML, CSS, Javascript, NodeJS, ExpressJS, MongoDB, and many more.',
+    Icons: IndiaLogo,
+    Details_URL:
+      'https://drive.google.com/file/d/1y0SasMOfcybBFAx9YvnRkMHOHuuMNW0b/view?usp=sharing'
   }
 ]
