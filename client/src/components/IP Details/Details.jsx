@@ -20,7 +20,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux' // Import the useSelector Hook
 import {
   ModifyIsLoading,
-  ModifyJWT
+  ModifyIPDetails
 } from '../../core/Redux/Slices/Guest Users' // Import the Redux Slice
 export default function IPDetails () {
   // Redux State
@@ -43,7 +43,7 @@ export default function IPDetails () {
         `/get/general/get-ip-details/?sessionid=${ReduxState.GuestUsers.JWT}`
       ).then((data) => {
         console.log(data)
-        dispatch(ModifyJWT(data.data))
+        dispatch(ModifyIPDetails(data.data))
         dispatch(ModifyIsLoading(false)) // Modify the IsLoading State
       })
     }
