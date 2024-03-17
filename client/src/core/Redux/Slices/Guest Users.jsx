@@ -5,19 +5,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const UserInfo = createSlice({
   name: "UserInfo",
   initialState: {
-    JWT: null,
+    JWT: "vervuyrevue",
     IsLoading: false,
     IP_Details: null,
   },
   reducers: {
     ModifyJWT: (state, action) => {
-      state.JWT = action.payload.JWT;
+      state.JWT = action.payload;
     },
     ModifyIsLoading: (state, action) => {
-      state.IsLoading = action.payload.IsLoading;
+      state.IsLoading = action.payload;
     },
     ModifyIPDetails: (state, action) => {
-      state.IP_Details = action.payload.IP_Details;
+      state.IP_Details = action.payload;
     },
   },
 });
