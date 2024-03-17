@@ -7,6 +7,8 @@ import { OwnerName } from '../core/Keys/OwnerDetails.keys' // Import the Owner N
 import Navbar from '../components/Navbar/Navbar' // Import the Navbar component
 import Footer from '../components/Footer/Footer' // Import the Footer component
 
+import IPDetails from '../components/IP Details/Details' // Import the IP Details component
+
 // Main Component
 export default function IPdetailsPage () {
   // Change the title of the page
@@ -15,6 +17,7 @@ export default function IPdetailsPage () {
   return (
     <>
       <Navbar />
+      <IPDetails />
       <Footer />
     </>
   )

@@ -2,6 +2,7 @@
 import React from 'react' // Import the React library
 import { React as Service } from 'react-caches' // Import React Caches
 import { OwnerName } from '../core/Keys/OwnerDetails.keys' // Import the Owner Name
+import { useSelector } from 'react-redux' // import react-redux
 
 // import Components
 import Navbar from '../components/Navbar/Navbar' // Import the Navbar component
@@ -15,6 +16,10 @@ import Certification from '../components/Home/Certification' // Import the Certi
 export default function HomePage () {
   // Change the title of the page
   Service.UpdateDocumentTitle(`Home - ${OwnerName}`) // Change the title of the page to "Home"
+
+  // Initialize the Redux State
+  const ReduxStates = useSelector((state) => state.GuestUsers) // Get the Redux State
+
   return (
     <>
       <Navbar />
