@@ -239,3 +239,17 @@ export const OwnerCertification = [
       'https://drive.google.com/file/d/1y0SasMOfcybBFAx9YvnRkMHOHuuMNW0b/view?usp=sharing'
   }
 ]
+
+// Owner Projects
+export const OwnerProjects = [
+  {
+    ProjectsName: 'PaisaPay',
+    Description: 'PaisaPay is a user-friendly web-based payment wallet that leverages the power of React and the MERN technology stack. With PaisaPay, users can easily load balance into their wallet and make seamless payments to their family members. Whether it is sending money to loved ones or making quick transactions',
+    URL: 'https://paisapay.ankansaha.tech',
+  },
+  {
+    ProjectsName: 'Outers (NPM Package)',
+    Description: 'Outers is a vibrant npm package that can help you to encrypt - decrypt messages, color up in terminal, send response,and many more things ',
+    URL: 'https://www.npmjs.com/package/outers',
+  }
+]
