@@ -23,4 +23,4 @@ export const API_Call = new Service.ClassBasedFunctions.API({
 })
 
 // Export the Loading GIF
-export const LoadingGIF = Loading; // Global Loading GIF
+export const LoadingGIF = Loading // Global Loading GIF

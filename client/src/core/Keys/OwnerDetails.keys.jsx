@@ -244,37 +244,44 @@ export const OwnerCertification = [
 export const OwnerProjects = [
   {
     ProjectsName: 'PaisaPay',
-    Description: 'PaisaPay is a user-friendly web-based payment wallet that leverages the power of React and the MERN technology stack. With PaisaPay, users can easily load balance into their wallet and make seamless payments to their family members. Whether it is sending money to loved ones or making quick transactions',
-    URL: 'https://paisapay.ankansaha.tech',
+    Description:
+      'PaisaPay is a user-friendly web-based payment wallet that leverages the power of React and the MERN technology stack. With PaisaPay, users can easily load balance into their wallet and make seamless payments to their family members. Whether it is sending money to loved ones or making quick transactions',
+    URL: 'https://paisapay.ankansaha.tech'
   },
   {
     ProjectsName: 'Outers (NPM Package)',
-    Description: 'Outers is a vibrant npm package that can help you to encrypt - decrypt messages, color up in terminal, send response,and many more things ',
-    URL: 'https://www.npmjs.com/package/outers',
+    Description:
+      'Outers is a vibrant npm package that can help you to encrypt - decrypt messages, color up in terminal, send response,and many more things ',
+    URL: 'https://www.npmjs.com/package/outers'
   },
   {
     ProjectsName: 'Code Compiler',
-    Description: 'Code-Compiler: Your online tool to edit, run, and refine code in real-time. A seamless platform for coding, testing, and learning',
-    URL: 'https://code.ankansaha.tech',
+    Description:
+      'Code-Compiler: Your online tool to edit, run, and refine code in real-time. A seamless platform for coding, testing, and learning',
+    URL: 'https://code.ankansaha.tech'
   },
   {
     ProjectsName: 'Store Management System',
-    Description: 'This Store Management Backend Node App is built using Typescript, ExpressJS, and MongoDB. It provides efficient management of products, orders, and customer data. The app backend functionality includes user authentication, CRUD operations, and data validation. Its clean code and scalability make it ideal for any e-commerce or retail store',
-    URL: 'https://store.ankansaha.tech ',
+    Description:
+      'This Store Management Backend Node App is built using Typescript, ExpressJS, and MongoDB. It provides efficient management of products, orders, and customer data. The app backend functionality includes user authentication, CRUD operations, and data validation. Its clean code and scalability make it ideal for any e-commerce or retail store',
+    URL: 'https://store.ankansaha.tech '
   },
   {
     ProjectsName: 'Uniquegen (NPM Package)',
-    Description: 'UniqueGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers. ',
-    URL: 'https://www.npmjs.com/package/uniquegen',
+    Description:
+      'UniqueGen is an open-source package for Node.js projects, enabling the generation of random numbers and words. It offers flexibility and ease of use, making it a valuable tool for developers. ',
+    URL: 'https://www.npmjs.com/package/uniquegen'
   },
   {
     ProjectsName: 'MongoSuper (NPM Package)',
-    Description: "MongoSuper is an npm package that enables secure connection to MongoDB. It provides automatic reconnection functionality, ensuring seamless connectivity even after disconnection.",
-    URL: 'https://www.npmjs.com/package/mongosuper',
+    Description:
+      'MongoSuper is an npm package that enables secure connection to MongoDB. It provides automatic reconnection functionality, ensuring seamless connectivity even after disconnection.',
+    URL: 'https://www.npmjs.com/package/mongosuper'
   },
   {
     ProjectsName: 'react-caches (NPM Package)',
-    Description: 'React Caches is a lightweight and easy-to-use package that simplifies the management of local storage and cache storage in your React-based applications. With this package, you can easily access and manage data stored in local storage, cache storage, and other local storage used by JavaScript. ',
-    URL: 'https://www.npmjs.com/package/react-caches',
+    Description:
+      'React Caches is a lightweight and easy-to-use package that simplifies the management of local storage and cache storage in your React-based applications. With this package, you can easily access and manage data stored in local storage, cache storage, and other local storage used by JavaScript. ',
+    URL: 'https://www.npmjs.com/package/react-caches'
   }
 ]

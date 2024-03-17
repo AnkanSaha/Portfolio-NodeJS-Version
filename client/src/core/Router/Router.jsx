@@ -5,7 +5,7 @@ import HomePage from '../../Pages/Home' // Import the Home page
 import ProjectsPage from '../../Pages/Projects' // Import the Projects page
 import ContactPage from '../../Pages/Contact' // Import the Contact page
 import GetIPDetailsPage from '../../Pages/Get IP Details' // Import the Get IP Details page
-import SkeletonPage from '../../Pages/Skeleton'; // Import the Skeleton page
+import SkeletonPage from '../../Pages/Skeleton' // Import the Skeleton page
 
 // Main Router
 const MainRouter = () => {
