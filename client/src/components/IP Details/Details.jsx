@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react"; // Import Chakra UI Components
 
 // Main Component
-export default function IPDetails() {
+export default function IPDetails () {
   return (
     <>
       <MainText Text="Current IP Details" />
@@ -52,5 +52,5 @@ export default function IPDetails() {
         </CardBody>
       </Card>
     </>
-  );
+  )
 }
