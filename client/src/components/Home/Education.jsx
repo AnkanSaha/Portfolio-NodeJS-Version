@@ -2,15 +2,14 @@
 import React from 'react' // Import React
 import { OwnerEducation } from '../../core/Keys/OwnerDetails.keys' // Import Owner Education
 
+// Import Components
+import MainText from '../Header/HeaderText' // Import MainText component
+
 // Main Components
 export default function Education () {
   return (
     <>
-      <h1 className='my-[3.25rem] lg:my-[4.25rem] text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl'>
-        <span className=' text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'>
-          Education
-        </span>{' '}
-      </h1>
+      <MainText Text='Education' />
       <ol className='relative border-s border-gray-200 dark:border-gray-700 my-5 lg:my-0 lg:mb-5 mx-4 lg:mx-[4.5rem]'>
         {OwnerEducation.map((education) => {
           return (
