@@ -20,7 +20,7 @@ export default function IPdetailsPage() {
 
   return (
     <>
-      {ReduxStates.IsLoading === false ? (
+      {ReduxStates.IsLoading === true ? (
         <Skeleton />
       ) : (
         <>

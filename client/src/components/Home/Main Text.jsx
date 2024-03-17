@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 import { OwnerName, OwnerSkills } from "../../core/Keys/OwnerDetails.keys"; // Import the OwnerName variable
-import { useDispatch } from "react-redux"; // import redux from 'react-redux
+import { useSelector, useDispatch } from "react-redux"; // import redux from 'react-redux
 import { ModifyJWT } from "../../core/Redux/Slices/Guest Users"; //  imports actions
 import React from "react"; // import react library from 'react
 import { API_Call } from "../../core/Keys/variables.keys"; // import variables
@@ -9,13 +9,16 @@ import { API_Call } from "../../core/Keys/variables.keys"; // import variables
 export default function MainText() {
   // Initialize redux state
   const dispatch = useDispatch(); // use dispatch
+  const ReduxState = useSelector((state) => state); // use redux state
 
   // Get the JWT from the server
   React.useEffect(() => {
-    API_Call.Get("/get/auth/generate-JWT-Token").then((Response) =>
-      dispatch(ModifyJWT(Response.data))
-    );
-  }, []); // use effect
+    ReduxState.GuestUsers.JWT === null
+      ? API_Call.Get("/get/auth/generate-JWT-Token").then((Response) =>
+          dispatch(ModifyJWT(Response.data))
+        )
+      : null;
+  }, []);
   return (
     <>
       <div className="main-text ml-[9rem] mt-[6.25rem] lg:mt-[5.25rem]">

@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const UserInfo = createSlice({
   name: "UserInfo",
   initialState: {
-    JWT: "vervuyrevue",
+    JWT: null,
     IsLoading: false,
     IP_Details: null,
   },
