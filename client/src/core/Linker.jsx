@@ -1,7 +1,9 @@
 import MainRouter from "./Router/Router"; // Import the Main Router
-// import Redux Provider
-import { Provider } from "react-redux"; // Import React Redux Provider
-import ReduxStore from "./Redux/Store"; // Import Redux Store
+
+import { useSelector } from "react-redux"; // import react-redux
+
+// import Components
+import Skeleton from "../Pages/Skeleton"; // Import the Skeleton
 
 // import CSS Frameworks
 import "../css/tailwind.css"; // Import Tailwind CSS
@@ -10,13 +12,18 @@ import { ChakraProvider } from "@chakra-ui/react"; // Import Chakra Provider
 
 // Main Linker Component
 export default function MainLinker() {
+  // Initialize the Redux State
+  const ReduxStates = useSelector((state) => state.GuestUsers); // Get the Redux State
+
   return (
     <>
-      <ChakraProvider>
-        <Provider store={ReduxStore}>
+      {ReduxStates.IsLoading === true ? (
+        <Skeleton />
+      ) : (
+        <ChakraProvider>
           <MainRouter />
-        </Provider>
-      </ChakraProvider>
+        </ChakraProvider>
+      )}
     </>
   );
 }

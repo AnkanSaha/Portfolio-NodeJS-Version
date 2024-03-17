@@ -12,7 +12,6 @@ import MainText from "../components/Home/Main Text"; // Import the MainText comp
 import Skill from "../components/Home/Skill"; // Import the MainText component
 import Education from "../components/Home/Education"; // Import the Education component
 import Certification from "../components/Home/Certification"; // Import the Certification component
-import Skeleton from "./Skeleton"; // Import the Skeleton
 
 export default function HomePage() {
   // Change the title of the page
@@ -23,21 +22,15 @@ export default function HomePage() {
 
   return (
     <>
-      {ReduxStates.IsLoading === true ? (
-        <Skeleton />
-      ) : (
-        <>
-          <Navbar />
-          <div className="justify-between space-x-0 lg:flex">
-            <OwnerPictureShower />
-            <MainText />
-          </div>
-          <Skill />
-          <Education />
-          <Certification />
-          <Footer />
-        </>
-      )}
+      <Navbar />
+      <div className="justify-between space-x-0 lg:flex">
+        <OwnerPictureShower />
+        <MainText />
+      </div>
+      <Skill />
+      <Education />
+      <Certification />
+      <Footer />
     </>
   );
 }
