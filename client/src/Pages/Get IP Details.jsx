@@ -8,6 +8,7 @@ import { useSelector } from "react-redux"; // import react-redux
 import Navbar from "../components/Navbar/Navbar"; // Import the Navbar component
 import Footer from "../components/Footer/Footer"; // Import the Footer component
 import Skeleton from "./Skeleton"; // Import the Skeleton
+import IPDetails from "../components/IP Details/Details"; // Import the IP Details component
 
 // Main Component
 export default function IPdetailsPage() {
@@ -24,6 +25,7 @@ export default function IPdetailsPage() {
       ) : (
         <>
           <Navbar />
+          <IPDetails />
           <Footer />
         </>
       )}
