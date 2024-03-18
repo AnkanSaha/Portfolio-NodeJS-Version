@@ -26,7 +26,6 @@ export default function IPDetails() {
   // Redux State
   const ReduxState = useSelector((state) => state); // State
   const dispatch = useDispatch(); // Dispatch
-  console.log(ReduxState.GuestUsers);
 
   // Import The IP Address Details
   React.useEffect(() => {
@@ -37,17 +36,15 @@ export default function IPDetails() {
 
   // Function for the API Call
   const GetIPInfo = () => {
-    if (ReduxState.GuestUsers.IsLoading === false) {
-      dispatch(ModifyIsLoading(true)); // Modify the IsLoading State
-      API_Call.Get(
-        `/get/general/get-ip-details/?sessionid=${ReduxState.GuestUsers.JWT}`
-      ).then((data) => {
-        console.log(data);
-        dispatch(ModifyIPDetails(data.data));
-        dispatch(ModifyIsLoading(false)); // Modify the IsLoading State
-      });
-    }
+    dispatch(ModifyIsLoading(true)); // Modify the IsLoading State
+    API_Call.Get(
+      `/get/general/get-ip-details/?sessionid=${ReduxState.GuestUsers.JWT}`
+    ).then((data) => {
+      dispatch(ModifyIPDetails(data.data));
+      dispatch(ModifyIsLoading(false)); // Modify the IsLoading State
+    });
   };
+
   return ReduxState.GuestUsers.IsLoading === false ? (
     <>
       <MainText Text="Current IP Details" />
@@ -75,6 +72,12 @@ export default function IPDetails() {
           </Stack>
         </CardBody>
       </Card>
+      <button
+        onClick={GetIPInfo}
+        className="btn btn-circle bg-black text-white my-3 ml-[10rem] lg:ml-[45rem]"
+      >
+        Fetch
+      </button>
     </>
   ) : null;
 }
