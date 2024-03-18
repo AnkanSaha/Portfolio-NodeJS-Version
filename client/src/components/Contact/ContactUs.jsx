@@ -1,13 +1,55 @@
 /* eslint-disable no-unused-vars */
 import React from "react"; // Import React
+import {useSelector} from 'react-redux'; // Import Redux  Hook
 
 // Import Component
 import MainText from "../Header/HeaderText"; // Main Text
 
-// Import ChakraUI
+import { API_Call } from "../../core/Keys/variables.keys"; // API Caller
 
 // Main Component
 export default function ContactForm() {
+  // Redux States
+  const ReduxStates = useSelector(state => state); // Get the Redux States
+  // States
+  const [RequestData, setRequestData] = React.useState({
+    RequestTitle: "",
+    RequestDescription: "",
+    Email: "",
+    sessionid:ReduxStates.GuestUsers.JWT
+  });
+
+  // Handle Change
+  const handleChange = (e) => {
+    setRequestData({
+      ...RequestData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // handle Submit
+  const SendRequest = async ()=> {
+    // Check if the Email is Valid
+    if (RequestData.Email === "" && RequestData.Email.includes("@") == false) {
+      alert("Please Enter a Valid Email");
+      return;
+    }
+
+    // Check if the Request Title is Valid
+    if (RequestData.RequestTitle === "") {
+      alert("Please Enter a Valid Title");
+      return;
+    }
+
+    // Check if the Request Description is Valid
+    if (RequestData.RequestDescription === "") {
+      alert("Please Enter a Valid Description");
+      return;
+    }
+
+    // Send the Request
+    const Response = await API_Call.Post("/post/request/CreateNewRequest"); // Send the Request
+  }
   return (
     <>
       <MainText Text="Contact US" />
@@ -23,14 +65,14 @@ export default function ContactForm() {
               <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
               <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
-            <input type="text" className="grow" placeholder="Email" />
+            <input type="text" name="Email" value={RequestData.Email} onChange={handleChange} className="grow" placeholder="Email" />
           </label>
-          <input type="text" placeholder="Enter Title for this Request" className="input input-bordered input-accent w-full max-w-xs" />
-          <input type="text" placeholder="Describe all things here..." className="input input-bordered input-accent w-full max-w-xs" />
+          <input type="text" name="RequestTitle" value={RequestData.RequestTitle} onChange={handleChange} placeholder="Enter Title for this Request" className="input input-bordered input-accent w-full max-w-xs" />
+          <input type="text" name="RequestDescription" value={RequestData.RequestDescription} onChange={handleChange} placeholder="Describe all things here..." className="input input-bordered input-accent w-full max-w-xs" />
         </figure>
         <div className="card-body items-center text-center">
           <div className="card-actions">
-            <button className="btn btn-circle btn-lg bg-zinc-950 text-white hover:bg-zinc-950">Send</button>
+            <button onClick={SendRequest} className="btn btn-circle btn-lg bg-zinc-950 text-white hover:bg-zinc-950">Send</button>
           </div>
         </div>
       </div>
