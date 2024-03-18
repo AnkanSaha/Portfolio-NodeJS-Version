@@ -30,7 +30,7 @@ export default function ContactForm() {
         </figure>
         <div className="card-body items-center text-center">
           <div className="card-actions">
-            <button className="btn btn-primary">Send Now</button>
+            <button className="btn btn-circle btn-lg bg-zinc-950 text-white hover:bg-zinc-950">Send</button>
           </div>
         </div>
       </div>
