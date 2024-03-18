@@ -21,7 +21,7 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 To deploy this project run
 
 ```bash
-  npm run start
+  yarn run start
 ```
 
 ## 🚀 About Me
@@ -50,7 +50,7 @@ Javascript, HTML, CSS, Nodejs, MongoDB
 
 ## Tech Stack
 
-**Client:** HTML, CSS, Javascript
+**Client:** HTML, CSS, Javascript, ReactJS
 
 **Server:** Node, Express, MongoDB
 
@@ -59,5 +59,16 @@ Javascript, HTML, CSS, Nodejs, MongoDB
 To run tests, run the following command
 
 ```bash
-  npm run dev
+  YARN run dev
 ```
+
+## Environment Variables
+
+- PORT
+- CORS_ORIGIN
+- JWT_SECRET
+- JWT_EXPIRES_IN
+- IP_INFO_API_KEY
+- MONGODB_URL
+- DB_NAME
+- CPU_COUNT_MULTIPLIERENV

@@ -45,7 +45,7 @@ export default function IPDetails () {
     })
   }
 
-  return ReduxState.GuestUsers.IsLoading === false
+  return ReduxState.GuestUsers.IP_Details !== null
     ? (
       <>
         <MainText Text='Current IP Details' />

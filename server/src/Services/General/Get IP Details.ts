@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { Request, Response } from 'express'; // Importing express types
 import { FunctionBased, ClassBased, Console, StatusCodes } from 'outers'; // Import Methods from outers
 import { StringKeys } from '../../core/variables.core'; // Import the variables
@@ -9,12 +10,15 @@ export default async function GetIPDetails(Request: Request, Response: Response)
 	try {
 		// Get User IP Address
 		const RequesterIPaddress =
-			Request.headers['x-forwarded-for'] ??
-			Request.connection.remoteAddress ??
-			Request.socket.remoteAddress ??
-			Request.socket.remoteAddress ??
-			Request.headers['x-real-ip'] ??
-			Request.ip; // Get Requester IP Address
+			StringKeys.ENV == 'DEVELOPMENT'
+				? '8.8.8.8'
+				: Request.headers['RequestedIPDetails'] ??
+					Request.headers['x-forwarded-for'] ??
+					Request.connection.remoteAddress ??
+					Request.socket.remoteAddress ??
+					Request.socket.remoteAddress ??
+					Request.headers['x-real-ip'] ??
+					Request.ip; // Get Requester IP Address
 
 		// Get Ip Address Details
 		const IP_Address_Details = await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, String(RequesterIPaddress)); // Get IP Details
