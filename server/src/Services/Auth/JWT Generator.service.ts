@@ -15,11 +15,11 @@ export default async function GenerateJWT(Request: Request, Response: Response) 
 			StringKeys.ENV === 'DEVELOPMENT'
 				? '8.8.8.8'
 				: Request.headers['x-forwarded-for'] ??
-				Request.connection.remoteAddress ??
-				Request.socket.remoteAddress ??
-				Request.socket.remoteAddress ??
-				Request.headers['x-real-ip'] ??
-			Request.ip; // Get Requester IP Address
+					Request.connection.remoteAddress ??
+					Request.socket.remoteAddress ??
+					Request.socket.remoteAddress ??
+					Request.headers['x-real-ip'] ??
+					Request.ip; // Get Requester IP Address
 
 		// Get Ip Address Details
 		const IP_Address_Details = await IP_Details(String(RequesterIPaddress)); // Get IP Details
