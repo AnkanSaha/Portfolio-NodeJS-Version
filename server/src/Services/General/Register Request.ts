@@ -24,7 +24,17 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		const { RequestTitle, RequestDescription, Email, RequesterIPaddress }: RegisterRequest = Request.body; // Destructure Request Body
 
 		// Check if RequestTitle, RequestDescription and Email is empty
-		if (!RequestTitle || !RequestDescription || !Email || !RequesterIPaddress) return EmptyDetails.Send('Please Send Appropriate Details with Request'); // Send Empty Details
+		if (
+			!RequestTitle ||
+			!RequestDescription ||
+			!Email ||
+			!RequesterIPaddress ||
+			RequestTitle === '' ||
+			RequestDescription === '' ||
+			Email === '' ||
+			RequesterIPaddress === ''
+		)
+			return EmptyDetails.Send('Please Send Appropriate Details with Request'); // Send Empty Details
 
 		// Generate Unique Request ID
 		let UniqueRequestID: number; // Unique Request ID
