@@ -5,7 +5,6 @@ import {
   OwnerYoutube,
   OwnerFacebook
 } from '../../core/Keys/OwnerDetails.keys' // Owner details
-import { AppLaunchDate } from '../../core/Keys/variables.keys' // Variables
 
 // main Component
 export default function Footer () {
@@ -13,7 +12,7 @@ export default function Footer () {
     <footer className='footer items-center p-4 bg-neutral text-neutral-content'>
       <aside className='items-center grid-flow-col'>
         <img src={OwnerPicture} alt={OwnerName} width='36' height='36' />
-        <p>Copyright © {AppLaunchDate.split('-')[2]} - All right reserved</p>
+        <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </aside>
       <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
         <a href={`https://x.com/${OwnerTwitter}`} target='blank'>
