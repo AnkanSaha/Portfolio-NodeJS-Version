@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { Request, Response } from 'express'; // Importing express types
 import { FunctionBased, ClassBased, Console, StatusCodes } from 'outers'; // Import Methods from outers
 import { StringKeys } from '../../core/variables.core'; // Import the variables
