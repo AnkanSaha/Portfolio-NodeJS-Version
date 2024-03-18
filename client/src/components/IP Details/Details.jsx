@@ -75,7 +75,7 @@ export default function IPDetails () {
         </Card>
         <button
           onClick={GetIPInfo}
-          className='btn btn-circle bg-black text-white my-3 ml-[10rem] lg:ml-[45rem]'
+          className='btn btn-circle bg-black text-white my-3 ml-[10rem] lg:ml-[45rem] btn-lg'
         >
           Fetch
         </button>
