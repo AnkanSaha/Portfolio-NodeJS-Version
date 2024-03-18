@@ -26,7 +26,6 @@ export default function IPDetails () {
   // Redux State
   const ReduxState = useSelector((state) => state) // State
   const dispatch = useDispatch() // Dispatch
-  console.log(ReduxState.GuestUsers)
 
   // Import The IP Address Details
   React.useEffect(() => {
@@ -37,54 +36,50 @@ export default function IPDetails () {
 
   // Function for the API Call
   const GetIPInfo = () => {
-    if (ReduxState.GuestUsers.IsLoading === false) {
-      dispatch(ModifyIsLoading(true)) // Modify the IsLoading State
-      API_Call.Get(
-        `/get/general/get-ip-details/?sessionid=${ReduxState.GuestUsers.JWT}`
-      ).then((data) => {
-        console.log(data)
-        dispatch(ModifyIPDetails(data.data))
-        dispatch(ModifyIsLoading(false)) // Modify the IsLoading State
-      })
-    }
+    dispatch(ModifyIsLoading(true)) // Modify the IsLoading State
+    API_Call.Get(
+      `/get/general/get-ip-details/?sessionid=${ReduxState.GuestUsers.JWT}`
+    ).then((data) => {
+      dispatch(ModifyIPDetails(data.data))
+      dispatch(ModifyIsLoading(false)) // Modify the IsLoading State
+    })
   }
-  return (
-    <>
-      <MainText Text='Current IP Details' />
-      <Card className='mx-5 my-5'>
-        <CardHeader>
-          <Heading size='md'>IP Address Report</Heading>
-        </CardHeader>
 
-        <CardBody>
-          <Stack divider={<StackDivider />} spacing='4'>
-            <Box>
-              <Heading size='xs' textTransform='uppercase'>
-                Summary
-              </Heading>
-              <Text pt='2' fontSize='sm'>
-                View a summary of all your clients over the last month.
-              </Text>
-            </Box>
-            <Box>
-              <Heading size='xs' textTransform='uppercase'>
-                Overview
-              </Heading>
-              <Text pt='2' fontSize='sm'>
-                Check out the overview of your clients.
-              </Text>
-            </Box>
-            <Box>
-              <Heading size='xs' textTransform='uppercase'>
-                Analysis
-              </Heading>
-              <Text pt='2' fontSize='sm'>
-                See a detailed analysis of all your business clients.
-              </Text>
-            </Box>
-          </Stack>
-        </CardBody>
-      </Card>
-    </>
-  )
+  return ReduxState.GuestUsers.IsLoading === false
+    ? (
+      <>
+        <MainText Text='Current IP Details' />
+        <Card className='mx-5 lg:ml-[15.25rem] lg:mr-[15.25rem] my-5'>
+          <CardHeader>
+            <Heading size='md'>
+              IP Address Report for {ReduxState.GuestUsers.IP_Details?.ip}
+            </Heading>
+          </CardHeader>
+
+          <CardBody>
+            <Stack divider={<StackDivider />} spacing='4'>
+              {Object.keys(ReduxState.GuestUsers.IP_Details).map((Key) => {
+                return (
+                  <Box key={Key}>
+                    <Heading size='xs' textTransform='uppercase'>
+                  {Key.toUpperCase()}
+                </Heading>
+                    <Text pt='2' fontSize='sm'>
+                  {ReduxState.GuestUsers.IP_Details[Key].toString()}
+                </Text>
+                  </Box>
+                )
+              })}
+            </Stack>
+          </CardBody>
+        </Card>
+        <button
+          onClick={GetIPInfo}
+          className='btn btn-circle bg-black text-white my-3 ml-[10rem] lg:ml-[45rem]'
+        >
+          Fetch
+        </button>
+      </>
+      )
+    : null
 }
