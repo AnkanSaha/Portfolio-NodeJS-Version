@@ -12,11 +12,13 @@ export default async function GenerateJWT(Request: Request, Response: Response) 
 	try {
 		// Get User IP Address
 		const RequesterIPaddress =
-			Request.headers['x-forwarded-for'] ??
-			Request.connection.remoteAddress ??
-			Request.socket.remoteAddress ??
-			Request.socket.remoteAddress ??
-			Request.headers['x-real-ip'] ??
+			StringKeys.ENV === 'DEVELOPMENT'
+				? '8.8.8.8'
+				: Request.headers['x-forwarded-for'] ??
+				Request.connection.remoteAddress ??
+				Request.socket.remoteAddress ??
+				Request.socket.remoteAddress ??
+				Request.headers['x-real-ip'] ??
 			Request.ip; // Get Requester IP Address
 
 		// Get Ip Address Details
