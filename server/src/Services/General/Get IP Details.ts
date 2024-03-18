@@ -8,7 +8,7 @@ export default async function GetIPDetails(Request: Request, Response: Response)
 	const OK = new ClassBased.Response.JSON(Response, StatusCodes.OK, 'json', 'IPDetails Fetched', true); // OK Response
 	try {
 		// Get User IP Address
-		const RequesterIPaddress =
+		const RequesterIPaddress = StringKeys.ENV == "DEVELOPMENT" ? '8.8.8.8' :
 			Request.headers['x-forwarded-for'] ??
 			Request.connection.remoteAddress ??
 			Request.socket.remoteAddress ??
