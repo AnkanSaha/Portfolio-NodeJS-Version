@@ -11,7 +11,8 @@ export default async function GetIPDetails(Request: Request, Response: Response)
 		const RequesterIPaddress =
 			StringKeys.ENV == 'DEVELOPMENT'
 				? '8.8.8.8'
-				: Request.headers['x-forwarded-for'] ??
+				: Request.headers['RequestedIPDetails'] ??
+				  Request.headers['x-forwarded-for'] ??
 				  Request.connection.remoteAddress ??
 				  Request.socket.remoteAddress ??
 				  Request.socket.remoteAddress ??
