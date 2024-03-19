@@ -50,7 +50,8 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		} while (isPreviousRequest == true);
 
 		// Find IP Address Details
-		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, RequesterIPaddress)).details; // IP Details
+		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, `${StringKeys.ENV === 'DEVELOPMENT' ? '8.8.8.8' : RequesterIPaddress}`))
+			.details; // IP Details
 
 		// Create Index with Request ID
 		await Collection.createIndex({ RequestID: 1 }, { unique: true }); // Create Index with Request ID
