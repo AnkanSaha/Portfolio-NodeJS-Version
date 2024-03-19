@@ -69,7 +69,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		// Check if Request is Saved Successfully
 		if (SaveStatus.acknowledged === true) {
 			// Send Response to Client
-			return OK.Send({ RequestID: UniqueRequestID }, 'Your Request has been saved with the following parameters and Request ID');
+			return OK.Send({ RequestID: UniqueRequestID }, 'Your Request has been saved with the following parameters and Request ID successfully.'); // Send OK
 		}
 
 		// Send Response to Client if failed
