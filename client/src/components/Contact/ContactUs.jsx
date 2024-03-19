@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react"; // Import React
-import { useSelector } from "react-redux"; // Import Redux  Hook
+import { useSelector, useDispatch } from "react-redux"; // Import Redux  Hook
 
 // Import Component
 import MainText from "../Header/HeaderText"; // Main Text
