@@ -59,3 +59,6 @@ export const AllExposedHeadersInCORS: string[] = [
 
 // Register APiCall Instance
 export const IP_API = new ClassBased.API('https://ipinfo.io'); // Create New APiCall Instance
+
+// Register Crypto Instance
+export const CRY_API = new ClassBased.CryptoGraphy(StringKeys.JWT_SECRET); // Create New Crypto Call Instance

@@ -1,6 +1,6 @@
 import { Response, Request } from 'express'; // Import Response and Request from express
 import { Console, ClassBased, StatusCodes, FunctionBased } from 'outers'; // Import red from outers
-import { StringKeys } from '../../core/variables.core'; // import variables from outers
+import { StringKeys, CRY_API } from '../../core/variables.core'; // import variables from outers
 
 // Import MongoDB Action Creator
 import { Collection } from '../../Database/MongoDB'; // Import MongoDB Action Creator
@@ -59,9 +59,9 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		// Save The Request To The Database
 		const SaveStatus = await Collection.insertOne({
 			RequestID: UniqueRequestID,
-			RequestTitle: RequestTitle,
-			RequestDescription: RequestDescription,
-			Email: Email,
+			RequestTitle: await CRY_API.Encrypt(RequestTitle),
+			RequestDescription: await CRY_API.Encrypt(RequestDescription),
+			Email: await CRY_API.Encrypt(Email),
 			RequesterIPaddress: RequesterIPaddress,
 			Requester_IP_Details: IP_Details,
 		});
