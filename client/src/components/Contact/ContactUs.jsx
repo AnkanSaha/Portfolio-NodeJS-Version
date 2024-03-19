@@ -43,7 +43,9 @@ export default function ContactForm () {
       setNotificationStates({
         Title: 'Invalid Email',
         Message: 'Please enter a valid email address to send your request',
-        CloseButtonFunction: () => {}
+        CloseButtonFunction: () => {
+          console.log('Please enter a valid email address')
+        }
       })
       return Notify.showModal() // Show Notification
     }
@@ -75,13 +77,26 @@ export default function ContactForm () {
       RequestData
     ) // Send the Request
 
-    // Set Notification States
-    setNotificationStates({
-      Title: Response.Title,
-      Message: Response.message,
-      CloseButtonFunction: () => (window.location.href = '/')
-    })
-    Notify.showModal() // Show Notification
+    if (Response.statusCode === 200) {
+      // Set Notification States
+      setNotificationStates({
+        Title: Response.Title,
+        Message: Response.message,
+        CloseButtonFunction: () => {
+          window.location.href = '/'
+        }
+      })
+    } else {
+      // Set Notification States
+      setNotificationStates({
+        Title: Response.Title,
+        Message: Response.message,
+        CloseButtonFunction: () => {
+          console.log(Response.message)
+        }
+      })
+      Notify.showModal() // Show Notification
+    }
   }
   return (
     <>
