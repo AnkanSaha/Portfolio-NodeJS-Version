@@ -4,19 +4,28 @@ import { useSelector } from 'react-redux' // Import Redux  Hook
 
 // Import Component
 import MainText from '../Header/HeaderText' // Main Text
-
+import NotificationModal from '../Modals/Notification' // Notification Modal
 import { API_Call } from '../../core/Keys/variables.keys' // API Caller
 
 // Main Component
 export default function ContactForm () {
+  const Notify = document.getElementById('StatusModal') // Get the Modal
+
   // Redux States
   const ReduxStates = useSelector((state) => state) // Get the Redux States
+
   // States
   const [RequestData, setRequestData] = React.useState({
     RequestTitle: '',
     RequestDescription: '',
     Email: '',
     sessionid: ReduxStates.GuestUsers.JWT
+  })
+
+  const [NotificationStates, setNotificationStates] = React.useState({
+    Title: '',
+    Message: '',
+    CloseButtonFunction: () => {}
   })
 
   // Handle Change
@@ -30,25 +39,49 @@ export default function ContactForm () {
   // handle Submit
   const SendRequest = async () => {
     // Check if the Email is Valid
-    if (RequestData.Email === '' && RequestData.Email.includes('@') == false) {
-      alert('Please Enter a Valid Email')
-      return
+    if (RequestData.Email === '' || RequestData.Email.includes('@') == false) {
+      setNotificationStates({
+        Title: 'Invalid Email',
+        Message: 'Please enter a valid email address to send your request',
+        CloseButtonFunction: () => {}
+      })
+      return Notify.showModal() // Show Notification
     }
 
     // Check if the Request Title is Valid
     if (RequestData.RequestTitle === '') {
-      alert('Please Enter a Valid Title')
-      return
+      setNotificationStates({
+        Title: 'Invalid Request Title',
+        Message: 'Please enter a valid Request Title',
+        CloseButtonFunction: () => {}
+      })
+      return Notify.showModal() // Show Notification
     }
 
     // Check if the Request Description is Valid
     if (RequestData.RequestDescription === '') {
-      alert('Please Enter a Valid Description')
-      return
+      // Set Notification States
+      setNotificationStates({
+        Title: 'Invalid Request Description',
+        Message: 'Please Enter a Valid Description',
+        CloseButtonFunction: () => {}
+      })
+      return Notify.showModal() // Show Notification
     }
 
     // Send the Request
-    const Response = await API_Call.Post('/post/request/CreateNewRequest') // Send the Request
+    const Response = await API_Call.Post(
+      '/post/request/CreateNewRequest',
+      RequestData
+    ) // Send the Request
+
+    // Set Notification States
+    setNotificationStates({
+      Title: Response.Title,
+      Message: Response.message,
+      CloseButtonFunction: () => (window.location.href = '/')
+    })
+    Notify.showModal() // Show Notification
   }
   return (
     <>
@@ -102,6 +135,11 @@ export default function ContactForm () {
           </div>
         </div>
       </div>
+      <NotificationModal
+        Title={NotificationStates.Title}
+        Message={NotificationStates.Message}
+        CloseButtonFunction={NotificationStates.CloseButtonFunction}
+      />
     </>
   )
 }

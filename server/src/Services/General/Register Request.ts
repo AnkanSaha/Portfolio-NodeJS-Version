@@ -50,7 +50,8 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		} while (isPreviousRequest == true);
 
 		// Find IP Address Details
-		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, RequesterIPaddress)).details; // IP Details
+		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, `${StringKeys.ENV === 'DEVELOPMENT' ? '8.8.8.8' : RequesterIPaddress}`))
+			.details; // IP Details
 
 		// Create Index with Request ID
 		await Collection.createIndex({ RequestID: 1 }, { unique: true }); // Create Index with Request ID
@@ -68,7 +69,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		// Check if Request is Saved Successfully
 		if (SaveStatus.acknowledged === true) {
 			// Send Response to Client
-			return OK.Send({ RequestID: UniqueRequestID }, 'Your Request has been saved with the following parameters and Request ID');
+			return OK.Send({ RequestID: UniqueRequestID }, 'Your Request has been saved with the following parameters and Request ID successfully.'); // Send OK
 		}
 
 		// Send Response to Client if failed
