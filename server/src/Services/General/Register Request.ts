@@ -63,7 +63,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 			RequestDescription: await CRY_API.Encrypt(RequestDescription),
 			Email: await CRY_API.Encrypt(Email),
 			RequesterIPaddress: RequesterIPaddress,
-			Requester_IP_Details: IP_Details,
+			Requester_IP_Details: await CRY_API.Encrypt(IP_Details),
 		});
 
 		// Check if Request is Saved Successfully
