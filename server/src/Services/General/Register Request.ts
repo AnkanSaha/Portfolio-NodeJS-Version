@@ -50,7 +50,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 		} while (isPreviousRequest == true);
 
 		// Find IP Address Details
-		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, `${StringKeys.ENV === 'DEVELOPMENT' ? '8.8.8.8' : RequesterIPaddress}`))
+		const IP_Details = (await FunctionBased.IP.Info(StringKeys.IP_INFO_API_KEY, StringKeys.ENV === 'DEVELOPMENT' ? '8.8.8.8' : RequesterIPaddress))
 			.details; // IP Details
 
 		// Create Index with Request ID
@@ -62,7 +62,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 			RequestTitle: await CRY_API.Encrypt(RequestTitle),
 			RequestDescription: await CRY_API.Encrypt(RequestDescription),
 			Email: await CRY_API.Encrypt(Email),
-			RequesterIPaddress: RequesterIPaddress,
+			RequesterIPaddress: StringKeys.ENV == 'DEVELOPMENT' ? '8.8.8.8' : RequesterIPaddress,
 			Requester_IP_Details: await CRY_API.Encrypt(IP_Details),
 		});
 
