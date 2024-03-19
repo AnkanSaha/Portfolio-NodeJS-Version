@@ -40,20 +40,33 @@ export default function ContactForm() {
   const SendRequest = async () => {
     // Check if the Email is Valid
     if (RequestData.Email === "" || RequestData.Email.includes("@") == false) {
-      alert("Please Enter a Valid Email");
-      return;
+      setNotificationStates({
+        Title: "Invalid Email",
+        Message: "Please enter a valid email address to send your request",
+        CloseButtonFunction: () => {},
+      });
+      return Notify.showModal(); // Show Notification
     }
 
     // Check if the Request Title is Valid
     if (RequestData.RequestTitle === "") {
-      alert("Please Enter a Valid Title");
-      return;
+      setNotificationStates({
+        Title: "Invalid Request Title",
+        Message: "Please enter a valid Request Title",
+        CloseButtonFunction: () => {},
+      });
+      return Notify.showModal(); // Show Notification
     }
 
     // Check if the Request Description is Valid
     if (RequestData.RequestDescription === "") {
-      alert("Please Enter a Valid Description");
-      return;
+      // Set Notification States
+      setNotificationStates({
+        Title: "Invalid Request Description",
+        Message: "Please Enter a Valid Description",
+        CloseButtonFunction: () => {},
+      });
+      return Notify.showModal(); // Show Notification
     }
 
     // Send the Request
@@ -66,6 +79,7 @@ export default function ContactForm() {
     setNotificationStates({
       Title: Response.Title,
       Message: Response.message,
+      CloseButtonFunction: () => (window.location.href = "/"),
     });
     Notify.showModal(); // Show Notification
   };
