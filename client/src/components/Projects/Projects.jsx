@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import React
 import { OwnerProjects } from '../../core/Keys/OwnerDetails.keys' // Import Projects
-import {React as Service} from 'react-caches'; // Import React-caches
+import { React as Service } from 'react-caches' // Import React-caches
 
 // Colors
 const BgColors = [
