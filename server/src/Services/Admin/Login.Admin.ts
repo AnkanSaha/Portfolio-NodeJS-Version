@@ -4,6 +4,9 @@ import { ClassBased, StatusCodes, Console } from 'outers'; // Import outer types
 // import Keys
 import { StringKeys } from '../../core/variables.core'; // Import Keys
 
+// import Another Function to Generate Token
+import GenerateJWT from '../Auth/JWT Generator.service'; // Import Another Function to Generate Token
+
 // Main Function
 export default async function AdminLogin(Request: Request, Response: Response) {
 	// Register Response
@@ -13,20 +16,19 @@ export default async function AdminLogin(Request: Request, Response: Response) {
 	try {
 		// Destructure the Request Body
 		const { ADMIN_PASSWORD } = Request.body; // Destructure the Request Body
-		
+
 		// Check if ADMIN_PASSWORD is not provided
 		if (ADMIN_PASSWORD === undefined || ADMIN_PASSWORD === null || ADMIN_PASSWORD === '') {
 			return Missing.Send(undefined, 'ADMIN_PASSWORD is required.'); // Send Missing Required Fields
 		}
-		console.log(StringKeys.ADMIN_PASSWORD)
+
 		// Check if ADMIN_PASSWORD is matching with the ADMIN_PASSWORD provided by system or not
 		if (StringKeys.ADMIN_PASSWORD.toLowerCase() !== ADMIN_PASSWORD.toLowerCase()) {
 			return MisMatch.Send(undefined, 'ADMIN_PASSWORD is not matching with the ADMIN_PASSWORD provided by system.'); // Send Invalid ADMIN_PASSWORD
 		}
 
-		// Send Internal Request to generate the token
-		const Response = await new ClassBased.API('http://localhost:5678').Get('/get/auth/generate-JWT-Token')
-		console.log(Response);
+		// Pass the Request to GenerateJWT Function
+		GenerateJWT(Request, Response); // Pass the Request to GenerateJWT Function
 	} catch (error) {
 		Console.red(error); // Log Error
 		return InternalError.Send(undefined, 'Internal Server Error Occurred while processing the request.'); // Send Internal Server Error
