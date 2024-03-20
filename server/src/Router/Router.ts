@@ -13,6 +13,7 @@ import RegisterRequest from './POST/Request.routes'; // Import the Request Route
 
 // Import Sub Routes for Admin
 import AdminAuth from './POST/Admin/Auth.routes'; // Import the Admin Auth Routes
+import AdminInfo from './GET/Admin/Info.routes'; // Import the Admin Info Routes
 
 // Create a new Router instance
 const Routing = Router(); // This is the main router
@@ -39,6 +40,7 @@ Routing.use('/post/request', RegisterRequest); // Attach the Request Routes
 
 // All Routes for Admin
 Routing.use('/post/AdminAuth', AdminAuth); // Attach the Admin Auth Routes
+Routing.use('/get/AdminInfo', AdminInfo); // Attach the Admin Info Routes
 
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {
