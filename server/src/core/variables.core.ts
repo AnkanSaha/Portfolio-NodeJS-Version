@@ -8,8 +8,9 @@ export const StringKeys = Object.freeze({
 	AppName: String('Portfolio'),
 	CORS_URL: String(process.env.CORS_ORIGIN) ?? '*',
 	JWT_SECRET: String(process.env.JWT_SECRET),
-	JWT_EXPIRES_IN: String(process.env.JWT_EXPIRES_IN) ?? '30d',
+	JWT_EXPIRES_IN: String(process.env.JWT_EXPIRES_IN) ?? '3d',
 	ENV: String(process.env.NODE_ENV) ?? 'PRODUCTION',
+	ADMIN_PASSWORD: String(process.env.ADMIN_PASSWORD) ?? 'admin',
 
 	// Server Details
 	Platform: String(platform()),
