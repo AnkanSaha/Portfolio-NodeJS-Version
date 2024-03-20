@@ -1,7 +1,7 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import { FaLock } from "react-icons/fa"; // Import Icon
 import { API_Call } from "../../../core/Keys/variables.keys"; // Import APi Caller
-import {useNavigate} from 'react-router-dom'; // import useNavigate
+import { useNavigate } from "react-router-dom"; // import useNavigate
 
 // import ChakraUI
 import { Input, Button } from "@chakra-ui/react"; // ChakraUI Input
@@ -58,7 +58,7 @@ export default function LoginBox() {
         Title: Response.Title,
         Message: Response.message,
         CloseButtonFunction: () => {
-          Navigate('/')
+          Navigate("/");
         },
       });
 
@@ -87,7 +87,7 @@ export default function LoginBox() {
           leftIcon={<FaLock />}
           onClick={OnSubmit}
           colorScheme="facebook"
-          className="ml-[5.25rem] lg:ml-[39.5rem]"
+          className="ml-[4.75rem] lg:ml-[39.5rem]"
         >
           {" "}
           Login Now
