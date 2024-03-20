@@ -29,7 +29,7 @@ Routing.use(Middleware.RequestInjectIP(['POST', 'PUT', 'DELETE'])); // Inject IP
 
 Routing.use(Middleware.RequestLogger(true, true, true, true, true)); // Log all Requests
 
-// All Routes
+// All Routes for Client
 Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
 Routing.use('/get/general', General); // Attach the General Routes
 Routing.use('/post/request', RegisterRequest); // Attach the Request Routes
