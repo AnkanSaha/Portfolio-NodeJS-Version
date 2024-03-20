@@ -21,7 +21,8 @@ export const StringKeys = Object.freeze({
 	Allowed_Methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	MongoDB_URL: String(process.env.MONGODB_URL),
 	DB_NAME: String(process.env.DB_NAME),
-	CollectionName: 'Request Center',
+	RequestCollectionName: 'Request Center',
+	PortfolioInfoCollectionName: 'Portfolio Info',
 });
 
 // All Number Keys
