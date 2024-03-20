@@ -22,6 +22,7 @@ export default function LoginBox() {
   const [Notification, setNotification] = React.useState({
     Title: "",
     Message: "",
+    ButtonText: "",
     CloseButtonFunction: () => {
       console.log("Noting");
     },
@@ -45,6 +46,7 @@ export default function LoginBox() {
       setNotification({
         Title: "Invalid Password",
         Message: "Please enter a valid password",
+        ButtonText: "Close",
         CloseButtonFunction: () => {},
       });
       return Notify.showModal(); // Show modal
@@ -58,6 +60,7 @@ export default function LoginBox() {
         Title: "Login Successful",
         Message:
           "You have successfully logged in as an admin user to admin panel",
+        ButtonText: "Go to Admin Panel",
         CloseButtonFunction: () => {
           Navigate("/");
         },
@@ -97,6 +100,7 @@ export default function LoginBox() {
       <NotifyModal
         Title={Notification.Title}
         Message={Notification.Message}
+        ButtonText={Notification.ButtonText}
         ButtonFunction={Notification.CloseButtonFunction}
       />
     </>
