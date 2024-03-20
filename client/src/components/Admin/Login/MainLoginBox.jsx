@@ -1,9 +1,7 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import { FaLock } from "react-icons/fa"; // Import Icon
-import { useDispatch } from "react-redux"; // import useDispatch from react-redux
-
-// Import Redux State
-import { ModifyIsLoading } from "../../../core/Redux/Slices/Guest Users"; // Redux Slices
+import { API_Call } from "../../../core/Keys/variables.keys"; // Import APi Caller
+import {useNavigate} from 'react-router-dom'; // import useNavigate
 
 // import ChakraUI
 import { Input, Button } from "@chakra-ui/react"; // ChakraUI Input
@@ -14,9 +12,7 @@ import NotifyModal from "../../Modals/Notification"; // NotifyModal
 // Main component
 export default function LoginBox() {
   const Notify = document.getElementById("StatusModal"); // Get the Modal
-
-  // Redux
-  const dispatcher = useDispatch(); // useDispatch
+  const Navigate = useNavigate(); // Initialize useNavigate
 
   // States
   const [Password, setPassword] = React.useState({
@@ -41,8 +37,9 @@ export default function LoginBox() {
   };
 
   // Submit handler
-  const OnSubmit = (event) => {
+  const OnSubmit = async (event) => {
     event.preventDefault(); // prevent default
+
     // Check if blank
     if (Password.ADMIN_PASSWORD === "") {
       setNotification({
@@ -52,6 +49,29 @@ export default function LoginBox() {
       });
       return Notify.showModal(); // Show modal
     }
+
+    // Call The API
+    const Response = await API_Call.Post("/post/AdminAuth/login", Password); // Call the API
+
+    if (Response.statusCode === 200) {
+      setNotification({
+        Title: Response.Title,
+        Message: Response.message,
+        CloseButtonFunction: () => {
+          Navigate('/')
+        },
+      });
+
+      return Notify.showModal(); // Show modal
+    }
+
+    setNotification({
+      Title: Response.Title,
+      Message: Response.message,
+      CloseButtonFunction: () => {},
+    });
+
+    return Notify.showModal(); // Show modal
   };
   return (
     <>
