@@ -28,7 +28,7 @@ export default async function AdminLogin(Request: Request, Response: Response) {
 		}
 
 		// Pass the Request to GenerateJWT Function
-		GenerateJWT(Request, Response); // Pass the Request to GenerateJWT Function
+		await GenerateJWT(Request, Response); // Pass the Request to GenerateJWT Function
 	} catch (error) {
 		Console.red(error); // Log Error
 		return InternalError.Send(undefined, 'Internal Server Error Occurred while processing the request.'); // Send Internal Server Error
