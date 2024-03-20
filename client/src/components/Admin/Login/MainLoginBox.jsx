@@ -8,6 +8,9 @@ import {ModifyIsLoading} from '../../../core/Redux/Slices/Guest Users'; // Redux
 // import ChakraUI
 import { Input, Button } from "@chakra-ui/react"; // ChakraUI Input
 
+// Import Notifier
+import NotifyModal from '../../Modals/Notification'; // NotifyModal
+
 // Main component
 export default function LoginBox() {
   // Redux
@@ -16,6 +19,14 @@ export default function LoginBox() {
   // States
   const [Password, setPassword] = React.useState({
     ADMIN_PASSWORD: "",
+  });
+
+  const [Notification, setNotification] = React.useState({
+    Title: "",
+    Message: "",
+    CloseButtonFunction: () => {
+      console.log('Noting')
+    },
   });
 
   // Onchange handlers
@@ -56,6 +67,7 @@ export default function LoginBox() {
           Login Now
         </Button>
       </div>
+      <NotifyModal Title={Notification.Title} Message={Notification.Message} CloseButtonFunction={Notification.CloseButtonFunction} />
     </>
   );
 }
