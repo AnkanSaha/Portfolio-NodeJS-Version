@@ -13,7 +13,6 @@ export default function LoginBox() {
 
   // Onchange handlers
   const onchange = (event) => {
-    console.log(Password);
     event.preventDefault(); // prevent default
     setPassword({
       ...Password,
