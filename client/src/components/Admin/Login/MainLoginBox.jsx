@@ -13,6 +13,8 @@ import NotifyModal from "../../Modals/Notification"; // NotifyModal
 
 // Main component
 export default function LoginBox() {
+  const Notify = document.getElementById("StatusModal"); // Get the Modal
+
   // Redux
   const dispatcher = useDispatch(); // useDispatch
 
@@ -43,11 +45,12 @@ export default function LoginBox() {
     event.preventDefault(); // prevent default
     // Check if blank
     if (Password.ADMIN_PASSWORD === "") {
-      return setNotification({
+      setNotification({
         Title: "Invalid Password",
         Message: "Please enter a valid password",
         CloseButtonFunction: () => {},
       });
+      return Notify.showModal(); // Show modal
     }
   };
   return (
