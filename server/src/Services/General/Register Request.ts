@@ -3,7 +3,7 @@ import { Console, ClassBased, StatusCodes, FunctionBased } from 'outers'; // Imp
 import { StringKeys, CRY_API } from '../../core/variables.core'; // import variables from outers
 
 // Import MongoDB Action Creator
-import { Collection } from '../../Database/MongoDB'; // Import MongoDB Action Creator
+import { RequestCollection } from '../../Database/MongoDB'; // Import MongoDB Action Creator
 
 // Interface
 interface RegisterRequest {
@@ -45,7 +45,7 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 			UniqueRequestID = FunctionBased.RandomGenerator.Number(10, true); // Unique Request ID
 
 			// Check if Request with this ID already
-			const PreviousRequest = await Collection.find({ RequestID: UniqueRequestID }).toArray(); // Find Request with this ID
+			const PreviousRequest = await RequestCollection.find({ RequestID: UniqueRequestID }).toArray(); // Find Request with this ID
 			PreviousRequest.length !== 0 ? (isPreviousRequest = true) : false; // If Request with this ID already exists
 		} while (isPreviousRequest == true);
 
@@ -54,10 +54,10 @@ export default async function RegisterRequest(Request: Request, Response: Respon
 			.details; // IP Details
 
 		// Create Index with Request ID
-		await Collection.createIndex({ RequestID: 1 }, { unique: true }); // Create Index with Request ID
+		await RequestCollection.createIndex({ RequestID: 1 }, { unique: true }); // Create Index with Request ID
 
 		// Save The Request To The Database
-		const SaveStatus = await Collection.insertOne({
+		const SaveStatus = await RequestCollection.insertOne({
 			RequestID: UniqueRequestID,
 			RequestTitle: await CRY_API.Encrypt(RequestTitle),
 			RequestDescription: await CRY_API.Encrypt(RequestDescription),
