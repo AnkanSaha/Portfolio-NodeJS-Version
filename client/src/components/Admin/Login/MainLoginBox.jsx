@@ -1,15 +1,15 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import { FaLock } from "react-icons/fa"; // Import Icon
-import {useDispatch} from 'react-redux'; // import useDispatch from react-redux
+import { useDispatch } from "react-redux"; // import useDispatch from react-redux
 
 // Import Redux State
-import {ModifyIsLoading} from '../../../core/Redux/Slices/Guest Users'; // Redux Slices
+import { ModifyIsLoading } from "../../../core/Redux/Slices/Guest Users"; // Redux Slices
 
 // import ChakraUI
 import { Input, Button } from "@chakra-ui/react"; // ChakraUI Input
 
 // Import Notifier
-import NotifyModal from '../../Modals/Notification'; // NotifyModal
+import NotifyModal from "../../Modals/Notification"; // NotifyModal
 
 // Main component
 export default function LoginBox() {
@@ -25,7 +25,7 @@ export default function LoginBox() {
     Title: "",
     Message: "",
     CloseButtonFunction: () => {
-      console.log('Noting')
+      console.log("Noting");
     },
   });
 
@@ -42,11 +42,14 @@ export default function LoginBox() {
   const OnSubmit = (event) => {
     event.preventDefault(); // prevent default
     // Check if blank
-    if(Password.ADMIN_PASSWORD === ''){
-      alert('Password is required');
-      return;
+    if (Password.ADMIN_PASSWORD === "") {
+      return setNotification({
+        Title: "Invalid Password",
+        Message: "Please enter a valid password",
+        CloseButtonFunction: () => {},
+      });
     }
-  }
+  };
   return (
     <>
       <div className="mx-10 my-52 lg:my-44 space-y-8">
@@ -67,7 +70,11 @@ export default function LoginBox() {
           Login Now
         </Button>
       </div>
-      <NotifyModal Title={Notification.Title} Message={Notification.Message} CloseButtonFunction={Notification.CloseButtonFunction} />
+      <NotifyModal
+        Title={Notification.Title}
+        Message={Notification.Message}
+        CloseButtonFunction={Notification.CloseButtonFunction}
+      />
     </>
   );
 }
