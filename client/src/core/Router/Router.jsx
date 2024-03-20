@@ -7,6 +7,9 @@ import ContactPage from '../../Pages/Contact' // Import the Contact page
 import GetIPDetailsPage from '../../Pages/Get IP Details' // Import the Get IP Details page
 import SkeletonPage from '../../Pages/Skeleton' // Import the Skeleton page
 
+// Sub Router
+import AdminRouter from './Admin/Router' // import AdminRouter
+
 // Main Router
 const MainRouter = () => {
   return (
@@ -16,6 +19,7 @@ const MainRouter = () => {
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/current-ip' element={<GetIPDetailsPage />} />
+        <Route path='/admin/*' element={<AdminRouter />} />
         <Route path='*' element={<SkeletonPage />} />
       </Routes>
     </BrowserRouter>
