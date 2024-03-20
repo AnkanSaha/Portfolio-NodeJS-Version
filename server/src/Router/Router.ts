@@ -6,10 +6,13 @@ import { StringKeys } from '../core/variables.core'; // Import the variables
 import RateLimiterMiddleware from '../Middleware/RateLimiter.middleware'; // Import Rate Limiter Middleware
 import CORSMiddleware from '../Middleware/CORS.middleware'; // Import CORS Middleware
 
-// Import Sub Routes
+// Import Sub Routes for Client
 import Authenticate from './GET/Auth.routes'; // Import the Auth Routes
 import General from './GET/General.routes'; // Import the General Routes
 import RegisterRequest from './POST/Request.routes'; // Import the Request Routes
+
+// Import Sub Routes for Admin
+import AdminAuth from './POST/Admin/Auth.routes'; // Import the Admin Auth Routes
 
 // Create a new Router instance
 const Routing = Router(); // This is the main router
@@ -33,6 +36,9 @@ Routing.use(Middleware.RequestLogger(true, true, true, true, true)); // Log all 
 Routing.use('/get/auth', Authenticate); // Attach the Auth Routes
 Routing.use('/get/general', General); // Attach the General Routes
 Routing.use('/post/request', RegisterRequest); // Attach the Request Routes
+
+// All Routes for Admin
+Routing.use('/post/AdminAuth', AdminAuth); // Attach the Admin Auth Routes
 
 // If All Routes not found
 Routing.all('*', (Request: Request, Response: Response) => {
