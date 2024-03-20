@@ -74,7 +74,10 @@ export default function ContactForm () {
     // Send the Request
     const Response = await API_Call.Post(
       '/post/request/CreateNewRequest',
-      RequestData
+      RequestData,
+      {
+        'Content-Type': 'application/json'
+      }
     ) // Send the Request
 
     if (Response.statusCode === 200) {

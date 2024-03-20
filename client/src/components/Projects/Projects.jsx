@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import React
 import { OwnerProjects } from '../../core/Keys/OwnerDetails.keys' // Import Projects
+import { React as Service } from 'react-caches' // Import React-caches
 
 // Colors
 const BgColors = [
@@ -22,7 +23,7 @@ export default function Projects () {
           <div
             key={project.ProjectsName}
             className={`card mx-3 lg:mx-5 my-3 w-[21rem] text-white ${
-              BgColors[Math.floor(Math.random() * BgColors.length)]
+              BgColors[Service.Random.Number(1, true)]
             }`}
           >
             <div className='card-body'>
