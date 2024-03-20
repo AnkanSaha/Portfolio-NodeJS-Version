@@ -6,7 +6,8 @@ import React from 'react' // import React
 export default function NotificationModal ({
   Title,
   Message,
-  CloseButtonFunction
+  ButtonText,
+  ButtonFunction
 }) {
   return (
     <dialog id='StatusModal' className='modal'>
@@ -15,8 +16,8 @@ export default function NotificationModal ({
         <p className='py-4'>{Message}</p>
         <div className='modal-action'>
           <form method='dialog'>
-            <button onClick={CloseButtonFunction} className='btn'>
-              Close
+            <button onClick={ButtonFunction} className='btn'>
+              {ButtonText}
             </button>
           </form>
         </div>
@@ -29,5 +30,6 @@ export default function NotificationModal ({
 NotificationModal.defaultProps = {
   Title: '',
   Message: '',
+  ButtonText: 'Close',
   CloseButtonFunction: () => {}
 }

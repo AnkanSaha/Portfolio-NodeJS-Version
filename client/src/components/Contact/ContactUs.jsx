@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import React
 import { useSelector } from 'react-redux' // Import Redux  Hook
+import { useNavigate } from 'react-router-dom' // import useNavigate
 
 // Import Component
 import MainText from '../Header/HeaderText' // Main Text
@@ -10,6 +11,7 @@ import { API_Call } from '../../core/Keys/variables.keys' // API Caller
 // Main Component
 export default function ContactForm () {
   const Notify = document.getElementById('StatusModal') // Get the Modal
+  const Navigate = useNavigate() // Initialize useNavigate
 
   // Redux States
   const ReduxStates = useSelector((state) => state) // Get the Redux States
@@ -25,6 +27,7 @@ export default function ContactForm () {
   const [NotificationStates, setNotificationStates] = React.useState({
     Title: '',
     Message: '',
+    ButtonText: '',
     CloseButtonFunction: () => {}
   })
 
@@ -43,6 +46,7 @@ export default function ContactForm () {
       setNotificationStates({
         Title: 'Invalid Email',
         Message: 'Please enter a valid email address to send your request',
+        ButtonText: 'Close',
         CloseButtonFunction: () => {
           console.log('Please enter a valid email address')
         }
@@ -55,6 +59,7 @@ export default function ContactForm () {
       setNotificationStates({
         Title: 'Invalid Request Title',
         Message: 'Please enter a valid Request Title',
+        ButtonText: 'Close',
         CloseButtonFunction: () => {}
       })
       return Notify.showModal() // Show Notification
@@ -66,6 +71,7 @@ export default function ContactForm () {
       setNotificationStates({
         Title: 'Invalid Request Description',
         Message: 'Please Enter a Valid Description',
+        ButtonText: 'Close',
         CloseButtonFunction: () => {}
       })
       return Notify.showModal() // Show Notification
@@ -85,8 +91,9 @@ export default function ContactForm () {
       setNotificationStates({
         Title: Response.Title,
         Message: Response.message,
+        ButtonText: 'Go Back',
         CloseButtonFunction: () => {
-          window.location.href = '/'
+          Navigate('/') // Navigate to Home
         }
       })
     } else {
@@ -156,7 +163,8 @@ export default function ContactForm () {
       <NotificationModal
         Title={NotificationStates.Title}
         Message={NotificationStates.Message}
-        CloseButtonFunction={NotificationStates.CloseButtonFunction}
+        ButtonText={NotificationStates.ButtonText}
+        ButtonFunction={NotificationStates.CloseButtonFunction}
       />
     </>
   )
