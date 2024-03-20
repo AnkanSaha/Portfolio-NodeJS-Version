@@ -56,7 +56,8 @@ export default function LoginBox() {
     if (Response.statusCode === 200) {
       setNotification({
         Title: "Login Successful",
-        Message: "You have successfully logged in as an admin user to admin panel",
+        Message:
+          "You have successfully logged in as an admin user to admin panel",
         CloseButtonFunction: () => {
           Navigate("/");
         },
@@ -96,7 +97,7 @@ export default function LoginBox() {
       <NotifyModal
         Title={Notification.Title}
         Message={Notification.Message}
-        CloseButtonFunction={Notification.CloseButtonFunction}
+        ButtonFunction={Notification.CloseButtonFunction}
       />
     </>
   );

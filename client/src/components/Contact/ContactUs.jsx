@@ -27,6 +27,7 @@ export default function ContactForm() {
   const [NotificationStates, setNotificationStates] = React.useState({
     Title: "",
     Message: "",
+    ButtonText: "",
     CloseButtonFunction: () => {},
   });
 
@@ -45,6 +46,7 @@ export default function ContactForm() {
       setNotificationStates({
         Title: "Invalid Email",
         Message: "Please enter a valid email address to send your request",
+        ButtonText: "Close",
         CloseButtonFunction: () => {
           console.log("Please enter a valid email address");
         },
@@ -57,6 +59,7 @@ export default function ContactForm() {
       setNotificationStates({
         Title: "Invalid Request Title",
         Message: "Please enter a valid Request Title",
+        ButtonText: "Close",
         CloseButtonFunction: () => {},
       });
       return Notify.showModal(); // Show Notification
@@ -68,6 +71,7 @@ export default function ContactForm() {
       setNotificationStates({
         Title: "Invalid Request Description",
         Message: "Please Enter a Valid Description",
+        ButtonText: "Close",
         CloseButtonFunction: () => {},
       });
       return Notify.showModal(); // Show Notification
@@ -87,6 +91,7 @@ export default function ContactForm() {
       setNotificationStates({
         Title: Response.Title,
         Message: Response.message,
+        ButtonText: "Go Back"
         CloseButtonFunction: () => {
           Navigate("/"); // Navigate to Home
         },
@@ -158,7 +163,8 @@ export default function ContactForm() {
       <NotificationModal
         Title={NotificationStates.Title}
         Message={NotificationStates.Message}
-        CloseButtonFunction={NotificationStates.CloseButtonFunction}
+        ButtonText={NotificationStates.ButtonText}
+        ButtonFunction={NotificationStates.CloseButtonFunction}
       />
     </>
   );
