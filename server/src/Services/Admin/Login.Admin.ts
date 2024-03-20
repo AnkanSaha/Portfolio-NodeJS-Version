@@ -12,7 +12,7 @@ export default async function AdminLogin(Request: Request, Response: Response) {
 	// Register Response
 	const InternalError = new ClassBased.Response.JSON(Response, StatusCodes.INTERNAL_SERVER_ERROR, 'json', 'Internal Server Error'); // Internal Server Error
 	const Missing = new ClassBased.Response.JSON(Response, StatusCodes.BAD_REQUEST, 'json', 'Missing Required Fields'); // Missing Required Fields
-	const MisMatch = new ClassBased.Response.JSON(Response, StatusCodes.NETWORK_AUTHENTICATION_REQUIRED, 'json', 'Invalid ADMIN_PASSWORD'); // Invalid ADMIN_PASSWORD
+	const MisMatch = new ClassBased.Response.JSON(Response, StatusCodes.NETWORK_AUTHENTICATION_REQUIRED, 'json', 'Invalid Admin Password'); // Invalid ADMIN_PASSWORD
 	try {
 		// Destructure the Request Body
 		const { ADMIN_PASSWORD } = Request.body; // Destructure the Request Body
@@ -24,7 +24,7 @@ export default async function AdminLogin(Request: Request, Response: Response) {
 
 		// Check if ADMIN_PASSWORD is matching with the ADMIN_PASSWORD provided by system or not
 		if (StringKeys.ADMIN_PASSWORD.toLowerCase() !== ADMIN_PASSWORD.toLowerCase()) {
-			return MisMatch.Send(undefined, 'ADMIN_PASSWORD is not matching with the ADMIN_PASSWORD provided by system.'); // Send Invalid ADMIN_PASSWORD
+			return MisMatch.Send(undefined, 'This Password is not matching with that provided by system.'); // Send Invalid ADMIN_PASSWORD
 		}
 
 		// Pass the Request to GenerateJWT Function
