@@ -91,7 +91,7 @@ export default function ContactForm() {
       setNotificationStates({
         Title: Response.Title,
         Message: Response.message,
-        ButtonText: "Go Back"
+        ButtonText: "Go Back",
         CloseButtonFunction: () => {
           Navigate("/"); // Navigate to Home
         },
