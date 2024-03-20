@@ -98,8 +98,8 @@ export default function ContactForm () {
           console.log(Response.message)
         }
       })
-      Notify.showModal() // Show Notification
     }
+    Notify.showModal() // Show Notification
   }
   return (
     <>
