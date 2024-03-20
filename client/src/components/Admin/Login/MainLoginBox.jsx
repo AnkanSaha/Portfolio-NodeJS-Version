@@ -1,11 +1,18 @@
 import React from "react"; // eslint-disable-line no-unused-vars
 import { FaLock } from "react-icons/fa"; // Import Icon
+import {useDispatch} from 'react-redux'; // import useDispatch from react-redux
+
+// Import Redux State
+import {ModifyIsLoading} from '../../../core/Redux/Slices/Guest Users'; // Redux Slices
 
 // import ChakraUI
 import { Input, Button } from "@chakra-ui/react"; // ChakraUI Input
 
 // Main component
 export default function LoginBox() {
+  // Redux
+  const dispatcher = useDispatch(); // useDispatch
+
   // States
   const [Password, setPassword] = React.useState({
     ADMIN_PASSWORD: "",
@@ -20,6 +27,15 @@ export default function LoginBox() {
     });
   };
 
+  // Submit handler
+  const OnSubmit = (event) => {
+    event.preventDefault(); // prevent default
+    // Check if blank
+    if(Password.ADMIN_PASSWORD === ''){
+      alert('Password is required');
+      return;
+    }
+  }
   return (
     <>
       <div className="mx-10 my-52 lg:my-44 space-y-8">
@@ -32,6 +48,7 @@ export default function LoginBox() {
         <Button
           rightIcon={<FaLock />}
           leftIcon={<FaLock />}
+          onClick={OnSubmit}
           colorScheme="facebook"
           className="ml-[5.25rem] lg:ml-[39.5rem]"
         >
