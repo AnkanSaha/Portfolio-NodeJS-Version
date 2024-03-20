@@ -1,16 +1,16 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom"; // import the React router DOM module
+import { Routes, Route } from "react-router-dom"; // import the React router DOM module
 
 // Import Pages
 import SkeletonPage from "../../../Pages/Skeleton"; // Import the Skeleton page
+import AdminLogin from "../../../Pages/Admin/AdminLogin"; // Import the Admin Login page
 
 // Main Router
 const AdminRouter = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<SkeletonPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<AdminLogin />} />
+      <Route path="*" element={<SkeletonPage />} />
+    </Routes>
   );
 };
 
