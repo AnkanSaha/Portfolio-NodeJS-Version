@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React from "react"; // Import React
-import { useSelector } from "react-redux"; // import Redux
+import { useSelector, useDispatch } from "react-redux"; // import Redux
+import { ModifyCertificates } from "../../core/Redux/Slices/SiteInfo"; // Redux Slice
 import {
   Box,
   Flex,
@@ -24,7 +26,12 @@ import MainText from "../Header/HeaderText"; // Import MainText component
 export default function Certification() {
   // Redux States
   const ReduxState = useSelector((state) => state); // Create Redux States
-  console.log(ReduxState);
+  const dispatch = useDispatch(); // Create Redux Dispatch
+
+  // React useEffect
+  React.useEffect(() => {
+    dispatch(ModifyCertificates(OwnerCertification));
+  }, [ReduxState.SiteInfo.Certificates]);
 
   // State for the component
   const [MoreCertificateShow, setMoreCertificateShow] = React.useState(false); // State for More Skill Show
