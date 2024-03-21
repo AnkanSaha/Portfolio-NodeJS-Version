@@ -3,7 +3,7 @@ import React from "react"; // Import React
 
 // Redux Imports
 import { useSelector, useDispatch } from "react-redux"; // Import useSelector from react-redux
-import { ModifyEducation } from "../../core/Redux/Slices/SiteInfo"; //
+import { ModifyEducation } from "../../core/Redux/Slices/SiteInfo"; // Import ModifyEducation from SiteInfo Slice
 import { OwnerEducation } from "../../core/Keys/OwnerDetails.keys"; // Import Owner Education
 
 // Import Components
