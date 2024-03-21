@@ -30,5 +30,10 @@ const SiteInfo = createSlice({
 })
 
 // Exports
-export const { ModifyCertificates, ModifyEducation, ModifySkills, ModifyProjects } = SiteInfo.actions // Export All Actions
+export const {
+  ModifyCertificates,
+  ModifyEducation,
+  ModifySkills,
+  ModifyProjects
+} = SiteInfo.actions // Export All Actions
 export default SiteInfo.reducer // Export All Reducers
