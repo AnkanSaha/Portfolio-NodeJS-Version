@@ -31,7 +31,7 @@ export default function Certification () {
   // React useEffect
   React.useEffect(() => {
     dispatch(ModifyCertificates(OwnerCertification))
-  }, [ReduxState.SiteInfo.Certificates])
+  }, [ReduxState.SiteInfo.Certificates, dispatch])
 
   // State for the component
   const [MoreCertificateShow, setMoreCertificateShow] = React.useState(false) // State for More Skill Show

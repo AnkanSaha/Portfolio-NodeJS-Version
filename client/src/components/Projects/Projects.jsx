@@ -3,6 +3,10 @@ import React from 'react' // Import React
 import { OwnerProjects } from '../../core/Keys/OwnerDetails.keys' // Import Projects
 import { React as Service } from 'react-caches' // Import React-caches
 
+// Redux Imports
+import { useSelector, useDispatch } from 'react-redux' // Import useSelector from react-redux
+import { ModifyProjects } from '../../core/Redux/Slices/SiteInfo' // Import ModifyProjects from SiteInfo Slice
+
 // Colors
 const BgColors = [
   'bg-red-700',
@@ -16,14 +20,22 @@ const BgColors = [
 
 // Main Component
 export default function Projects () {
+  // Redux States
+  const dispatch = useDispatch() // Dispatch
+  const ReduxState = useSelector((state) => state) // Redux States
+
+  // React UseEffect
+  React.useEffect(() => {
+    dispatch(ModifyProjects(OwnerProjects)) // Dispatch OwnerProjects
+  }, [ReduxState.SiteInfo.Projects, dispatch])
   return (
     <div className='flex flex-row flex-wrap'>
-      {OwnerProjects.map((project) => {
+      {ReduxState.SiteInfo.Projects.map((project) => {
         return (
           <div
             key={project.ProjectsName}
             className={`card mx-3 lg:mx-5 my-3 w-[21rem] text-white ${
-              BgColors[Service.Random.Number(1, true)]
+              BgColors[Service.Random.Number(1, true, [0, 1, 2, 3, 4, 5, 6])]
             }`}
           >
             <div className='card-body'>

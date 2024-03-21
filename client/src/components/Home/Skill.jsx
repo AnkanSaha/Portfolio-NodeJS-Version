@@ -4,8 +4,21 @@ import { Button } from '@chakra-ui/react' // Import Chakra UI Button
 import { OwnerSkillsIcons } from '../../core/Keys/OwnerDetails.keys' // Import Owner Skills Icons
 import { MdExpandMore, MdExpandLess } from 'react-icons/md' // More Icon
 
+// Redux Imports
+import { useSelector, useDispatch } from 'react-redux' // Import useSelector from react-redux
+import { ModifySkills } from '../../core/Redux/Slices/SiteInfo' // Import ModifyEducation from SiteInfo Slice
+
 // main component
 export default function MiddleText () {
+  // Redux States
+  const dispatch = useDispatch() // Dispatch
+  const ReduxState = useSelector((state) => state) // Redux States
+
+  // React useEffect
+  React.useEffect(() => {
+    dispatch(ModifySkills(OwnerSkillsIcons)) // Dispatch ModifyEducation
+  }, [ReduxState.SiteInfo.Skills, dispatch])
+
   // State for the component
   const [MoreSkillShow, setMoreSkillShow] = React.useState(false) // State for More Skill Show
   const [CountSkill, setCountSkill] = React.useState(2) // State for Count of Skill
@@ -31,7 +44,7 @@ export default function MiddleText () {
       </h1>
 
       <div className='flex lg:flex-row flex-col flex-wrap'>
-        {OwnerSkillsIcons.map((SkillDetails, index) => {
+        {ReduxState.SiteInfo.Skills.map((SkillDetails, index) => {
           return index <= CountSkill
             ? (
               <div
