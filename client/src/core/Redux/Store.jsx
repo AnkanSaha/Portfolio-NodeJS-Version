@@ -4,10 +4,12 @@ import { isDevelopmentMode } from '../Keys/variables.keys' // Import the develop
 
 // Import the reducers
 import GuestUsersReducers from './Slices/Guest Users' // Import the Guest Users Reducer
+import SiteInfoReducers from './Slices/SiteInfo' // Import the SiteInfo Reducer
 
 // Combine all the reducers into one
 export const CombinedReducers = combineReducers({
-  GuestUsers: GuestUsersReducers
+  GuestUsers: GuestUsersReducers,
+  SiteInfo: SiteInfoReducers
 })
 // Main store Configuration for the application
 const ReduxStore = configureStore({

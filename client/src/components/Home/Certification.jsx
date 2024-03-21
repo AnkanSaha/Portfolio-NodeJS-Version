@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React from 'react' // Import React
+import { useSelector, useDispatch } from 'react-redux' // import Redux
+import { ModifyCertificates } from '../../core/Redux/Slices/SiteInfo' // Redux Slice
 import {
   Box,
   Flex,
@@ -13,11 +16,7 @@ import {
   CardFooter,
   Button
 } from '@chakra-ui/react' // Import Chakra UI components
-import {
-  OwnerPicture,
-  OwnerName,
-  OwnerCertification
-} from '../../core/Keys/OwnerDetails.keys' // Import OwnerDetails
+import { OwnerCertification } from '../../core/Keys/OwnerDetails.keys' // Import OwnerDetails
 import { MdExpandMore, MdExpandLess } from 'react-icons/md' // More Icon
 
 // Import Components
@@ -25,6 +24,15 @@ import MainText from '../Header/HeaderText' // Import MainText component
 
 // Certification component
 export default function Certification () {
+  // Redux States
+  const ReduxState = useSelector((state) => state) // Create Redux States
+  const dispatch = useDispatch() // Create Redux Dispatch
+
+  // React useEffect
+  React.useEffect(() => {
+    dispatch(ModifyCertificates(OwnerCertification))
+  }, [ReduxState.SiteInfo.Certificates])
+
   // State for the component
   const [MoreCertificateShow, setMoreCertificateShow] = React.useState(false) // State for More Skill Show
   const [CountCertificate, setCountCountCertificate] = React.useState(2) // State for Count of Skill
@@ -45,7 +53,7 @@ export default function Certification () {
     <>
       <MainText Text='Certification' />
       <div className='flex lg:flex-row flex-col flex-wrap'>
-        {OwnerCertification.map((Certification, index) => {
+        {ReduxState.SiteInfo.Certificates.map((Certification, index) => {
           return index <= CountCertificate
             ? (
               <Card
