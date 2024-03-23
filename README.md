@@ -72,4 +72,4 @@ To run tests, run the following command
 - MONGODB_URL
 - DB_NAME
 - CPU_COUNT_MULTIPLIERENV
-- NODE_ENV
+- NODE_ENV="DEVELOPMENT"
