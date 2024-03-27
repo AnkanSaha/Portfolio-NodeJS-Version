@@ -9,4 +9,4 @@ client/.vite
 server/node_modules
 server/.env
 server/Build
-server/Cache
+server/.Cache
