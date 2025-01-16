@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Build client Project
           command: | 
-            cd client/ && yarn install --force && yarn run build
+            cd client/ && yarn install --force && npm run build
   
   Test_client:
     docker:
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Test client Project
           command: |
-            cd client/ && yarn install --force && yarn run test
+            cd client/ && yarn install --force && npm run test
 
   Build_Server:
     docker:
@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Build server Project
           command: |
-           cd server/ && yarn install --force &&  yarn run build
+           cd server/ && yarn install --force &&  npm run build
   
   Test_Server:
     docker:
@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Test server Project
           command: |
-            cd server/ && yarn install --force && yarn run build && yarn add pm2 && yarn run test
+            cd server/ && yarn install --force && npm run build && yarn add pm2 && npm run test
 
 
   Push_To_Gitlab:
