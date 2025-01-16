@@ -1,23 +1,23 @@
 version: 2.1
 
 jobs:
-  Build_Client:
+  Build_client:
     docker:
       - image: node:latest
     steps:
       - checkout
       - run:
-          name: Build Client Project
+          name: Build client Project
           command: | 
             cd client/ && yarn install --force && yarn run build
   
-  Test_Client:
+  Test_client:
     docker:
       - image: node:latest
     steps:
       - checkout
       - run:
-          name: Test Client Project
+          name: Test client Project
           command: |
             cd client/ && yarn install --force && yarn run test
 
@@ -27,7 +27,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build Server Project
+          name: Build server Project
           command: |
            cd server/ && yarn install --force &&  yarn run build
   
@@ -37,7 +37,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Test Server Project
+          name: Test server Project
           command: |
             cd server/ && yarn install --force && yarn run build && yarn add pm2 && yarn run test
 
@@ -62,39 +62,142 @@ jobs:
           command: |
             git push gitlab
 
+  Send_client_To_Server:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - ${SSH_FINGERPRINT}
+      - run:
+          name: Install client Dependencies
+          command: | 
+            cd client/ && npm install --force 
+      - run:
+          name: Build client Project
+          command: |
+            cd client/ && npm run build
+      - run:
+          name: Check if client Build Folder Already Exists in server
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "sudo rm -rf ${PROJECT_NAME}"
+      - run:
+          name: Send client Files to server
+          command: |
+            cd client/ && scp -o StrictHostKeyChecking=no -r ${PROJECT_NAME}/ ${SSH_USER}@${VM_IP}:/home/${SSH_USER}/
+      - run:
+          name: Check if Already Exists in Nginx Static Folder
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "sudo rm -rf /var/www/html/${PROJECT_NAME}"
+      - run:
+          name: Move Files to Nginx Static Folder
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "sudo mv /home/${SSH_USER}/${PROJECT_NAME} /var/www/html/"
+
+  Send_Server_File:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - ${SSH_FINGERPRINT}
+      - run:
+          name: Install server Dependencies
+          command: |
+            cd server/ && npm install --force
+      - run:
+          name: Build server Project
+          command: |
+            cd server/ && npm run build
+      - run:
+          name: Check if Backend Build Folder Already Exists in server
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "sudo rm -rf ${PROJECT_NAME}"
+      - run:
+          name: Send server Files to server
+          command: |
+            cd server/ && scp -o StrictHostKeyChecking=no -r ${PROJECT_NAME}/ ${SSH_USER}@${VM_IP}:/home/${SSH_USER}/
+      - run:
+          name: Install Dependencies
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "cd /home/${SSH_USER}/${PROJECT_NAME} && npm install --force"
+      - run:
+          name: Add Environment Variables
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "\
+            cd /home/${SSH_USER}/${PROJECT_NAME} && \
+            echo 'PORT=${PORT}' > .env && \
+            echo 'CPU_COUNT_MULTIPLIERENV=${CPU_COUNT_MULTIPLIERENV}' >> .env && \
+            echo 'CORS_ORIGIN=${CORS_ORIGIN}' >> .env && \
+            echo 'JWT_SECRET=${JWT_SECRET}' >> .env && \
+            echo 'JWT_EXPIRES_IN=${JWT_EXPIRES_IN}' >> .env && \
+            echo 'IP_INFO_API_KEY=${IP_INFO_API_KEY}' >> .env && \
+            echo 'MONGODB_URL=${MONGODB_URL}' >> .env && \
+            echo 'DB_NAME=${DB_NAME}' >> .env && \
+            echo 'NODE_ENV=${NODE_ENV}' >> .env"
+      - run:
+          name: Check if Pm2 Already Has the Process Running if Yes then delete it
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "if pm2 list | grep -q '${PROJECT_NAME}'; then pm2 delete ${PROJECT_NAME}; else echo 'Process not found'; fi"
+      - run:
+          name: Start server
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "cd ${PROJECT_NAME} && npm start"
+      - run:
+          name: Save The Pm2 Process for Restart
+          command: |
+            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${VM_IP} "cd ${PROJECT_NAME} && sudo pm2 startup && pm2 save"
+
+
 workflows:
   version: 2
   Build_Publish:
     jobs:
-      - Build_Client:
-          name: Build Client Side
+      - Build_client:
+          name: Build client Side
           filters:
            branches:
              only: main
       - Build_Server:
-          name: Build Server Side
+          name: Build server Side
           filters:
            branches:
              only: main
-      - Test_Client:
-          name: Test Client Side
+      - Test_client:
+          name: Test client Side
           requires:
-            - Build Client Side
+            - Build client Side
           filters:
            branches:
              only: main
       - Test_Server:
-          name: Test Server Side
+          name: Test server Side
           requires:
-            - Build Server Side
+            - Build server Side
           filters:
            branches:
              only: main
       - Push_To_Gitlab:
           name: Publish to Gitlab
           requires:
-            - Test Server Side
-            - Test Client Side
+            - Test server Side
+            - Test client Side
+          filters:
+            branches:
+              only: main
+      - Send_client_To_Server:
+          name: Send client to server
+          requires:
+            - Push to Gitlab
+          filters:
+            branches:
+              only: main
+      - Send_Server_File:
+          name: Send server File to server
+          requires:
+            - Send client to server
           filters:
             branches:
               only: main
