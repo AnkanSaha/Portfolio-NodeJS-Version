@@ -17,7 +17,7 @@
       "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
       // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
       "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */                                 /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-      "outDir": "./Build",                                   /* Specify an output folder for all emitted files. */
+      "outDir": "./Portfolio",                                   /* Specify an output folder for all emitted files. */
       "removeComments": true,                           /* Disable emitting comments. */
       "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
       "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
