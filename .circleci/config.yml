@@ -190,7 +190,7 @@ workflows:
       - Send_client_To_Server:
           name: Send client to server
           requires:
-            - Push to Gitlab
+            - Publish to Gitlab
           filters:
             branches:
               only: main
