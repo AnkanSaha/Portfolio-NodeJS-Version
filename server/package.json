@@ -2,10 +2,10 @@
   "name": "Portfolio",
   "version": "1.1.0",
   "scripts": {
-    "test:start": "pm2 start ./Build/core/Portfolio.core.js --name Portfolio --max-memory-restart 200M -f",
+    "test:start": "pm2 start ./Portfolio/core/Portfolio.core.js --name Portfolio --max-memory-restart 200M -f",
     "test": "yarn run lint && yarn run test:start && yarn run stop",
     "lint": "eslint ./src/**/*.{js,ts} --fix",
-    "build": "yarn run lint && tsc && cp package.json ./Build/ && cp yarn.lock ./Build/ && cd ./Build && yarn install",
+    "Portfolio": "yarn run lint && tsc && cp package.json ./Portfolio/ && cp yarn.lock ./Portfolio/ && cd ./Portfolio && yarn install",
     "dev": "yarn run lint && nodemon src/core/Portfolio.core.ts",
     "start": "pm2 start ./core/Portfolio.core.js --name Portfolio --max-memory-restart 200M -f",
     "stop": "pm2 stop Portfolio"
